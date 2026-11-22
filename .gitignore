@@ -1,0 +1,4 @@
+# Never commit these (Python caches; the Graphify memory layer belongs in the private workspace).
+__pycache__/
+*.pyc
+graphify-out/

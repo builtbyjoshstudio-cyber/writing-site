@@ -1,0 +1,79 @@
+name: Deploy
+
+# Publishes the site to GitHub Pages, but only if the build check passes, so a stale build
+# (out-of-date ?v= version tags or sw.js) can never go live, even when it was committed from a
+# clone without the pre-commit hook. After a successful deploy it tells IndexNow which pages changed.
+#
+# Until launch the deploy and IndexNow jobs are skipped (the build check always runs), so pushes before
+# launch don't show failed runs or publish anything. On launch day:
+#   1. Settings -> Pages -> Build and deployment -> Source: "GitHub Actions"
+#      (custom domain writing.builtbyjoshstudio.com and "Enforce HTTPS" on the same page)
+#   2. Settings -> Secrets and variables -> Actions -> Variables: PAGES_ENABLED = true
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  check:
+    name: Build check (version tags and sw.js up to date)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check the build
+        run: python -I .github/build_sw.py --check .
+
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: check
+    if: github.event_name != 'pull_request' && vars.PAGES_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read      # job permissions replace the workflow's: without this, checkout fails on a private repo
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Collect the site (committed files only; repo tooling is export-ignore in .gitattributes)
+        run: mkdir _site && git archive --format=tar HEAD | tar -x -C _site
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deployment
+        uses: actions/deploy-pages@v4
+
+  indexnow:
+    # Tells Bing/Yandex/Seznam/Naver about pages changed by a push, so they recrawl in hours instead of
+    # weeks. Google does NOT use IndexNow. The key is public by design (served at /<key>.txt).
+    name: Submit changed pages to IndexNow
+    needs: deploy
+    if: github.event_name == 'push' && vars.PAGES_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Submit changed URLs to IndexNow
+        env:
+          INDEXNOW_HOST: writing.builtbyjoshstudio.com
+          INDEXNOW_KEY: c45db13d6b2e9a37ce6e94570f91516f
+          BEFORE_SHA: ${{ github.event.before }}
+          AFTER_SHA: ${{ github.sha }}
+        run: python3 .github/indexnow_ci.py

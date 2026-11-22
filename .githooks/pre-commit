@@ -1,0 +1,46 @@
+#!/bin/sh
+# Refuse a commit whose CSS/JS version tags (?v=<hash>) or sw.js are out of date.
+#
+# It checks exactly what is being committed: the staged files are copied to a temporary folder and
+# .github/build_sw.py --check runs there. To fix a refusal:
+#     python3 .github/build_sw.py
+#     git add -A
+#     git commit ...
+#
+# Install once per clone:  git config core.hooksPath .githooks
+set -e
+top=$(git rev-parse --show-toplevel)
+tmp=$(mktemp -d 2>/dev/null || mktemp -d -t build-sw)
+cleanup() { if [ -n "$tmp" ] && [ -d "$tmp" ]; then rm -r -f -- "$tmp"; fi; }
+trap cleanup EXIT INT TERM
+git checkout-index --all --prefix="$tmp/"
+
+if [ ! -f "$tmp/.github/build_sw.py" ]; then
+  echo "pre-commit: .github/build_sw.py is not staged; cannot check the build." >&2
+  exit 1
+fi
+# Find a Python 3 that really runs. Order: python3, then "py -3" (the Windows launcher), then python.
+# Being on PATH is not enough: under Git for Windows, "python3" and "python" can be the Microsoft Store
+# stub (WindowsApps), which prints "Python was not found..." and exits 9009 instead of running Python.
+# So each candidate must run a one-line Python 3 check before it is used.
+find_python() {
+  for cand in "python3" "py -3" "python"; do
+    set -- $cand
+    command -v "$1" >/dev/null 2>&1 || continue
+    if "$@" -c 'import sys; sys.exit(0 if sys.version_info[0] == 3 else 1)' >/dev/null 2>&1; then
+      PY=$cand
+      return 0
+    fi
+  done
+  return 1
+}
+if ! find_python; then
+  echo "pre-commit: Python 3 is needed to check the build; none of python3, py -3, python ran Python 3." >&2
+  echo "pre-commit: on Windows, install Python from python.org (it adds the py launcher)." >&2
+  exit 1
+fi
+# $PY is deliberately unquoted: "py -3" is a command plus an argument
+if ! $PY -I "$tmp/.github/build_sw.py" --check "$tmp"; then
+  echo "pre-commit: commit refused: the staged site has stale version tags or a stale sw.js." >&2
+  exit 1
+fi

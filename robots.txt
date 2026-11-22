@@ -1,0 +1,9 @@
+# writing.builtbyjoshstudio.com — robots.txt
+#
+# J.S. Warden: books, field dispatches and character pages, and the free tabletop tools.
+# All content is public and meant to be indexed and cited.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://writing.builtbyjoshstudio.com/sitemap.xml

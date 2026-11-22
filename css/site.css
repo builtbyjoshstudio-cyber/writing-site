@@ -1,0 +1,161 @@
+/* J.S. Warden — site chrome and page templates.
+   Loads after tokens/themes.css and css/base.css. Tokens only: no colours or font names here. */
+
+/* ---- Layout ---- */
+.jsw-wrap { max-width: 1120px; margin: 0 auto; padding: 0 clamp(16px, 5vw, 48px); }
+.jsw-main { display: block; padding: clamp(36px, 7vw, 84px) 0 clamp(56px, 9vw, 110px); }
+.jsw-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.jsw-stack > * + * { margin-top: var(--stack, 20px); }
+.jsw-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 24px; }
+.jsw-section { margin-top: clamp(48px, 8vw, 96px); }
+.jsw-section-head { margin-bottom: 28px; }
+
+.jsw-skip { position: absolute; left: 16px; top: -100px; z-index: 20; padding: 12px 16px; background: var(--accent); color: var(--on-accent); font-family: var(--font-label); font-size: var(--label-size); font-weight: var(--label-weight-strong); text-transform: uppercase; }
+.jsw-skip:focus { top: 12px; color: var(--on-accent); }
+
+/* ---- Page head (kicker, title, divider, lede) ---- */
+.jsw-page-head .jsw-kicker { margin-bottom: 18px; }
+.jsw-page-head h1 { margin-bottom: 24px; }
+.jsw-page-head .jsw-divider { margin-bottom: 24px; }
+.jsw-page-head--compact h1 { font-size: calc(clamp(2.25rem, 6vw, 4rem) * var(--display-scale)); }
+
+/* ---- Header ---- */
+.jsw-header { border-bottom: 1px solid var(--line); background: var(--bg); }
+.jsw-header__bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 32px; min-height: 76px; }
+.jsw-brand {
+  font-family: var(--font-display); font-weight: var(--display-weight); text-transform: uppercase;
+  letter-spacing: var(--display-tracking); font-size: 1.5rem; line-height: 1;
+  color: var(--heading); text-decoration: none; padding: 12px 0;
+}
+.jsw-brand:hover { color: var(--accent-strong); }
+.jsw-header__panel { display: flex; flex: 1; align-items: center; justify-content: space-between; gap: 32px; }
+.jsw-nav { display: flex; gap: 6px; list-style: none; margin: 0; padding: 0; }
+.jsw-nav a {
+  display: flex; align-items: center; min-height: 44px; padding: 0 12px;
+  font-family: var(--font-label); font-size: var(--label-size); font-weight: var(--label-weight);
+  letter-spacing: calc(var(--label-tracking) * .5); text-transform: uppercase; white-space: nowrap;
+  color: var(--text-muted); text-decoration: none; border-bottom: 2px solid transparent;
+}
+.jsw-nav a:hover { color: var(--heading); }
+.jsw-nav a[aria-current="page"] { color: var(--heading); border-bottom-color: var(--accent); }
+.jsw-header .jsw-themes { flex-wrap: nowrap; }
+.jsw-themes__label { white-space: nowrap; margin-right: 4px; }
+/* Wide screens: swatch-only buttons, with the active theme named beside them. Names stay in the
+   markup for screen readers and show again inside the phone menu. */
+.jsw-header .jsw-theme-btn { padding: 8px; }
+.jsw-header .jsw-theme-btn__name { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+.jsw-nav-toggle {
+  display: none; align-items: center; gap: 12px; min-height: 44px; padding: 0 14px; cursor: pointer;
+  font-family: var(--font-label); font-size: var(--label-size); font-weight: var(--label-weight);
+  letter-spacing: calc(var(--label-tracking) * .5); text-transform: uppercase;
+  color: var(--heading); background: transparent; border: 1px solid var(--line-strong); border-radius: var(--radius);
+}
+.jsw-nav-toggle__bars { width: 18px; height: 2px; background: currentColor; box-shadow: 0 -6px 0 currentColor, 0 6px 0 currentColor; }
+.jsw-nav-toggle[aria-expanded="true"] { border-color: var(--accent); }
+
+/* Below 1100px: the bar keeps brand + Menu button; links and themes drop into a panel. */
+@media (max-width: 1099px) {
+  .jsw-nav-toggle { display: inline-flex; }
+  .jsw-header__panel { display: none; flex: none; width: 100%; flex-direction: column; align-items: stretch; gap: 0; padding-bottom: 20px; }
+  .jsw-header__panel.is-open { display: flex; }
+  .jsw-nav { flex-direction: column; gap: 0; border-top: 1px solid var(--line); }
+  .jsw-nav a { min-height: 52px; padding: 0 4px; border-bottom: 1px solid var(--line); }
+  .jsw-nav a[aria-current="page"] { border-bottom-color: var(--line); box-shadow: inset 3px 0 0 var(--accent); padding-left: 14px; }
+  .jsw-header .jsw-themes { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding-top: 18px; }
+  .jsw-themes__label { grid-column: 1 / -1; }
+  .jsw-header .jsw-theme-btn { justify-content: flex-start; padding: 8px 12px; }
+  .jsw-header .jsw-theme-btn__name { position: static; width: auto; height: auto; overflow: visible; clip-path: none; }
+  /* No JavaScript: nothing can open the panel, so leave it open and drop the button. */
+  html:not(.js) .jsw-nav-toggle { display: none; }
+  html:not(.js) .jsw-header__panel { display: flex; }
+}
+
+/* ---- Footer ---- */
+.jsw-footer { border-top: 1px solid var(--line); background: var(--bg-sunk); padding: clamp(36px, 6vw, 60px) 0 28px; }
+.jsw-footer__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 36px 48px; }
+.jsw-footer p { color: var(--text-muted); font-size: .92em; }
+.jsw-footer .jsw-label { display: block; margin-bottom: 12px; color: var(--text-dim); }
+.jsw-footer ul { list-style: none; margin: 0; padding: 0; }
+.jsw-footer li a { display: inline-flex; align-items: center; min-height: 44px; font-size: .92em; }
+.jsw-footer__base { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; justify-content: space-between; margin-top: 36px; padding-top: 20px; border-top: 1px solid var(--line); }
+.jsw-footer__base .jsw-label { margin: 0; }
+
+/* ---- Home hero ---- */
+.jsw-hero { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr); gap: clamp(28px, 6vw, 72px); align-items: center; }
+@media (max-width: 760px) { .jsw-hero { grid-template-columns: 1fr; } .jsw-hero .jsw-cover { max-width: 240px; } }
+
+/* ---- Cards ---- */
+.jsw-card h3 { margin: 6px 0 10px; }
+.jsw-card p { font-size: .92em; color: var(--text-muted); }
+.jsw-card > :last-child { margin-bottom: 0; }
+.jsw-book-card { display: grid; grid-template-columns: 112px minmax(0, 1fr); gap: 22px; align-items: start; }
+.jsw-book-card img { width: 112px; height: auto; display: block; border: 1px solid var(--accent-line); }
+
+/* Tools hub card: index number, name, one line, link. The whole card is the link target. */
+/* Ten tools sit two-up (five even rows) on wide screens and in one column on a phone. */
+.jsw-grid--hub { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 760px) { .jsw-grid--hub { grid-template-columns: 1fr; } }
+.jsw-tool-card { position: relative; display: grid; grid-template-columns: 3.25rem minmax(0, 1fr); gap: 0 20px; align-items: start; }
+.jsw-tool-card__index { font-size: 1.75rem; line-height: 1.15; color: var(--accent); grid-row: 1 / span 3; }
+.jsw-tool-card h3 { margin-top: 0; }
+.jsw-tool-card a { font-family: var(--font-label); font-weight: var(--label-weight); font-size: var(--label-size); letter-spacing: calc(var(--label-tracking) * .5); text-transform: uppercase; text-decoration: none; }
+.jsw-tool-card a::after { content: ""; position: absolute; inset: 0; }
+.jsw-tool-card:hover, .jsw-tool-card:focus-within { border-color: var(--accent); }
+
+/* ---- Long-form prose (essays, blog posts, privacy page) ----
+   Sits on a solid sheet so the page texture never runs behind a paragraph. */
+.jsw-article { max-width: calc(var(--prose-measure) + 2 * clamp(16px, 5vw, 56px)); margin: 0 auto; padding: clamp(28px, 6vw, 64px) clamp(16px, 5vw, 56px); background: var(--bg); border: 1px solid var(--line); }
+.jsw-article .jsw-page-head { margin-bottom: 36px; }
+.jsw-byline { display: flex; flex-wrap: wrap; gap: 6px 20px; }
+.jsw-prose { font-size: var(--prose-size); line-height: var(--prose-leading); color: var(--text); max-width: var(--prose-measure); overflow-wrap: break-word; }
+.jsw-prose > * { max-width: none; }
+.jsw-prose p { margin: 0 0 1.1em; }
+.jsw-prose h2, .jsw-prose h3 { margin: 1.8em 0 .6em; }
+.jsw-prose h2 { font-size: 1.5em; }
+.jsw-prose h3 { font-size: 1.2em; }
+.jsw-prose strong { color: var(--heading); font-weight: 700; }
+.jsw-prose ul, .jsw-prose ol { margin: 0 0 1.1em; padding-left: 1.3em; }
+.jsw-prose li { margin-bottom: .4em; }
+.jsw-prose li::marker { color: var(--accent); }
+.jsw-prose blockquote { margin: 1.6em 0; padding: .2em 0 .2em 1.2em; border-left: var(--rule-weight) solid var(--accent); color: var(--heading); font-style: italic; }
+.jsw-prose blockquote p:last-child { margin-bottom: 0; }
+.jsw-prose hr { border: 0; height: 1px; margin: 2.4em 0; background: var(--line); }
+.jsw-prose figure { margin: 1.8em 0; }
+.jsw-prose figcaption { margin-top: 10px; }
+.jsw-prose code { font-family: var(--font-numeric); font-size: .88em; padding: .1em .35em; background: var(--bg-raised); border: 1px solid var(--line); }
+.jsw-prose .jsw-lede { font-size: 1.12em; color: var(--text-muted); }
+
+/* Image stand-in. Swap for a real <img>. */
+.jsw-plate { display: flex; align-items: center; justify-content: center; text-align: center; aspect-ratio: 16 / 9; padding: 16px; background: var(--bg-sunk); border: 1px solid var(--line-strong); }
+.jsw-plate--portrait { aspect-ratio: 4 / 5; }
+
+.jsw-pager a { display: inline-flex; align-items: center; min-height: 44px; }
+.jsw-pager { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--line); }
+
+/* ---- Blog index ---- */
+.jsw-post-list { list-style: none; margin: 0; padding: 0; border-top: var(--rule-weight) solid var(--line-strong); }
+.jsw-post { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 8px 32px; padding: 28px 0; border-bottom: 1px solid var(--line); }
+.jsw-post h2 { font-size: clamp(1.375rem, 3vw, 1.75rem); margin-bottom: 10px; }
+.jsw-post h2 a { color: var(--heading); text-decoration: none; }
+.jsw-post h2 a:hover { color: var(--accent-strong); }
+.jsw-post p { color: var(--text-muted); margin-bottom: 10px; }
+@media (max-width: 700px) { .jsw-post { grid-template-columns: 1fr; } }
+
+/* ---- Book and character pages ---- */
+.jsw-book, .jsw-character { display: grid; grid-template-columns: minmax(0, 340px) minmax(0, 1fr); gap: clamp(28px, 6vw, 72px); align-items: start; }
+.jsw-book__cover, .jsw-character__portrait { position: sticky; top: 24px; }
+@media (max-width: 800px) {
+  .jsw-book, .jsw-character { grid-template-columns: 1fr; }
+  .jsw-book__cover, .jsw-character__portrait { position: static; max-width: 280px; }
+}
+.jsw-dl { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 0 28px; margin: 0; border-top: 1px solid var(--line); }
+.jsw-dl dt, .jsw-dl dd { margin: 0; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.jsw-dl dt { display: flex; align-items: center; font-family: var(--font-label); font-size: var(--label-size); letter-spacing: calc(var(--label-tracking) * .6); text-transform: uppercase; color: var(--text-muted); }
+.jsw-pullquote { margin: 0; padding: 22px 0; border-top: var(--rule-weight) solid var(--line-strong); border-bottom: 1px solid var(--line); font-family: var(--font-display); font-weight: var(--display-weight); font-style: var(--display-accent-style); font-size: clamp(1.375rem, 3vw, 1.875rem); line-height: 1.25; color: var(--heading); }
+
+/* ---- 404 ---- */
+.jsw-404 { text-align: center; padding: clamp(24px, 8vw, 96px) 0; }
+.jsw-404__code { display: block; font-size: clamp(5rem, 22vw, 12rem); line-height: .9; color: var(--accent); text-shadow: var(--display-accent-shadow); margin-bottom: 18px; }
+.jsw-404 p { margin-left: auto; margin-right: auto; }
+.jsw-404 .jsw-divider, .jsw-404 .jsw-row { justify-content: center; }

@@ -1,0 +1,13 @@
+# Text files served by the site: always LF, on every OS and autocrlf setting.
+*.css text eol=lf
+*.html text eol=lf
+*.js text eol=lf
+# Also LF: files hashed into sw.js's version, and the hook and build scripts (sh and Python need LF everywhere).
+*.webmanifest text eol=lf
+*.py text eol=lf
+.githooks/* text eol=lf
+# Repo tooling, not part of the published site (the deploy workflow publishes `git archive` output).
+.github export-ignore
+.githooks export-ignore
+.gitattributes export-ignore
+.gitignore export-ignore

@@ -1,0 +1,217 @@
+/* GENERATED from themes.json by tools/build_tokens.py. Edit the JSON, not this file. */
+
+:root {
+  --swatch-warden-bg: #0a0c10;
+  --swatch-warden-accent: #7ba7d4;
+  --swatch-echoes-bg: #040507;
+  --swatch-echoes-accent: #34e7d0;
+  --swatch-ebonspire-bg: #17181b;
+  --swatch-ebonspire-accent: #5b8fc4;
+  --swatch-casefile-bg: #c6c9cc;
+  --swatch-casefile-accent: #214875;
+}
+
+/* Warden: Author default. Ink + bone, serif mark. */
+:root,
+[data-theme="warden"] {
+  color-scheme: dark;
+  --bg: #0a0c10;
+  --bg-raised: #14171c;
+  --bg-sunk: #07080b;
+  --heading: #f2efe7;
+  --text: #c9d0d9;
+  --text-muted: #9fb4cc;
+  --text-dim: #8a94a0;
+  --accent: #7ba7d4;
+  --accent-strong: #9fc0e2;
+  --on-accent: #0a0c10;
+  --alert: #e8806f;
+  --success: #7fc79a;
+  --warning: #e0b25c;
+  --line: rgba(154,164,176,.22);
+  --line-strong: rgba(154,164,176,.6);
+  --accent-line: rgba(123,167,212,.4);
+  --glow: rgba(123,167,212,.14);
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Jost', system-ui, sans-serif;
+  --font-label: 'Jost', system-ui, sans-serif;
+  --display-weight: 700;
+  --display-transform: uppercase;
+  --display-tracking: .02em;
+  --display-leading: .95;
+  --display-accent-style: normal;
+  --display-accent-shadow: none;
+  --body-size: 1.0625rem;
+  --body-leading: 1.65;
+  --body-weight: 400;
+  --label-size: .8125rem;
+  --label-tracking: .3em;
+  --label-weight: 500;
+  --display-scale: .78;
+  --label-weight-strong: 700;
+  --font-numeric: 'Jost', system-ui, sans-serif;
+  --numeric-weight: 500;
+  --prose-size: 1.125rem;
+  --prose-leading: 1.75;
+  --prose-measure: 31rem;
+  --radius: 0px;
+  --texture: repeating-linear-gradient(102deg, rgba(255,255,255,.03) 0 1px, transparent 1px 7px);
+  --vignette: inset 0 0 200px rgba(0,0,0,.6);
+  --shadow: 0 20px 44px rgba(0,0,0,.6);
+  --kicker-prefix: '';
+  --divider-glyph: '\25C6';
+  --rule-weight: 1px;
+}
+
+/* Overlayed Echoes: System HUD. Teal signal, scanlines, one red glitch. */
+[data-theme="echoes"] {
+  color-scheme: dark;
+  --bg: #040507;
+  --bg-raised: #0a0e15;
+  --bg-sunk: #020304;
+  --heading: #f4f7fa;
+  --text: #dfe6ee;
+  --text-muted: #98a3b3;
+  --text-dim: #7e8a99;
+  --accent: #34e7d0;
+  --accent-strong: #7df3e3;
+  --on-accent: #04120f;
+  --alert: #e8493d;
+  --success: #5fd38a;
+  --warning: #f0b429;
+  --line: rgba(255,255,255,.12);
+  --line-strong: rgba(255,255,255,.28);
+  --accent-line: rgba(52,231,208,.22);
+  --glow: rgba(52,231,208,.4);
+  --font-display: 'Anton', Impact, sans-serif;
+  --font-body: 'Space Grotesk', system-ui, sans-serif;
+  --font-label: 'Space Mono', ui-monospace, monospace;
+  --display-weight: 400;
+  --display-transform: uppercase;
+  --display-tracking: .005em;
+  --display-leading: .9;
+  --display-accent-style: normal;
+  --display-accent-shadow: 3px 0 0 rgba(232,73,61,.6);
+  --body-size: 1.0625rem;
+  --body-leading: 1.55;
+  --body-weight: 400;
+  --label-size: .78rem;
+  --label-tracking: .2em;
+  --label-weight: 400;
+  --display-scale: 1;
+  --label-weight-strong: 700;
+  --font-numeric: 'Space Mono', ui-monospace, monospace;
+  --numeric-weight: 700;
+  --prose-size: 1.125rem;
+  --prose-leading: 1.7;
+  --prose-measure: 35rem;
+  --radius: 2px;
+  --texture: repeating-linear-gradient(0deg, rgba(255,255,255,.028) 0 1px, transparent 1px 4px);
+  --vignette: none;
+  --shadow: 0 40px 80px rgba(0,0,0,.7);
+  --kicker-prefix: '// ';
+  --divider-glyph: '';
+  --rule-weight: 1px;
+}
+
+/* Ebonspire: Gaslamp noir. Ink, ledger lines, one thread of arcane light. */
+[data-theme="ebonspire"] {
+  color-scheme: dark;
+  --bg: #17181b;
+  --bg-raised: #1f2226;
+  --bg-sunk: #0f1115;
+  --heading: #f2efe7;
+  --text: #ddd7c7;
+  --text-muted: #9aa4b0;
+  --text-dim: #8a94a0;
+  --accent: #5b8fc4;
+  --accent-strong: #9fc0e2;
+  --on-accent: #0f1115;
+  --alert: #d98a80;
+  --success: #8fbf9a;
+  --warning: #d9b36a;
+  --line: rgba(221,215,199,.22);
+  --line-strong: #ddd7c7;
+  --accent-line: rgba(123,167,212,.4);
+  --glow: rgba(143,180,220,.14);
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Cormorant Garamond', Georgia, serif;
+  --font-label: 'Special Elite', 'Courier New', monospace;
+  --display-weight: 700;
+  --display-transform: uppercase;
+  --display-tracking: .02em;
+  --display-leading: .92;
+  --display-accent-style: italic;
+  --display-accent-shadow: none;
+  --body-size: 1.3125rem;
+  --body-leading: 1.5;
+  --body-weight: 500;
+  --label-size: .8125rem;
+  --label-tracking: .24em;
+  --label-weight: 400;
+  --display-scale: .8;
+  --label-weight-strong: 400;
+  --font-numeric: 'Jost', system-ui, sans-serif;
+  --numeric-weight: 500;
+  --prose-size: 1.375rem;
+  --prose-leading: 1.6;
+  --prose-measure: 35rem;
+  --radius: 0px;
+  --texture: repeating-linear-gradient(0deg, transparent 0 47px, rgba(221,215,199,.045) 47px 48px);
+  --vignette: none;
+  --shadow: 0 26px 52px rgba(0,0,0,.6);
+  --kicker-prefix: '';
+  --divider-glyph: '\25C6';
+  --rule-weight: 3px;
+}
+
+/* Case File: Ebonspire on paper. The light theme. */
+[data-theme="casefile"] {
+  color-scheme: light;
+  --bg: #c6c9cc;
+  --bg-raised: #e9e6dc;
+  --bg-sunk: #b6bdc7;
+  --heading: #191c20;
+  --text: #23272c;
+  --text-muted: #3d434a;
+  --text-dim: #484d53;
+  --accent: #214875;
+  --accent-strong: #163559;
+  --on-accent: #f2efe7;
+  --alert: #7a2622;
+  --success: #194b2e;
+  --warning: #5c3f00;
+  --line: rgba(25,28,32,.3);
+  --line-strong: #191c20;
+  --accent-line: rgba(47,95,146,.45);
+  --glow: rgba(47,95,146,.1);
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Cormorant Garamond', Georgia, serif;
+  --font-label: 'Special Elite', 'Courier New', monospace;
+  --display-weight: 700;
+  --display-transform: none;
+  --display-tracking: 0;
+  --display-leading: .96;
+  --display-accent-style: italic;
+  --display-accent-shadow: none;
+  --body-size: 1.3125rem;
+  --body-leading: 1.5;
+  --body-weight: 500;
+  --label-size: .8125rem;
+  --label-tracking: .24em;
+  --label-weight: 400;
+  --display-scale: .9;
+  --label-weight-strong: 400;
+  --font-numeric: 'Jost', system-ui, sans-serif;
+  --numeric-weight: 500;
+  --prose-size: 1.375rem;
+  --prose-leading: 1.6;
+  --prose-measure: 35rem;
+  --radius: 0px;
+  --texture: repeating-linear-gradient(0deg, transparent 0 51px, rgba(25,28,32,.07) 51px 52px);
+  --vignette: inset 0 0 200px rgba(20,25,30,.28);
+  --shadow: 0 16px 34px rgba(0,0,0,.3);
+  --kicker-prefix: '';
+  --divider-glyph: '\25C6';
+  --rule-weight: 2px;
+}

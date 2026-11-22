@@ -1,0 +1,109 @@
+/* J.S. Warden — tabletop tool parts.
+   Inputs, selects, buttons, results panel, results list and table, validation.
+   Loads after tokens/themes.css, css/base.css and css/site.css. Tokens only. */
+
+/* ---- Tool shell: controls beside results on wide screens, stacked on a phone ---- */
+.jsw-tool { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 24px; align-items: start; }
+@media (max-width: 860px) { .jsw-tool { grid-template-columns: 1fr; } }
+.jsw-tool__panel { background: var(--bg-raised); border: 1px solid var(--line); border-radius: var(--radius); padding: clamp(18px, 3.5vw, 28px); }
+.jsw-tool__panel > h2, .jsw-tool__panel > h3 { font-size: 1.25rem; margin-bottom: 18px; }
+.jsw-tool__actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+
+/* ---- Fields ---- */
+.jsw-form { display: grid; gap: 18px; }
+.jsw-form--inline { grid-template-columns: repeat(auto-fit, minmax(min(100%, 140px), 1fr)); align-items: end; }
+.jsw-field { display: grid; gap: 6px; min-width: 0; }
+.jsw-field > label, .jsw-fieldset > legend {
+  font-family: var(--font-label); font-size: var(--label-size); font-weight: var(--label-weight);
+  letter-spacing: calc(var(--label-tracking) * .6); text-transform: uppercase; color: var(--text-muted);
+}
+.jsw-field__hint { font-size: .85em; color: var(--text-dim); margin: 0; }
+.jsw-field__error { font-size: .85em; color: var(--alert); margin: 0; }
+.jsw-fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
+.jsw-fieldset > legend { padding: 0; margin-bottom: 8px; }
+
+.jsw-select, .jsw-textarea {
+  font: inherit; color: var(--heading); background-color: var(--bg-sunk);
+  border: 1px solid var(--line-strong); border-radius: var(--radius);
+  padding: 12px 14px; min-height: 44px; width: 100%;
+}
+.jsw-select {
+  appearance: none; padding-right: 40px; cursor: pointer;
+  background-image: linear-gradient(45deg, transparent 50%, var(--text-muted) 50%), linear-gradient(135deg, var(--text-muted) 50%, transparent 50%);
+  background-position: calc(100% - 19px) 50%, calc(100% - 13px) 50%;
+  background-size: 6px 6px; background-repeat: no-repeat;
+}
+.jsw-textarea { min-height: 110px; resize: vertical; }
+/* Number entry uses the numeric face so what you type matches what you read back. */
+.jsw-input[type="number"], .jsw-input--num { font-family: var(--font-numeric); font-weight: var(--numeric-weight); font-variant-numeric: tabular-nums lining-nums; }
+.jsw-input:focus-visible, .jsw-select:focus-visible, .jsw-textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-color: var(--accent); }
+.jsw-input:disabled, .jsw-select:disabled, .jsw-btn:disabled { opacity: .5; cursor: not-allowed; }
+
+.jsw-field--invalid .jsw-input, .jsw-field--invalid .jsw-select, .jsw-field--invalid .jsw-textarea,
+.jsw-input[aria-invalid="true"], .jsw-select[aria-invalid="true"] { border-color: var(--alert); box-shadow: inset 0 -2px 0 var(--alert); }
+
+.jsw-check { display: flex; align-items: center; gap: 10px; min-height: 44px; cursor: pointer; }
+.jsw-check input { width: 20px; height: 20px; margin: 0; accent-color: var(--accent); flex: none; }
+
+/* ---- Buttons (extends .jsw-btn from base.css) ---- */
+.jsw-btn--small { padding: 8px 14px; min-height: 44px; }
+.jsw-btn--danger { background: transparent; color: var(--alert); border-color: var(--alert); }
+.jsw-btn--danger:hover { background: transparent; color: var(--heading); border-color: var(--heading); }
+
+/* Die picker: a row of toggle buttons (d4, d6, d8 ...). */
+.jsw-dice { display: flex; flex-wrap: wrap; gap: 8px; }
+.jsw-die {
+  min-width: 56px; min-height: 48px; padding: 6px 10px; cursor: pointer;
+  font-family: var(--font-numeric); font-weight: var(--numeric-weight); font-size: 1.05rem; font-variant-numeric: lining-nums;
+  color: var(--text); background: var(--bg-sunk); border: 1px solid var(--line-strong); border-radius: var(--radius);
+}
+.jsw-die:hover { border-color: var(--accent); color: var(--heading); }
+.jsw-die[aria-pressed="true"] { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
+
+/* ---- Results panel: the one big answer ---- */
+.jsw-result { text-align: center; padding: clamp(20px, 4vw, 36px) 16px; background: var(--bg-sunk); border: 1px solid var(--accent-line); border-radius: var(--radius); }
+.jsw-result__value {
+  display: block; margin: 8px 0 10px;
+  font-family: var(--font-numeric); font-weight: var(--numeric-weight); font-variant-numeric: tabular-nums lining-nums;
+  font-size: clamp(4rem, 16vw, 7rem); line-height: 1; color: var(--heading);
+}
+.jsw-result__value--text { font-family: var(--font-display); font-weight: var(--display-weight); text-transform: var(--display-transform); letter-spacing: var(--display-tracking); font-size: clamp(1.75rem, 6vw, 2.75rem); line-height: 1.05; }
+.jsw-result__detail { margin: 0 auto; color: var(--text-muted); max-width: none; }
+.jsw-result__detail .jsw-num { color: var(--heading); font-size: 1.1em; }
+.jsw-result--empty .jsw-result__value { color: var(--text-dim); }
+
+/* ---- Results list (roll history, generated items) ---- */
+.jsw-results { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.jsw-results li { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 12px 2px; border-bottom: 1px solid var(--line); }
+.jsw-results .jsw-num { font-size: 1.25rem; color: var(--heading); flex: none; }
+/* Dice notation (2d20 + 5) is numbers too: set it in the numeric face, at text size. */
+.jsw-formula { font-family: var(--font-numeric); font-weight: var(--numeric-weight); font-variant-numeric: tabular-nums lining-nums; color: var(--text); }
+.jsw-results small { color: var(--text-muted); font-size: .85em; }
+.jsw-empty { margin: 0; padding: 22px 0; color: var(--text-dim); text-align: center; max-width: none; }
+
+/* ---- Results table (initiative order, loot tables) ---- */
+.jsw-table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); }
+.jsw-table { width: 100%; border-collapse: collapse; font-size: .95em; }
+.jsw-table caption { text-align: left; padding: 12px 14px; }
+.jsw-table th, .jsw-table td { padding: 12px 14px; text-align: left; border-bottom: 1px solid var(--line); vertical-align: middle; }
+.jsw-table thead th { font-family: var(--font-label); font-size: var(--label-size); font-weight: var(--label-weight); letter-spacing: calc(var(--label-tracking) * .6); text-transform: uppercase; color: var(--text-muted); background: var(--bg-sunk); white-space: nowrap; }
+.jsw-table tbody tr:last-child td, .jsw-table tbody tr:last-child th { border-bottom: 0; }
+.jsw-table tbody th { font-weight: inherit; color: var(--heading); }
+.jsw-table .jsw-num { font-size: 1.15rem; color: var(--heading); }
+.jsw-table td.jsw-num, .jsw-table th.jsw-num { text-align: right; }
+.jsw-table thead th.jsw-num { font-family: var(--font-label); font-size: var(--label-size); font-weight: var(--label-weight); color: var(--text-muted); }
+/* The active row (whose turn it is). Marked with a bar and a text tag, not colour alone. */
+.jsw-table tr[aria-current="true"] > * { background: var(--bg-sunk); }
+.jsw-table tr[aria-current="true"] > :first-child { box-shadow: inset 4px 0 0 var(--accent); }
+.jsw-tag { display: inline-block; margin-left: 8px; padding: 2px 8px; font-family: var(--font-label); font-size: .7rem; font-weight: var(--label-weight-strong); letter-spacing: .1em; text-transform: uppercase; color: var(--on-accent); background: var(--accent); border-radius: var(--radius); vertical-align: middle; }
+
+/* ---- Generated card (NPC, tavern, loot item) ---- */
+.jsw-gen { background: var(--bg-raised); border: 1px solid var(--line); border-top: var(--rule-weight) solid var(--line-strong); border-radius: var(--radius); padding: clamp(18px, 3.5vw, 28px); }
+.jsw-gen h3 { margin: 6px 0 14px; }
+.jsw-gen .jsw-dl dd { color: var(--text); }
+
+/* Stat row: label over number, for ability scores, HP, AC and similar. */
+.jsw-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(72px, 1fr)); gap: 8px; margin: 0; padding: 0; list-style: none; }
+.jsw-stats li { text-align: center; padding: 10px 4px; background: var(--bg-sunk); border: 1px solid var(--line); border-radius: var(--radius); }
+.jsw-stats .jsw-label { display: block; font-size: .7rem; }
+.jsw-stats .jsw-num { display: block; font-size: 1.5rem; line-height: 1.2; color: var(--heading); }
