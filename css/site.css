@@ -39,11 +39,7 @@
 .jsw-nav a:hover { color: var(--heading); }
 .jsw-nav a[aria-current="page"] { color: var(--heading); border-bottom-color: var(--accent); }
 .jsw-header .jsw-themes { flex-wrap: nowrap; }
-.jsw-themes__label { white-space: nowrap; margin-right: 4px; }
-/* Wide screens: swatch-only buttons, with the active theme named beside them. Names stay in the
-   markup for screen readers and show again inside the phone menu. */
-.jsw-header .jsw-theme-btn { padding: 8px; }
-.jsw-header .jsw-theme-btn__name { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.jsw-header .jsw-theme-btn { padding: 8px 14px; }
 
 .jsw-nav-toggle {
   display: none; align-items: center; gap: 12px; min-height: 44px; padding: 0 14px; cursor: pointer;

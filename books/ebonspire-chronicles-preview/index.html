@@ -1,15 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" data-theme-default="ebonspire">
+<html lang="en" data-theme="ebonspire" data-theme-fixed="ebonspire">
 <head>
 <meta charset="utf-8">
 <script>if(location.protocol.indexOf("http")===0&&/\/index\.html$/i.test(location.pathname))location.replace(location.pathname.slice(0,-10)+location.search+location.hash);</script>
 <script>
-(function(){var d=document.documentElement,t=null,ok=['warden','echoes','ebonspire','casefile'];
+(function(){var d=document.documentElement;
 d.className+=' js';
-try{t=localStorage.getItem('jsw-theme')}catch(e){}
-if(ok.indexOf(t)<0)t=d.getAttribute('data-theme-default');
-if(ok.indexOf(t)<0)t='warden';
-d.setAttribute('data-theme',t)})();
+d.setAttribute('data-theme',d.getAttribute('data-theme-fixed'))})();
 </script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-QDSPBB7S9J"></script>
 <script>
@@ -31,11 +28,11 @@ d.setAttribute('data-theme',t)})();
 <meta property="og:image" content="https://writing.builtbyjoshstudio.com/images/books/ebonspire-chronicles-front-cover.jpg">
 <meta property="og:site_name" content="J.S. Warden">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="/fonts/fonts.css?v=aa0d83c07e">
-<link rel="stylesheet" href="/tokens/themes.css?v=47c6296e35">
-<link rel="stylesheet" href="/css/base.css?v=8e0c7377c5">
-<link rel="stylesheet" href="/css/site.css?v=013752c2a3">
-<script defer src="/js/theme-switcher.js?v=9ca8cd26c0"></script>
+<link rel="stylesheet" href="/fonts/fonts.css?v=00fd9dd53c">
+<link rel="stylesheet" href="/tokens/themes.css?v=a10c66c644">
+<link rel="stylesheet" href="/css/base.css?v=fa70b1d88f">
+<link rel="stylesheet" href="/css/site.css?v=bf15793f00">
+<script defer src="/js/theme-switcher.js?v=8278cc8676"></script>
 <script defer src="/js/site.js?v=f8e9bf1bb4"></script>
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16.png">
@@ -136,7 +133,7 @@ d.setAttribute('data-theme',t)})();
 }
 </script>
 <meta property="og:image:alt" content="Ebonspire Chronicles — Book One, a dark fantasy detective noir by J.S. Warden.">
-<link rel="stylesheet" href="/css/pages/books.css?v=6f994a3da1">
+<link rel="stylesheet" href="/css/pages/books.css?v=c6c66249b6">
 </head>
 <body>
 <a class="jsw-skip" href="#main">Skip to content</a>
@@ -154,13 +151,6 @@ d.setAttribute('data-theme',t)})();
           <li><a href="/tabletop/">Tabletop Tools</a></li>
         </ul>
       </nav>
-      <div class="jsw-themes" role="group" aria-label="Colour theme">
-        <span class="jsw-label jsw-themes__label" aria-hidden="true">Theme · <span data-theme-current></span></span>
-        <button type="button" class="jsw-theme-btn" data-theme-set="warden" title="Warden"><span class="jsw-swatch" aria-hidden="true"></span><span class="jsw-theme-btn__name">Warden</span></button>
-        <button type="button" class="jsw-theme-btn" data-theme-set="echoes" title="Echoes"><span class="jsw-swatch" aria-hidden="true"></span><span class="jsw-theme-btn__name">Echoes</span></button>
-        <button type="button" class="jsw-theme-btn" data-theme-set="ebonspire" title="Ebonspire"><span class="jsw-swatch" aria-hidden="true"></span><span class="jsw-theme-btn__name">Ebonspire</span></button>
-        <button type="button" class="jsw-theme-btn" data-theme-set="casefile" title="Case File"><span class="jsw-swatch" aria-hidden="true"></span><span class="jsw-theme-btn__name">Case File</span></button>
-      </div>
     </div>
   </div>
 </header>
@@ -394,7 +384,6 @@ d.setAttribute('data-theme',t)})();
     </div>
     <div class="jsw-footer__base">
       <span class="jsw-label">&copy; <span class="jsw-num">2026</span> Built by Josh Studio LLC. All rights reserved.</span>
-      <button type="button" class="jsw-theme-btn" data-theme-reset>Reset theme</button>
     </div>
     <p>Tynkr Tools &amp; Co and <a href="https://littleacrelearning.com" rel="noopener">Little Acre Learning</a> are brands of Built by Josh Studio LLC.</p>
   </div>

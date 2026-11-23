@@ -29,7 +29,7 @@
    ========================================================= */
 (function () {
   'use strict';
-  var CACHE_VERSION = '3e86f469f115';
+  var CACHE_VERSION = 'ba5e26b4771b';
   var PAGES = 'jsw-pages-' + CACHE_VERSION;
   var ASSETS = 'jsw-assets-' + CACHE_VERSION;
 
@@ -51,12 +51,12 @@
   ];
   var SHELL_ASSETS = [
       "/site.webmanifest",
-      "/fonts/fonts.css?v=aa0d83c07e",
-      "/tokens/themes.css?v=47c6296e35",
-      "/css/base.css?v=8e0c7377c5",
-      "/css/site.css?v=013752c2a3",
+      "/fonts/fonts.css?v=00fd9dd53c",
+      "/tokens/themes.css?v=a10c66c644",
+      "/css/base.css?v=fa70b1d88f",
+      "/css/site.css?v=bf15793f00",
       "/css/tool-parts.css?v=0d4d40d55a",
-      "/js/theme-switcher.js?v=9ca8cd26c0",
+      "/js/theme-switcher.js?v=8278cc8676",
       "/js/site.js?v=f8e9bf1bb4",
       "/assets/icons/icon-192.png",
       "/css/pages/home.css?v=8a25d1c160",
@@ -72,13 +72,13 @@
       "/css/studio/components.css?v=09a4d9f402",
       "/css/studio/tools.css?v=76acb59400",
       "/tabletop/character-name-generator/styles.css?v=6d2448c243",
-      "/css/tool-bridge.css?v=dc0db3370f",
-      "/css/pages/tabletop-tool.css?v=9031b10f0b",
+      "/css/tool-bridge.css?v=a93e6e1806",
+      "/css/pages/tabletop-tool.css?v=5ca22a43cf",
       "/css/pages/kept-generators.css?v=bf10455c76",
       "/tabletop/character-name-generator/script.js?v=911adc986d",
       "/js/migrate-import.js?v=3bf55fbeb9",
       "/tabletop/dice-roller/styles.css?v=2c4cc1a9da",
-      "/css/pages/dice-roller.css?v=8661c9c975",
+      "/css/pages/dice-roller.css?v=13715f9dbd",
       "/tabletop/dice-roller/script.js?v=295e83153b",
       "/tabletop/initiative-tracker/styles.css?v=c9bb3dac43",
       "/css/pages/initiative-tracker.css?v=c979b8b1ae",
@@ -91,7 +91,7 @@
       "/tabletop/plot-hook-generator/styles.css?v=b79465d71e",
       "/tabletop/plot-hook-generator/script.js?v=060517c1ee",
       "/tabletop/random-table-roller/styles.css?v=d155c59415",
-      "/css/pages/random-table-roller.css?v=e4fb268025",
+      "/css/pages/random-table-roller.css?v=d440bcbbba",
       "/tabletop/random-table-roller/script.js?v=94c3f639cd",
       "/tabletop/session-notes/styles.css?v=487762b0eb",
       "/css/pages/session-notes.css?v=f9846352a7",
@@ -101,12 +101,6 @@
       "/tabletop/wargame-score-tracker/styles.css?v=6abeeeafb3",
       "/css/pages/wargame-score-tracker.css?v=553832962d",
       "/tabletop/wargame-score-tracker/script.js?v=3212c86ed8",
-      "/css/fonts/PlusJakartaSans-Variable.woff2",
-      "/css/fonts/jetbrains-mono-500-latin-ext.woff2",
-      "/css/fonts/jetbrains-mono-500-latin.woff2",
-      "/css/fonts/jetbrains-mono-700-latin-ext.woff2",
-      "/css/fonts/jetbrains-mono-700-latin.woff2",
-      "/fonts/anton/anton-latin-400-normal.woff2",
       "/fonts/cormorant-garamond/cormorant-garamond-latin-500-normal.woff2",
       "/fonts/cormorant-garamond/cormorant-garamond-latin-500-italic.woff2",
       "/fonts/cormorant-garamond/cormorant-garamond-latin-700-normal.woff2",
@@ -115,13 +109,13 @@
       "/fonts/jost/jost-latin-400-italic.woff2",
       "/fonts/jost/jost-latin-500-normal.woff2",
       "/fonts/jost/jost-latin-700-normal.woff2",
-      "/fonts/space-grotesk/space-grotesk-latin-400-normal.woff2",
-      "/fonts/space-grotesk/space-grotesk-latin-700-normal.woff2",
-      "/fonts/space-mono/space-mono-latin-400-normal.woff2",
-      "/fonts/space-mono/space-mono-latin-700-normal.woff2",
-      "/fonts/special-elite/special-elite-latin-400-normal.woff2",
-      "/css/pages/books.css?v=6f994a3da1",
-      "/css/pages/post.css?v=12fc9d8e74",
+      "/fonts/cinzel/cinzel-latin-600-normal.woff2",
+      "/fonts/cinzel/cinzel-latin-700-normal.woff2",
+      "/fonts/archivo/archivo-latin-600-normal.woff2",
+      "/fonts/archivo/archivo-latin-700-normal.woff2",
+      "/fonts/archivo/archivo-latin-800-normal.woff2",
+      "/css/pages/books.css?v=c6c66249b6",
+      "/css/pages/post.css?v=59dfb10ef4",
       "/css/pages/writing.css?v=18f59a813e"
   ];
 
@@ -237,8 +231,8 @@
       '<title>Offline &mdash; J.S. Warden</title>' +
       '<link rel="stylesheet" href="/fonts/fonts.css"><link rel="stylesheet" href="/tokens/themes.css">' +
       '<link rel="stylesheet" href="/css/base.css"><link rel="stylesheet" href="/css/site.css">' +
-      '<script>(function(){var d=document.documentElement,t=null,ok=["warden","echoes","ebonspire","casefile"];' +
-      'try{t=localStorage.getItem("jsw-theme")}catch(e){}if(ok.indexOf(t)<0)t="warden";d.setAttribute("data-theme",t)})();</script>' +
+      '<script>(function(){var d=document.documentElement,t=null;' +
+      'try{t=localStorage.getItem("jsw-theme")}catch(e){}t=(t==="light"||t==="casefile")?"light":"dark";d.setAttribute("data-theme",t)})();</script>' +
       '<body><main class="jsw-main" id="main"><div class="jsw-wrap">' +
       '<h1>You are offline</h1>' +
       '<p class="jsw-lede">This page has not been opened on this device yet, so there is no saved copy to show. ' +

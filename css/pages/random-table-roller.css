@@ -50,7 +50,7 @@
 /* 2. the paste box (the pack's field and textarea; styles.css draws #paste-box by ID and removes its outline) */
 .studio-tool .paste-field { margin-bottom: 0; }
 .studio-tool #paste-box {
-  min-height: 140px; padding: 12px 14px; font-family: var(--font-numeric); font-size: 1rem; line-height: 1.6;
+  min-height: 140px; padding: 12px 14px; font-family: var(--font-numeric); font-variant-numeric: tabular-nums lining-nums; font-size: 1rem; line-height: 1.6;
   color: var(--heading); background: var(--bg-sunk); border: 1px solid var(--line-strong); border-radius: var(--radius);
 }
 .studio-tool #paste-box:focus { border-color: var(--accent); }

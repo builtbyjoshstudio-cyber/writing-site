@@ -59,7 +59,7 @@
 .studio-tool .die-face.crit::after { content: "Natural 20"; }
 .studio-tool .die-face.fumble::after { content: "Natural 1"; }
 .studio-tool .die-face.dropped { opacity: 1; color: var(--text-dim); text-decoration: line-through; }
-.studio-tool .mod-face { font-family: var(--font-numeric); font-weight: var(--numeric-weight); font-size: 1.15rem; color: var(--text-muted); }
+.studio-tool .mod-face { font-family: var(--font-numeric); font-weight: var(--numeric-weight); font-variant-numeric: tabular-nums lining-nums; font-size: 1.15rem; color: var(--text-muted); }
 
 /* roll history (built by the script) in the pack's results list */
 .studio-tool .hist-head { margin-bottom: 18px; }
@@ -73,9 +73,9 @@
   grid-template-columns: minmax(0, max-content) minmax(0, 1fr) auto; gap: 6px 16px; align-items: baseline;
   margin: 0; padding: 12px 2px; background: none; border: 0; border-bottom: 1px solid var(--line); border-radius: 0;
 }
-.studio-tool .hist-row .hx { font-family: var(--font-numeric); font-weight: var(--numeric-weight); font-size: .95rem; color: var(--text); white-space: normal; overflow-wrap: anywhere; }
-.studio-tool .hist-row .hd { font-family: var(--font-numeric); font-size: .9rem; color: var(--text-muted); }
-.studio-tool .hist-row .hv { font-family: var(--font-numeric); font-weight: var(--numeric-weight); font-size: 1.25rem; color: var(--heading); }
+.studio-tool .hist-row .hx { font-family: var(--font-numeric); font-weight: var(--numeric-weight); font-variant-numeric: tabular-nums lining-nums; font-size: .95rem; color: var(--text); white-space: normal; overflow-wrap: anywhere; }
+.studio-tool .hist-row .hd { font-family: var(--font-numeric); font-variant-numeric: tabular-nums lining-nums; font-size: .9rem; color: var(--text-muted); }
+.studio-tool .hist-row .hv { font-family: var(--font-numeric); font-weight: var(--numeric-weight); font-variant-numeric: tabular-nums lining-nums; font-size: 1.25rem; color: var(--heading); }
 .studio-tool .jsw-results .empty-note { margin: 0; padding: 22px 0; border: 0; border-radius: 0; text-align: center; color: var(--text-dim); font-size: .95rem; font-family: var(--font-body); }   /* a sentence */
 
 @media (max-width: 680px) {

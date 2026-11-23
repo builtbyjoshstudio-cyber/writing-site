@@ -1,19 +1,15 @@
 /* GENERATED from themes.json by tools/build_tokens.py. Edit the JSON, not this file. */
 
 :root {
-  --swatch-warden-bg: #0a0c10;
-  --swatch-warden-accent: #7ba7d4;
-  --swatch-echoes-bg: #040507;
-  --swatch-echoes-accent: #34e7d0;
-  --swatch-ebonspire-bg: #17181b;
-  --swatch-ebonspire-accent: #5b8fc4;
-  --swatch-casefile-bg: #c6c9cc;
-  --swatch-casefile-accent: #214875;
+  --swatch-dark-bg: #0a0c10;
+  --swatch-dark-accent: #7ba7d4;
+  --swatch-light-bg: #c6c9cc;
+  --swatch-light-accent: #214875;
 }
 
-/* Warden: Author default. Ink + bone, serif mark. */
+/* Dark: Shared default. Warden dark ink + bone, Cormorant Garamond + Jost. */
 :root,
-[data-theme="warden"] {
+[data-theme="dark"] {
   color-scheme: dark;
   --bg: #0a0c10;
   --bg-raised: #14171c;
@@ -35,138 +31,36 @@
   --font-display: 'Cormorant Garamond', Georgia, serif;
   --font-body: 'Jost', system-ui, sans-serif;
   --font-label: 'Jost', system-ui, sans-serif;
+  --font-numeric: 'Jost', system-ui, sans-serif;
   --display-weight: 700;
   --display-transform: uppercase;
   --display-tracking: .02em;
   --display-leading: .95;
+  --display-scale: .78;
   --display-accent-style: normal;
   --display-accent-shadow: none;
   --body-size: 1.0625rem;
   --body-leading: 1.65;
   --body-weight: 400;
   --label-size: .8125rem;
-  --label-tracking: .3em;
+  --label-tracking: .24em;
   --label-weight: 500;
-  --display-scale: .78;
   --label-weight-strong: 700;
-  --font-numeric: 'Jost', system-ui, sans-serif;
   --numeric-weight: 500;
   --prose-size: 1.125rem;
   --prose-leading: 1.75;
-  --prose-measure: 31rem;
+  --prose-measure: 34rem;
   --radius: 0px;
-  --texture: repeating-linear-gradient(102deg, rgba(255,255,255,.03) 0 1px, transparent 1px 7px);
-  --vignette: inset 0 0 200px rgba(0,0,0,.6);
-  --shadow: 0 20px 44px rgba(0,0,0,.6);
+  --texture: repeating-linear-gradient(102deg, rgba(255,255,255,.025) 0 1px, transparent 1px 7px);
+  --vignette: inset 0 0 180px rgba(0,0,0,.55);
+  --shadow: 0 20px 44px rgba(0,0,0,.55);
   --kicker-prefix: '';
   --divider-glyph: '\25C6';
   --rule-weight: 1px;
 }
 
-/* Overlayed Echoes: System HUD. Teal signal, scanlines, one red glitch. */
-[data-theme="echoes"] {
-  color-scheme: dark;
-  --bg: #040507;
-  --bg-raised: #0a0e15;
-  --bg-sunk: #020304;
-  --heading: #f4f7fa;
-  --text: #dfe6ee;
-  --text-muted: #98a3b3;
-  --text-dim: #7e8a99;
-  --accent: #34e7d0;
-  --accent-strong: #7df3e3;
-  --on-accent: #04120f;
-  --alert: #e8493d;
-  --success: #5fd38a;
-  --warning: #f0b429;
-  --line: rgba(255,255,255,.12);
-  --line-strong: rgba(255,255,255,.28);
-  --accent-line: rgba(52,231,208,.22);
-  --glow: rgba(52,231,208,.4);
-  --font-display: 'Anton', Impact, sans-serif;
-  --font-body: 'Space Grotesk', system-ui, sans-serif;
-  --font-label: 'Space Mono', ui-monospace, monospace;
-  --display-weight: 400;
-  --display-transform: uppercase;
-  --display-tracking: .005em;
-  --display-leading: .9;
-  --display-accent-style: normal;
-  --display-accent-shadow: 3px 0 0 rgba(232,73,61,.6);
-  --body-size: 1.0625rem;
-  --body-leading: 1.55;
-  --body-weight: 400;
-  --label-size: .78rem;
-  --label-tracking: .2em;
-  --label-weight: 400;
-  --display-scale: 1;
-  --label-weight-strong: 700;
-  --font-numeric: 'Space Mono', ui-monospace, monospace;
-  --numeric-weight: 700;
-  --prose-size: 1.125rem;
-  --prose-leading: 1.7;
-  --prose-measure: 35rem;
-  --radius: 2px;
-  --texture: repeating-linear-gradient(0deg, rgba(255,255,255,.028) 0 1px, transparent 1px 4px);
-  --vignette: none;
-  --shadow: 0 40px 80px rgba(0,0,0,.7);
-  --kicker-prefix: '// ';
-  --divider-glyph: '';
-  --rule-weight: 1px;
-}
-
-/* Ebonspire: Gaslamp noir. Ink, ledger lines, one thread of arcane light. */
-[data-theme="ebonspire"] {
-  color-scheme: dark;
-  --bg: #17181b;
-  --bg-raised: #1f2226;
-  --bg-sunk: #0f1115;
-  --heading: #f2efe7;
-  --text: #ddd7c7;
-  --text-muted: #9aa4b0;
-  --text-dim: #8a94a0;
-  --accent: #5b8fc4;
-  --accent-strong: #9fc0e2;
-  --on-accent: #0f1115;
-  --alert: #d98a80;
-  --success: #8fbf9a;
-  --warning: #d9b36a;
-  --line: rgba(221,215,199,.22);
-  --line-strong: #ddd7c7;
-  --accent-line: rgba(123,167,212,.4);
-  --glow: rgba(143,180,220,.14);
-  --font-display: 'Cormorant Garamond', Georgia, serif;
-  --font-body: 'Cormorant Garamond', Georgia, serif;
-  --font-label: 'Special Elite', 'Courier New', monospace;
-  --display-weight: 700;
-  --display-transform: uppercase;
-  --display-tracking: .02em;
-  --display-leading: .92;
-  --display-accent-style: italic;
-  --display-accent-shadow: none;
-  --body-size: 1.3125rem;
-  --body-leading: 1.5;
-  --body-weight: 500;
-  --label-size: .8125rem;
-  --label-tracking: .24em;
-  --label-weight: 400;
-  --display-scale: .8;
-  --label-weight-strong: 400;
-  --font-numeric: 'Jost', system-ui, sans-serif;
-  --numeric-weight: 500;
-  --prose-size: 1.375rem;
-  --prose-leading: 1.6;
-  --prose-measure: 35rem;
-  --radius: 0px;
-  --texture: repeating-linear-gradient(0deg, transparent 0 47px, rgba(221,215,199,.045) 47px 48px);
-  --vignette: none;
-  --shadow: 0 26px 52px rgba(0,0,0,.6);
-  --kicker-prefix: '';
-  --divider-glyph: '\25C6';
-  --rule-weight: 3px;
-}
-
-/* Case File: Ebonspire on paper. The light theme. */
-[data-theme="casefile"] {
+/* Light: Shared Case File paper palette, identical typography and layout. */
+[data-theme="light"] {
   color-scheme: light;
   --bg: #c6c9cc;
   --bg-raised: #e9e6dc;
@@ -181,37 +75,144 @@
   --alert: #7a2622;
   --success: #194b2e;
   --warning: #5c3f00;
-  --line: rgba(25,28,32,.3);
-  --line-strong: #191c20;
-  --accent-line: rgba(47,95,146,.45);
-  --glow: rgba(47,95,146,.1);
+  --line: rgba(25,28,32,.26);
+  --line-strong: rgba(25,28,32,.62);
+  --accent-line: rgba(33,72,117,.42);
+  --glow: rgba(33,72,117,.12);
   --font-display: 'Cormorant Garamond', Georgia, serif;
-  --font-body: 'Cormorant Garamond', Georgia, serif;
-  --font-label: 'Special Elite', 'Courier New', monospace;
+  --font-body: 'Jost', system-ui, sans-serif;
+  --font-label: 'Jost', system-ui, sans-serif;
+  --font-numeric: 'Jost', system-ui, sans-serif;
   --display-weight: 700;
-  --display-transform: none;
-  --display-tracking: 0;
-  --display-leading: .96;
-  --display-accent-style: italic;
+  --display-transform: uppercase;
+  --display-tracking: .02em;
+  --display-leading: .95;
+  --display-scale: .78;
+  --display-accent-style: normal;
   --display-accent-shadow: none;
-  --body-size: 1.3125rem;
-  --body-leading: 1.5;
-  --body-weight: 500;
+  --body-size: 1.0625rem;
+  --body-leading: 1.65;
+  --body-weight: 400;
   --label-size: .8125rem;
   --label-tracking: .24em;
-  --label-weight: 400;
-  --display-scale: .9;
-  --label-weight-strong: 400;
-  --font-numeric: 'Jost', system-ui, sans-serif;
+  --label-weight: 500;
+  --label-weight-strong: 700;
   --numeric-weight: 500;
-  --prose-size: 1.375rem;
-  --prose-leading: 1.6;
-  --prose-measure: 35rem;
+  --prose-size: 1.125rem;
+  --prose-leading: 1.75;
+  --prose-measure: 34rem;
   --radius: 0px;
-  --texture: repeating-linear-gradient(0deg, transparent 0 51px, rgba(25,28,32,.07) 51px 52px);
-  --vignette: inset 0 0 200px rgba(20,25,30,.28);
-  --shadow: 0 16px 34px rgba(0,0,0,.3);
+  --texture: repeating-linear-gradient(102deg, rgba(25,28,32,.035) 0 1px, transparent 1px 7px);
+  --vignette: inset 0 0 180px rgba(25,28,32,.18);
+  --shadow: 0 16px 34px rgba(25,28,32,.22);
   --kicker-prefix: '';
   --divider-glyph: '\25C6';
+  --rule-weight: 1px;
+}
+
+/* Overlayed Echoes: Fixed book preview. Candlelit umber, amber & vellum, painterly grain, blue/violet rune glitch accents & white erasure bar. */
+[data-theme="echoes"] {
+  color-scheme: dark;
+  --bg: #15100c;
+  --bg-raised: #211913;
+  --bg-sunk: #0e0a07;
+  --heading: #f5ebd6;
+  --text: #dfd2bb;
+  --text-muted: #bfb09a;
+  --text-dim: #a8967e;
+  --accent: #e09d4e;
+  --accent-strong: #f0b872;
+  --on-accent: #15100c;
+  --alert: #f08775;
+  --success: #8cc894;
+  --warning: #e5b860;
+  --line: rgba(223,210,187,.22);
+  --line-strong: rgba(223,210,187,.55);
+  --accent-line: rgba(224,157,78,.42);
+  --glow: rgba(224,157,78,.16);
+  --rune-blue: #7eb8ea;
+  --rune-violet: #b894f5;
+  --erasure: #f7f4ee;
+  --static-line: rgba(126,184,234,.28);
+  --font-display: 'Cinzel', Georgia, serif;
+  --font-body: 'Jost', system-ui, sans-serif;
+  --font-label: 'Jost', system-ui, sans-serif;
+  --font-numeric: 'Jost', system-ui, sans-serif;
+  --display-weight: 700;
+  --display-transform: uppercase;
+  --display-tracking: .06em;
+  --display-leading: 1.02;
+  --display-scale: .74;
+  --display-accent-style: normal;
+  --display-accent-shadow: none;
+  --body-size: 1.0625rem;
+  --body-leading: 1.65;
+  --body-weight: 400;
+  --label-size: .8125rem;
+  --label-tracking: .22em;
+  --label-weight: 500;
+  --label-weight-strong: 700;
+  --numeric-weight: 500;
+  --prose-size: 1.125rem;
+  --prose-leading: 1.75;
+  --prose-measure: 34rem;
+  --radius: 0px;
+  --texture: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.68' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.85 0 0 0 0 0.72 0 0 0 0 0.52 0 0 0 0.06 0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E"), radial-gradient(ellipse 80% 55% at 22% 18%, rgba(224,157,78,.11), transparent 70%), radial-gradient(ellipse 65% 50% at 84% 78%, rgba(184,148,245,.05), transparent 72%);
+  --vignette: inset 0 0 210px rgba(8,5,3,.76);
+  --shadow: 0 22px 48px rgba(6,4,2,.68);
+  --kicker-prefix: '';
+  --divider-glyph: '\25C7';
   --rule-weight: 2px;
 }
+
+/* Ebonspire Chronicles (Electric Blue): Fixed book preview. Monochrome basalt charcoal & off-white on slate grain + crosshatch, single Flux electric-blue accent. */
+[data-theme="ebonspire"] {
+  color-scheme: dark;
+  --bg: #141517;
+  --bg-raised: #1e2023;
+  --bg-sunk: #0c0d0f;
+  --heading: #f0eee9;
+  --text: #d7d5cf;
+  --text-muted: #b0b3b8;
+  --text-dim: #9599a0;
+  --accent: #4da6ff;
+  --accent-strong: #82c2ff;
+  --on-accent: #0c0d0f;
+  --alert: #f0eee9;
+  --success: #d7d5cf;
+  --warning: #d7d5cf;
+  --line: rgba(215,213,207,.18);
+  --line-strong: rgba(240,238,233,.56);
+  --accent-line: rgba(77,166,255,.48);
+  --glow: rgba(77,166,255,.16);
+  --font-display: 'Archivo', system-ui, sans-serif;
+  --font-body: 'Jost', system-ui, sans-serif;
+  --font-label: 'Jost', system-ui, sans-serif;
+  --font-numeric: 'Jost', system-ui, sans-serif;
+  --display-weight: 800;
+  --display-transform: uppercase;
+  --display-tracking: .06em;
+  --display-leading: 1.0;
+  --display-scale: .72;
+  --display-accent-style: normal;
+  --display-accent-shadow: none;
+  --body-size: 1.0625rem;
+  --body-leading: 1.65;
+  --body-weight: 400;
+  --label-size: .8125rem;
+  --label-tracking: .24em;
+  --label-weight: 500;
+  --label-weight-strong: 700;
+  --numeric-weight: 500;
+  --prose-size: 1.125rem;
+  --prose-leading: 1.75;
+  --prose-measure: 34rem;
+  --radius: 0px;
+  --texture: repeating-linear-gradient(132deg, rgba(240,238,233,.028) 0 1px, transparent 1px 6px), repeating-linear-gradient(48deg, rgba(240,238,233,.02) 0 1px, transparent 1px 11px), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='s'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.78 0 0 0 0 0.80 0 0 0 0 0.83 0 0 0 0.055 0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23s)'/%3E%3C/svg%3E");
+  --vignette: inset 0 0 240px rgba(0,0,0,.84);
+  --shadow: 0 26px 56px rgba(0,0,0,.78);
+  --kicker-prefix: '';
+  --divider-glyph: '\25C7';
+  --rule-weight: 2px;
+}
+

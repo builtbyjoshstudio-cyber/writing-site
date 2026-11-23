@@ -173,8 +173,8 @@ TEMPLATE = r'''/* =========================================================
       '<title>Offline &mdash; J.S. Warden</title>' +
       '<link rel="stylesheet" href="/fonts/fonts.css"><link rel="stylesheet" href="/tokens/themes.css">' +
       '<link rel="stylesheet" href="/css/base.css"><link rel="stylesheet" href="/css/site.css">' +
-      '<script>(function(){var d=document.documentElement,t=null,ok=["warden","echoes","ebonspire","casefile"];' +
-      'try{t=localStorage.getItem("jsw-theme")}catch(e){}if(ok.indexOf(t)<0)t="warden";d.setAttribute("data-theme",t)})();</script>' +
+      '<script>(function(){var d=document.documentElement,t=null;' +
+      'try{t=localStorage.getItem("jsw-theme")}catch(e){}t=(t==="light"||t==="casefile")?"light":"dark";d.setAttribute("data-theme",t)})();</script>' +
       '<body><main class="jsw-main" id="main"><div class="jsw-wrap">' +
       '<h1>You are offline</h1>' +
       '<p class="jsw-lede">This page has not been opened on this device yet, so there is no saved copy to show. ' +
@@ -200,6 +200,8 @@ TEMPLATE = r'''/* =========================================================
 def font_files(root):
     out = []
     for css in sorted(glob.glob(os.path.join(root, '**', '*.css'), recursive=True)):
+        rel_css = os.path.relpath(css, root).replace(os.sep, '/')
+        if rel_css.startswith('css/studio/'): continue
         s = open(css, encoding='utf-8').read()
         if '@font-face' not in s: continue
         base = '/' + os.path.relpath(os.path.dirname(css), root).replace(os.sep, '/')

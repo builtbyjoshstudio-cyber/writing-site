@@ -18,6 +18,8 @@ body {
   -webkit-font-smoothing: antialiased;
   transition: background-color .25s ease, color .25s ease;
 }
+button, input, select, textarea { font-family: inherit; }
+code, kbd, pre { font-family: var(--font-numeric); font-variant-numeric: tabular-nums lining-nums; }
 
 /* The per-world texture (hatch / scanlines / ledger lines) + vignette, behind everything. */
 body::before {
@@ -173,13 +175,11 @@ a:hover { color: var(--accent-strong); }
   border: 1px solid var(--line); border-radius: var(--radius);
 }
 .jsw-theme-btn:hover { color: var(--heading); border-color: var(--line-strong); }
-.jsw-theme-btn[aria-pressed="true"] { color: var(--heading); border-color: var(--accent); }
+.jsw-theme-btn[aria-pressed="true"] { color: var(--heading); background: var(--bg-raised); border-color: var(--accent); box-shadow: inset 0 -2px 0 var(--accent); }
 /* The swatch previews the TARGET theme, so it reads the fixed --swatch-* tokens, not the live ones. */
 .jsw-swatch { flex: none; width: 18px; height: 18px; border-radius: 50%; background: var(--sw-bg); border: 1px solid var(--line-strong); box-shadow: inset -6px 0 0 var(--sw-fg); }
-[data-theme-set="warden"] .jsw-swatch { --sw-bg: var(--swatch-warden-bg); --sw-fg: var(--swatch-warden-accent); }
-[data-theme-set="echoes"] .jsw-swatch { --sw-bg: var(--swatch-echoes-bg); --sw-fg: var(--swatch-echoes-accent); }
-[data-theme-set="ebonspire"] .jsw-swatch { --sw-bg: var(--swatch-ebonspire-bg); --sw-fg: var(--swatch-ebonspire-accent); }
-[data-theme-set="casefile"] .jsw-swatch { --sw-bg: var(--swatch-casefile-bg); --sw-fg: var(--swatch-casefile-accent); }
+[data-theme-set="dark"] .jsw-swatch { --sw-bg: var(--swatch-dark-bg); --sw-fg: var(--swatch-dark-accent); }
+[data-theme-set="light"] .jsw-swatch { --sw-bg: var(--swatch-light-bg); --sw-fg: var(--swatch-light-accent); }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition: none !important; animation: none !important; }

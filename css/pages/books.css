@@ -37,3 +37,85 @@
 .jsw-sample-end { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--line); }
 .jsw-sample-end h2 { margin: 0; }
 .jsw-fineprint { font-size: .85em; color: var(--text-muted); }
+
+/* ---- Fixed book page: Overlayed Echoes (candlelit umber, painterly grain, organic neuro-glitch accents) ---- */
+[data-theme="echoes"] .jsw-preview {
+  position: relative;
+  border-color: var(--line-strong);
+  box-shadow: var(--shadow);
+  background: var(--bg);
+}
+[data-theme="echoes"] .jsw-preview::before {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; top: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent) 0 56%, var(--rune-blue) 56% 71%, var(--bg) 71% 74%, var(--erasure) 74% 85%, var(--rune-violet) 85% 100%);
+  pointer-events: none;
+}
+[data-theme="echoes"] .jsw-preview .jsw-kicker {
+  color: var(--rune-blue);
+  border-left: 3px solid var(--rune-violet);
+  padding-left: 12px;
+}
+[data-theme="echoes"] .jsw-preview .jsw-kicker::before {
+  content: "\25C8\00A0";
+  color: var(--rune-violet);
+}
+[data-theme="echoes"] .jsw-preview .jsw-divider { color: var(--rune-blue); }
+[data-theme="echoes"] .jsw-preview .jsw-divider::before { background: var(--rune-violet); width: 64px; }
+/* Stark, textureless flat off-white erasure scar bar dividing preview setup from Chapter One */
+[data-theme="echoes"] .jsw-reader-rule {
+  position: relative;
+  height: 8px;
+  margin: 48px 0 18px;
+  background: var(--erasure);
+  border: 0;
+  overflow: visible;
+}
+[data-theme="echoes"] .jsw-reader-rule::after {
+  content: "";
+  position: absolute;
+  left: 8%;
+  right: 0;
+  bottom: -6px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--rune-blue) 0 38%, var(--static-line) 38% 66%, var(--rune-violet) 66% 100%);
+}
+[data-theme="echoes"] .jsw-preview .jsw-reader h2 {
+  position: relative;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--static-line);
+}
+[data-theme="echoes"] .jsw-preview .jsw-notebook {
+  border-left: 3px solid var(--rune-violet);
+  border-top: 1px solid var(--static-line);
+  border-bottom: 1px solid var(--static-line);
+}
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes jsw-static-seam {
+    0%, 92%, 100% { transform: translateX(0); }
+    94% { transform: translateX(2px); }
+    96% { transform: translateX(-1px); }
+  }
+  [data-theme="echoes"] .jsw-reader-rule::after {
+    animation: jsw-static-seam 11s steps(1, end) infinite;
+  }
+}
+
+/* ---- Fixed book page: Ebonspire Chronicles (monochrome charcoal noir + single accent pop) ---- */
+[data-theme="ebonspire"] .jsw-preview {
+  border: 1px solid var(--line-strong);
+  border-top: 3px solid var(--accent);
+  box-shadow: var(--shadow);
+  background: var(--bg);
+}
+[data-theme="ebonspire"] .jsw-preview .jsw-pullquote {
+  border-top: 2px solid var(--line-strong);
+  border-bottom: 1px solid var(--line-strong);
+  letter-spacing: .04em;
+}
+[data-theme="ebonspire"] .jsw-reader-rule {
+  height: 2px;
+  background: var(--line-strong);
+}

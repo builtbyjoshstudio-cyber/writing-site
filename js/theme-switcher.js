@@ -1,28 +1,49 @@
-/*! J.S. Warden theme switcher. No dependencies. Load with <script defer>.
+/*! J.S. Warden theme switcher (Dark / Light + fixed book previews). No dependencies. Load with <script defer>.
  *
  *  Markup it wires up automatically:
- *    <button data-theme-set="echoes">Echoes</button>     sets + saves a theme
- *    <button data-theme-reset>Default</button>           forgets the saved choice
- *    <span data-theme-current></span>                    filled with the active theme's name
+ *    <button data-theme-set="dark">Dark</button>     sets + saves Dark
+ *    <button data-theme-set="light">Light</button>   sets + saves Light
+ *    <span data-theme-current></span>                filled with the active theme's name
  *
- *  Page default (e.g. a book page that should open in its own world unless the
- *  reader already picked something):  <html data-theme-default="echoes">
+ *  Fixed book pages (ignore saved choice, never write storage, no switcher):
+ *    <html data-theme-fixed="echoes">  or  <html data-theme-fixed="ebonspire">
  *
- *  API:  JSWTheme.get()  JSWTheme.set(id)  JSWTheme.reset()  JSWTheme.themes
+ *  Migrates legacy saved values on load:
+ *    'casefile' | 'light' -> 'light'
+ *    'warden' | 'echoes' | 'ebonspire' | 'dark' -> 'dark'
+ *
+ *  API:  JSWTheme.get()  JSWTheme.set(id)  JSWTheme.themes
  *  Event: window "jsw:themechange", detail = { theme, saved }
  */
 (function () {
   'use strict';
   var KEY = 'jsw-theme';
-  var FALLBACK = 'warden';
-  var THEMES = ['warden', 'echoes', 'ebonspire', 'casefile'];
+  var FALLBACK = 'dark';
+  var THEMES = ['dark', 'light'];
   var root = document.documentElement;
 
-  function valid(id) { return THEMES.indexOf(id) > -1; }
-  function saved() { try { var v = localStorage.getItem(KEY); return valid(v) ? v : null; } catch (e) { return null; } }
-  function pageDefault() { var d = root.getAttribute('data-theme-default'); return valid(d) ? d : FALLBACK; }
+  function normalize(v) {
+    if (v === 'light' || v === 'casefile') return 'light';
+    if (v === 'dark' || v === 'warden' || v === 'echoes' || v === 'ebonspire') return 'dark';
+    return null;
+  }
 
-  // Browser chrome colour follows the theme's --bg token, so no colour lives in this file.
+  function fixedTheme() {
+    var f = root.getAttribute('data-theme-fixed');
+    return f ? f : null;
+  }
+
+  function saved() {
+    try {
+      var raw = localStorage.getItem(KEY);
+      var norm = normalize(raw);
+      if (norm && norm !== raw) {
+        try { localStorage.setItem(KEY, norm); } catch (e2) {}
+      }
+      return norm;
+    } catch (e) { return null; }
+  }
+
   function syncChrome() {
     var bg = getComputedStyle(root).getPropertyValue('--bg').trim();
     if (!bg) return;
@@ -48,33 +69,36 @@
 
   var api = {
     themes: THEMES.slice(),
-    get: function () { return root.getAttribute('data-theme') || pageDefault(); },
+    get: function () { return root.getAttribute('data-theme') || fixedTheme() || FALLBACK; },
     set: function (id) {
-      if (!valid(id)) return false;
-      try { localStorage.setItem(KEY, id); } catch (e) { /* private mode: still applies for this page */ }
-      apply(id, true);
+      if (fixedTheme()) return false;
+      var norm = normalize(id);
+      if (!norm) return false;
+      try { localStorage.setItem(KEY, norm); } catch (e) { /* private mode: still applies for this page */ }
+      apply(norm, true);
       return true;
-    },
-    reset: function () {
-      try { localStorage.removeItem(KEY); } catch (e) {}
-      apply(pageDefault(), false);
     }
   };
   window.JSWTheme = api;
 
   function init() {
+    var f = fixedTheme();
+    if (f) {
+      apply(f, false);
+      window.addEventListener('load', syncChrome);
+      return;
+    }
     var s = saved();
-    apply(s || pageDefault(), !!s);
+    apply(s || FALLBACK, !!s);
     document.addEventListener('click', function (e) {
-      var t = e.target.closest ? e.target.closest('[data-theme-set],[data-theme-reset]') : null;
+      var t = e.target.closest ? e.target.closest('[data-theme-set]') : null;
       if (!t) return;
-      if (t.hasAttribute('data-theme-reset')) api.reset(); else api.set(t.getAttribute('data-theme-set'));
+      api.set(t.getAttribute('data-theme-set'));
     });
-    // keep other open tabs in step
     window.addEventListener('storage', function (e) {
-      if (e.key !== KEY) return;
+      if (e.key !== KEY || fixedTheme()) return;
       var s2 = saved();
-      apply(s2 || pageDefault(), !!s2);
+      apply(s2 || FALLBACK, !!s2);
     });
     window.addEventListener('load', syncChrome);
   }

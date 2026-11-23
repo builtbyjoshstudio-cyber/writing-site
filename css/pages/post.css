@@ -18,7 +18,7 @@
 
 .jsw-post-side, .jsw-post-band { margin-top: 40px; }
 .jsw-post-side h2, .jsw-post-band h2 { margin: 10px 0 12px; font-size: calc(clamp(1.5rem, 4vw, 2.25rem) * var(--display-scale)); }
-.jsw-post-price { font-family: var(--font-numeric); font-weight: var(--numeric-weight); color: var(--heading); font-size: 1.25em; }
+.jsw-post-price { font-family: var(--font-numeric); font-weight: var(--numeric-weight); font-variant-numeric: tabular-nums lining-nums; color: var(--heading); font-size: 1.25em; }
 .jsw-post-side ul { margin: 22px 0 0; padding-left: 1.3em; }
 .jsw-post-side li { margin-bottom: .4em; }
 .jsw-post-side li::marker { color: var(--accent); }

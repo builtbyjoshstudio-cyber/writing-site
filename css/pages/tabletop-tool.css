@@ -62,15 +62,15 @@
 /* network bands: a section head and rows of links (no pack part for the row) */
 .studio-tool .net-band { max-width: none; margin: clamp(48px, 8vw, 96px) 0 0; padding: 0; }
 .studio-tool .net-band .section-title { margin: 0; display: flex; align-items: center; gap: 14px; font-size: clamp(1.375rem, 3vw, 1.75rem); }
-.studio-tool .net-band .section-title .num { min-width: 0; height: auto; padding: 0; background: none; color: var(--accent); font-family: var(--font-numeric); font-size: 1em; }
+.studio-tool .net-band .section-title .num { min-width: 0; height: auto; padding: 0; background: none; color: var(--accent); font-family: var(--font-numeric); font-variant-numeric: tabular-nums lining-nums; font-size: 1em; }
 .studio-tool .net-band .section-title .rule { flex: 1; height: 1px; border: 0; background: linear-gradient(90deg, var(--accent-line), transparent); }
 .studio-tool .net-rows { margin-top: 20px; }
 .studio-tool a.anatomy-row { background: var(--bg-raised); border: 1px solid var(--line); border-radius: var(--radius); color: var(--text); }
 .studio-tool a.anatomy-row:hover { border-color: var(--accent); }
-.studio-tool .anatomy-row .ix { border-radius: var(--radius); font-family: var(--font-numeric); }
+.studio-tool .anatomy-row .ix { border-radius: var(--radius); font-family: var(--font-numeric); font-variant-numeric: tabular-nums lining-nums; }
 .studio-tool .anatomy-row h3 { font-family: var(--font-display); font-weight: var(--display-weight); font-size: 1.125rem; color: var(--heading); margin: 0 0 4px; }
 .studio-tool .anatomy-row p { font-size: .9rem; color: var(--text-muted); }
-.studio-tool .anatomy-row code { font-family: var(--font-numeric); color: var(--accent); }
+.studio-tool .anatomy-row code { font-family: var(--font-numeric); font-variant-numeric: tabular-nums lining-nums; color: var(--accent); }
 
 /* the tool's disclaimer footer, above the site footer */
 .studio-tool > .footer { max-width: none; margin: clamp(40px, 6vw, 64px) 0 clamp(40px, 6vw, 64px); padding: 20px 0 0; border-top: 1px solid var(--line); font-size: .9rem; }
