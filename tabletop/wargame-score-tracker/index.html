@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script>if(location.protocol.indexOf("http")===0&&/\/index\.html$/i.test(location.pathname))location.replace(location.pathname.slice(0,-10)+location.search+location.hash);</script>
+<script>
+(function(){var d=document.documentElement,t=null,ok=['warden','echoes','ebonspire','casefile'];
+d.className+=' js';
+try{t=localStorage.getItem('jsw-theme')}catch(e){}
+if(ok.indexOf(t)<0)t=d.getAttribute('data-theme-default');
+if(ok.indexOf(t)<0)t='warden';
+d.setAttribute('data-theme',t)})();
+</script>
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QDSPBB7S9J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      var gaKeep = new URLSearchParams(); new URLSearchParams(location.search).forEach(function (v, k) { if (k.indexOf('utm_') === 0) gaKeep.append(k, v); });
+      gtag('config', 'G-QDSPBB7S9J', { page_location: location.origin + location.pathname + (gaKeep.toString() ? '?' + gaKeep.toString() : ''), page_referrer: document.referrer.split(/[?#]/)[0] });
+    </script>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Wargame Score Tracker | Free VP &amp; CP Tracker, Any System</title>
+  <meta name="description" content="Track victory points, command points, secondaries, and battle rounds for two players in any miniature wargame. Saves mid-game. Free, ad-free, no signup.">
+  <meta name="robots" content="max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://writing.builtbyjoshstudio.com/tabletop/wargame-score-tracker/">
+
+  <!-- JSON-LD #1: WebApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Wargame Score Tracker",
+    "url": "https://writing.builtbyjoshstudio.com/tabletop/wargame-score-tracker/",
+    "description": "A two-player score sheet for miniature wargames — primary points by battle round, free-text secondary objectives, command points, and running totals. Saves itself mid-game.",
+    "applicationCategory": "GameApplication",
+    "operatingSystem": "Any (web browser)",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "publisher": {
+      "@type": "Organization",
+      "@id": "https://builtbyjoshstudio.com/#organization",
+      "name": "Built by Josh Studio LLC",
+      "legalName": "Built by Josh Studio LLC",
+      "alternateName": [
+        "BBJ Studio",
+        "Built by Josh Studio"
+      ],
+      "url": "https://builtbyjoshstudio.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://builtbyjoshstudio.com/images/logo/logo.webp",
+        "width": 512,
+        "height": 512
+      },
+      "image": "https://builtbyjoshstudio.com/images/logo/logo.webp",
+      "sameAs": [
+        "https://linktr.ee/builtbyjoshstudio",
+        "https://www.youtube.com/@TalesofInkShadowsStudio",
+        "https://www.youtube.com/@joshandjordanskitchen",
+        "https://tynkrtoolsandco.etsy.com",
+        "https://www.etsy.com/shop/BuiltByJoshStudio",
+        "https://www.redbubble.com/people/BBJStudio/shop"
+      ],
+      "identifier": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "Kansas Business ID",
+          "value": "10076138"
+        }
+      ]
+    }
+  }
+  </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "J.S. Warden", "item": "https://writing.builtbyjoshstudio.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Tabletop & RPG tools", "item": "https://writing.builtbyjoshstudio.com/tabletop/"},
+    {"@type": "ListItem", "position": 3, "name": "Wargame Score Tracker", "item": "https://writing.builtbyjoshstudio.com/tabletop/wargame-score-tracker/"}
+  ]
+}
+</script>
+
+  <!-- JSON-LD #2: FAQPage (mirrors the on-page FAQ) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Does this work for Warhammer 40,000, Age of Sigmar, or other miniature games?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — it's system-agnostic. It tracks the numbers nearly every miniature wargame shares: victory points by battle round, named secondary objectives you type yourself, command points, and a round counter. Nothing is tied to any publisher's missions or rules, so it works for any game, edition, or homebrew scenario."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will the score survive if the tab closes mid-game?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Every change saves to your browser's local storage instantly, so a closed tab, a dead battery, or a lunch break mid-tournament round doesn't lose the score — reopen the page and the match is exactly where you left it. It stays on this device; nothing is uploaded."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do secondary objectives work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Type each player's secondaries in as free text — whatever your mission pack or scenario calls them — and update their points as you score. Each secondary's points feed straight into that player's total alongside the per-round primary scores."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this score tracker free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — free, no ads, no signup, and it runs entirely in your browser. The score stays on your own device."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Open Graph + Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://writing.builtbyjoshstudio.com/tabletop/wargame-score-tracker/">
+  <meta property="og:title" content="Wargame Score Tracker | Free VP &amp; CP Tracker, Any System">
+  <meta property="og:description" content="Two players, battle rounds, primaries, secondaries, and command points — one score sheet that saves itself. Free, ad-free.">
+  <meta property="og:image" content="https://writing.builtbyjoshstudio.com/assets/brand/og-1200x630.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://writing.builtbyjoshstudio.com/tabletop/wargame-score-tracker/">
+  <meta name="twitter:title" content="Wargame Score Tracker | Free VP &amp; CP Tracker, Any System">
+  <meta name="twitter:description" content="Two players, battle rounds, primaries, secondaries, and command points — one score sheet that saves itself. Free, ad-free.">
+  <meta name="twitter:image" content="https://writing.builtbyjoshstudio.com/assets/brand/og-1200x630.png">
+
+<link rel="stylesheet" href="/css/studio/tokens.css?v=f58e0d92c0">
+<link rel="stylesheet" href="/css/studio/components.css?v=09a4d9f402">
+<link rel="stylesheet" href="/css/studio/tools.css?v=76acb59400">
+<link rel="stylesheet" href="styles.css?v=6abeeeafb3">
+<link rel="stylesheet" href="/fonts/fonts.css?v=aa0d83c07e">
+<link rel="stylesheet" href="/tokens/themes.css?v=47c6296e35">
+<link rel="stylesheet" href="/css/base.css?v=8e0c7377c5">
+<link rel="stylesheet" href="/css/site.css?v=013752c2a3">
+<link rel="stylesheet" href="/css/tool-parts.css?v=0d4d40d55a">
+<script defer src="/js/theme-switcher.js?v=9ca8cd26c0"></script>
+<script defer src="/js/site.js?v=f8e9bf1bb4"></script>
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16.png">
+<link rel="apple-touch-icon" href="/assets/favicons/favicon-180.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="/css/tool-bridge.css?v=dc0db3370f">
+<link rel="stylesheet" href="/css/pages/tabletop-tool.css?v=9031b10f0b">
+<link rel="stylesheet" href="/css/pages/wargame-score-tracker.css?v=553832962d">
+</head>
+<body>
+<a class="jsw-skip" href="#main">Skip to content</a>
+<header class="jsw-header">
+  <div class="jsw-wrap jsw-header__bar">
+    <a class="jsw-brand" href="/">J.S. Warden</a>
+    <button type="button" class="jsw-nav-toggle" aria-expanded="false" aria-controls="jsw-menu">
+      <span class="jsw-nav-toggle__bars" aria-hidden="true"></span>Menu
+    </button>
+    <div class="jsw-header__panel" id="jsw-menu">
+      <nav aria-label="Main">
+        <ul class="jsw-nav">
+          <li><a href="/books/">Books</a></li>
+          <li><a href="/writing/">Writing</a></li>
+          <li><a href="/tabletop/" aria-current="page">Tabletop Tools</a></li>
+        </ul>
+      </nav>
+      <div class="jsw-themes" role="group" aria-label="Colour theme">
+        <span class="jsw-label jsw-themes__label" aria-hidden="true">Theme · <span data-theme-current></span></span>
+        <button type="button" class="jsw-theme-btn" data-theme-set="warden" title="Warden"><span class="jsw-swatch" aria-hidden="true"></span><span class="jsw-theme-btn__name">Warden</span></button>
+        <button type="button" class="jsw-theme-btn" data-theme-set="echoes" title="Echoes"><span class="jsw-swatch" aria-hidden="true"></span><span class="jsw-theme-btn__name">Echoes</span></button>
+        <button type="button" class="jsw-theme-btn" data-theme-set="ebonspire" title="Ebonspire"><span class="jsw-swatch" aria-hidden="true"></span><span class="jsw-theme-btn__name">Ebonspire</span></button>
+        <button type="button" class="jsw-theme-btn" data-theme-set="casefile" title="Case File"><span class="jsw-swatch" aria-hidden="true"></span><span class="jsw-theme-btn__name">Case File</span></button>
+      </div>
+    </div>
+  </div>
+</header>
+
+  <div class="studio-tool jsw-wrap">
+<main class="jsw-main" id="main" tabindex="-1">
+
+    <header class="jsw-page-head jsw-page-head--compact">
+      <div>
+        <div class="jsw-row jsw-page-head__meta">
+          <span class="jsw-kicker">&#9679; Tabletop</span>
+          <span class="jsw-label">Two players &middot; Any system &middot; Saves mid-game</span>
+          <span class="updated-date jsw-label">Updated November <span class="jsw-num">2026</span></span>
+        </div>
+        <h1>Wargame Score <span class="jsw-accent">Tracker</span></h1>
+        <div class="jsw-divider" aria-hidden="true"></div>
+        <p class="jsw-lede">One score sheet between the two of you — primary points by battle round, the secondaries you're actually playing, command points, and a running total that settles arguments. Saves itself, so the score survives anything short of the dice.</p>
+      </div>
+    </header>
+
+    <!-- SETUP -->
+    <div class="jsw-tool__panel">
+      <div class="role"><span class="jsw-num">1</span>. Match setup</div>
+      <div class="setup-grid">
+        <div class="jsw-field">
+          <label for="p1-name">Player one</label>
+          <input type="text" id="p1-name" class="jsw-input" placeholder="Player 1" maxlength="24">
+        </div>
+        <div class="jsw-field">
+          <label for="p2-name">Player two</label>
+          <input type="text" id="p2-name" class="jsw-input" placeholder="Opponent" maxlength="24">
+        </div>
+        <div class="jsw-field">
+          <label for="rounds-select">Rounds</label>
+          <select id="rounds-select" class="jsw-select">
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5" selected>5</option>
+            <option value="6">6</option>
+          </select>
+        </div>
+        <button type="button" class="jsw-btn jsw-btn--danger" id="new-match" title="Zero all scores — keeps player names">New match</button>
+      </div>
+    </div>
+
+    <!-- SCOREBOARD -->
+    <div class="jsw-tool__panel">
+      <div class="jsw-result">
+        <span class="jsw-label" id="round-label" aria-live="polite">Battle round <span class="jsw-num">1</span> of <span class="jsw-num">5</span></span>
+        <div class="score-line">
+          <span class="pn" id="disp-n1">Player one</span>
+          <span class="pv a jsw-result__value" id="disp-s1">0</span>
+          <span class="vs">:</span>
+          <span class="pv b jsw-result__value" id="disp-s2">0</span>
+          <span class="pn" id="disp-n2">Player two</span>
+        </div>
+        <span class="jsw-result__detail" id="leader-sub">Even game.</span>
+      </div>
+
+      <div class="round-controls">
+        <button type="button" class="jsw-btn" id="next-round">Next round &rarr;</button>
+        <button type="button" class="jsw-btn jsw-btn--ghost" id="prev-round">&larr; Back</button>
+      </div>
+
+      <div class="panels">
+        <section class="panel pa" aria-label="Player one scoring">
+          <div class="cp-row">
+            <span class="cp-lbl" id="cp1-lbl">Command points</span>
+            <button type="button" class="cp-btn" data-p="0" data-d="-1" aria-label="Spend a command point, player one">&minus;</button>
+            <span class="cp-val" id="cp1-val" role="status"><span class="jsw-num">0</span></span>
+            <button type="button" class="cp-btn" data-p="0" data-d="1" aria-label="Gain a command point, player one">+</button>
+          </div>
+          <span class="prim-lbl">Primary points by round</span>
+          <div class="prim-row" id="prim1"></div>
+          <span class="prim-lbl">Secondaries</span>
+          <div class="sec-add">
+            <input type="text" id="sec1-name" class="jsw-input" placeholder="Hold the center&hellip;" maxlength="60" aria-label="Secondary objective name, player one">
+            <input type="number" id="sec1-pts" class="jsw-input" inputmode="numeric" min="0" max="999" placeholder="0" aria-label="Points, player one secondary">
+            <button type="button" class="jsw-btn jsw-btn--ghost" id="sec1-add">+ Add</button>
+          </div>
+          <div id="sec1-list" class="jsw-results"></div>
+        </section>
+
+        <section class="panel pb" aria-label="Player two scoring">
+          <div class="cp-row">
+            <span class="cp-lbl" id="cp2-lbl">Command points</span>
+            <button type="button" class="cp-btn" data-p="1" data-d="-1" aria-label="Spend a command point, player two">&minus;</button>
+            <span class="cp-val" id="cp2-val" role="status"><span class="jsw-num">0</span></span>
+            <button type="button" class="cp-btn" data-p="1" data-d="1" aria-label="Gain a command point, player two">+</button>
+          </div>
+          <span class="prim-lbl">Primary points by round</span>
+          <div class="prim-row" id="prim2"></div>
+          <span class="prim-lbl">Secondaries</span>
+          <div class="sec-add">
+            <input type="text" id="sec2-name" class="jsw-input" placeholder="Claim the crossroads&hellip;" maxlength="60" aria-label="Secondary objective name, player two">
+            <input type="number" id="sec2-pts" class="jsw-input" inputmode="numeric" min="0" max="999" placeholder="0" aria-label="Points, player two secondary">
+            <button type="button" class="jsw-btn jsw-btn--ghost" id="sec2-add">+ Add</button>
+          </div>
+          <div id="sec2-list" class="jsw-results"></div>
+        </section>
+      </div>
+
+      <p class="note">Points are just numbers here — score primaries per round as your mission pack counts them, type secondaries exactly as your scenario names them, and edit any cell when the judge rules against you. Everything stays on this device.</p>
+      <a class="xlink" href="/tabletop/dice-roller/">
+        Need to roll something off? Open the dice roller &rarr;
+      </a>
+    </div>
+
+  <!-- AT A GLANCE (P2-c) -->
+  <div class="jsw-tool__panel jsw-glance">
+    <h2>At a glance</h2>
+    <div class="jsw-table-wrap">
+    <table class="jsw-table">
+      <tbody>
+        <tr><th scope="row">What it does</th><td>One shared score sheet for a two-player miniature wargame.</td></tr>
+        <tr><th scope="row">Inputs</th><td>Player names, battle rounds, primary points per round, the secondary objectives each side is playing, and command points.</td></tr>
+        <tr><th scope="row">Outputs</th><td>Per-round and running totals for both players — the sheet survives a mid-game refresh.</td></tr>
+        <tr><th scope="row">Cost &amp; privacy</th><td>Free, ad-free, no signup. Runs and saves in this browser's local storage — nothing leaves your device.</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+    <!-- PROSE -->
+    <section class="jsw-section jsw-prose">
+      <h2>The score sheet that doesn't wander off</h2>
+      <p>Every miniature-wargame table has the same artifact: a crumpled score sheet, a dying phone calculator, or a <span class="jsw-formula">d12</span> pretending to be a scoreboard wedged next to the terrain. Then round four arrives and nobody can quite reconstruct whether that objective was scored in two or three. This is one screen — set it between you, and the running total is never in dispute.</p>
+
+      <h3>Primaries by round, the way games actually score</h3>
+      <p>Most systems score the mission round by round, so the tracker gives each player a cell per battle round instead of one running number. That makes mid-game audits trivial — you can see exactly where the points came from, round by round, when the post-game debrief turns forensic.</p>
+
+      <h3>Your secondaries, your words</h3>
+      <p>Secondary objectives change with every mission pack, season, and homebrew scenario, so the tracker doesn't pretend to know them. Type each one in as your game names it, then bump its points as you score. Free text means it works for this edition, last edition, and whatever your group invents next.</p>
+
+      <h3>Command points without finger-counting</h3>
+      <p>A resource that goes up and down a dozen times per game deserves better than memory. Each player gets a simple counter — plus when you gain, minus when you spend — always visible next to the score.</p>
+
+      <h3>Built to survive the table</h3>
+      <p>The whole match state saves to your browser on every change. A closed tab, a phone that locks, a lunch break between tournament rounds — reopen the page and the score is exactly where it was. Nothing uploads, nobody signs in, and when the game ends, "New match" zeroes the sheet but keeps your names for the rematch.</p>
+    </section>
+
+    <!-- FAQ -->
+    <section class="jsw-section jsw-faq">
+      <details>
+        <summary><span class="faq-q">Does this work for Warhammer <span class="jsw-num">40,000</span>, Age of Sigmar, or other miniature games?</span></summary>
+        <p>Yes — it's system-agnostic. It tracks the numbers nearly every miniature wargame shares: victory points by battle round, named secondary objectives you type yourself, command points, and a round counter. Nothing is tied to any publisher's missions or rules, so it works for any game, edition, or homebrew scenario.</p>
+      </details>
+      <details>
+        <summary><span class="faq-q">Will the score survive if the tab closes mid-game?</span></summary>
+        <p>Yes. Every change saves to your browser's local storage instantly, so a closed tab, a dead battery, or a lunch break mid-tournament round doesn't lose the score — reopen the page and the match is exactly where you left it. It stays on this device; nothing is uploaded.</p>
+      </details>
+      <details>
+        <summary><span class="faq-q">How do secondary objectives work?</span></summary>
+        <p>Type each player's secondaries in as free text — whatever your mission pack or scenario calls them — and update their points as you score. Each secondary's points feed straight into that player's total alongside the per-round primary scores.</p>
+      </details>
+      <details>
+        <summary><span class="faq-q">Is this score tracker free?</span></summary>
+        <p>Yes — free, no ads, no signup, and it runs entirely in your browser. The score stays on your own device.</p>
+      </details>
+    </section>
+
+  </main>
+
+  <section class="jsw-section net-band" id="more-tabletop-tools">
+    <h2 class="section-title"><span class="num">&#8599;</span>More tabletop tools<span class="rule"></span></h2>
+    <div class="net-rows">
+      <a class="glass-lite anatomy-row" href="/tabletop/initiative-tracker/">
+        <div class="ix">IT</div>
+        <div class="lbl"><h3>Initiative Tracker</h3><p>Turn order, rounds, HP and conditions for any RPG combat</p></div>
+        <code>&rarr;</code>
+      </a>
+      <a class="glass-lite anatomy-row" href="/tabletop/dice-roller/">
+        <div class="ix">D20</div>
+        <div class="lbl"><h3>Dice Roller</h3><p>Full dice notation, advantage/disadvantage, roll history</p></div>
+        <code>&rarr;</code>
+      </a>
+      <a class="glass-lite anatomy-row" href="/tabletop/session-notes/">
+        <div class="ix">SN</div>
+        <div class="lbl"><h3>Session Notes &amp; NPC Log</h3><p>Session notes, NPC log and loot, saved in your browser</p></div>
+        <code>&rarr;</code>
+      </a>
+      <a class="glass-lite anatomy-row" href="/tabletop/character-name-generator/">
+        <div class="ix">CN</div>
+        <div class="lbl"><h3>Character Name Generator</h3><p>Original fantasy names in four styles, six at a time</p></div>
+        <code>&rarr;</code>
+      </a>
+      <a class="glass-lite anatomy-row" href="/tabletop/npc-generator/">
+        <div class="ix">NPC</div>
+        <div class="lbl"><h3>NPC Generator</h3><p>A complete NPC in one click: name, quirk, motivation, secret</p></div>
+        <code>&rarr;</code>
+      </a>
+      <a class="glass-lite anatomy-row" href="/tabletop/loot-generator/">
+        <div class="ix">LT</div>
+        <div class="lbl"><h3>Loot Generator</h3><p>Flavorful, system-free treasure with texture and history</p></div>
+        <code>&rarr;</code>
+      </a>
+      <a class="glass-lite anatomy-row" href="/tabletop/plot-hook-generator/">
+        <div class="ix">PH</div>
+        <div class="lbl"><h3>Plot Hook Generator</h3><p>One-line adventure hooks with a built-in twist</p></div>
+        <code>&rarr;</code>
+      </a>
+      <a class="glass-lite anatomy-row" href="/tabletop/random-table-roller/">
+        <div class="ix">RT</div>
+        <div class="lbl"><h3>Random Table Roller</h3><p>Paste or build your own random tables and roll on them</p></div>
+        <code>&rarr;</code>
+      </a>
+      <a class="glass-lite anatomy-row" href="/tabletop/tavern-generator/">
+        <div class="ix">TV</div>
+        <div class="lbl"><h3>Tavern Generator</h3><p>A complete fantasy tavern: name, atmosphere, patron, rumor</p></div>
+        <code>&rarr;</code>
+      </a>
+      <a class="glass-lite anatomy-row" href="/tabletop/">
+        <div class="ix">ALL</div>
+        <div class="lbl"><h3>All tabletop tools</h3><p>The full Tabletop &amp; RPG hub</p></div>
+        <code>&rarr;</code>
+      </a>
+    </div>
+  </section>
+  <section class="jsw-section net-band">
+    <h2 class="section-title"><span class="num">&#8599;</span>Network<span class="rule"></span></h2>
+    <div class="net-rows">
+      <a class="glass-lite anatomy-row" href="/books/">
+        <div class="ix">JSW</div>
+        <div class="lbl"><h3>Books by J.S. Warden</h3><p>Ebonspire Chronicles and Overlayed Echoes</p></div>
+        <code>&rarr;</code>
+      </a>
+    </div>
+  </section>
+
+  <div class="footer">
+    <p>This tracker is system-agnostic and is not affiliated with, endorsed by, or associated with any game publisher. Game names are mentioned only to describe compatibility; all trademarks, including Warhammer <span class="jsw-num">40,000</span> and Age of Sigmar, are the property of their respective owners. Nothing you enter is sent anywhere — the score is stored only in your own browser.</p>
+</div>
+</div>
+
+<footer class="jsw-footer">
+  <div class="jsw-wrap">
+    <div class="jsw-footer__grid">
+      <div>
+        <span class="jsw-label">J.S. Warden</span>
+        <ul>
+          <li><a href="/books/">Books</a></li>
+          <li><a href="/writing/">Writing</a></li>
+          <li><a href="/tabletop/">Tabletop Tools</a></li>
+          <li><a href="https://www.youtube.com/@TalesofInkShadowsStudio" rel="noopener">Tales of Ink &amp; Shadows on YouTube</a></li>
+        </ul>
+        <p>Contact: <a href="mailto:support@builtbyjoshstudio.com">support@builtbyjoshstudio.com</a></p>
+      </div>
+      <nav aria-label="Studio sites">
+        <span class="jsw-label">More from the studio</span>
+        <ul>
+          <li><a href="https://builtbyjoshstudio.com/">Built by Josh Studio</a></li>
+          <li><a href="https://tynkr.builtbyjoshstudio.com/">Tynkr apps</a></li>
+          <li><a href="https://tools.builtbyjoshstudio.com/money/">Money tools</a></li>
+          <li><a href="https://cooking.builtbyjoshstudio.com/">Josh &amp; Jordan&#39;s Kitchen</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Site">
+        <span class="jsw-label">This site</span>
+        <ul>
+          <li><a href="/privacy/">Privacy</a></li>
+          <li><a href="https://builtbyjoshstudio.com/terms.html">Terms</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="jsw-footer__base">
+      <span class="jsw-label">&copy; <span class="jsw-num">2026</span> Built by Josh Studio LLC. All rights reserved.</span>
+      <button type="button" class="jsw-theme-btn" data-theme-reset>Reset theme</button>
+    </div>
+    <p>Tynkr Tools &amp; Co and <a href="https://littleacrelearning.com" rel="noopener">Little Acre Learning</a> are brands of Built by Josh Studio LLC.</p>
+  </div>
+</footer>
+
+  <script src="script.js?v=3212c86ed8" defer></script>
+  <script src="../kinetic.js?v=ffe4b73997" defer></script>
+  <script src="/js/ga4-events.js?v=c398073a2c" defer></script>
+  <script src="/js/migrate-import.js?v=3bf55fbeb9" defer></script>
+</body>
+</html>

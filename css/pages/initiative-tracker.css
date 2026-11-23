@@ -1,0 +1,131 @@
+/* Initiative Tracker (restyle, as the dice-roller pilot): the parts the tool's script builds (combatant rows with
+   initiative, name, side, HP and conditions) and the controls its styles.css draws by ID, in the pack's tool-part
+   look. Loads after tool-bridge.css and tabletop-tool.css. Tokens only. */
+
+/* 1. add combatants */
+.studio-tool .add-grid { gap: 14px; }
+.studio-tool .jsw-field .lbl-opt { text-transform: none; letter-spacing: 0; }
+/* the primary button styles.css draws by ID in the heading face with a lift: the pack's primary button */
+.studio-tool #add-combatant {
+  justify-content: center; font-family: var(--font-label); font-size: var(--label-size); font-weight: var(--label-weight-strong);
+  letter-spacing: calc(var(--label-tracking) * .6); text-transform: uppercase; line-height: 1.2;
+  padding: 14px 22px; min-height: 44px; border-radius: var(--radius); box-shadow: none; transition: background-color .16s ease;
+}
+.studio-tool #add-combatant:hover { background: var(--accent-strong); border-color: var(--accent-strong); color: var(--on-accent); transform: none; box-shadow: none; }
+.studio-tool .add-hint { margin: 14px 0 0; max-width: none; font-family: var(--font-body); font-size: .95rem; color: var(--text-muted); }
+
+/* 2. the result panel: round (a number, so the numeric face, never the label face), whose turn, on deck */
+.studio-tool .jsw-result { margin-bottom: 20px; }
+.studio-tool #round-label { font-family: var(--font-numeric); font-weight: var(--numeric-weight); font-variant-numeric: tabular-nums lining-nums; }
+.studio-tool #current-name { overflow-wrap: anywhere; }
+.studio-tool .jsw-result .jsw-result__detail { display: block; }
+
+/* turn controls: Next turn is the primary action (styles.css sets its size by ID) */
+.studio-tool .turn-controls { gap: 10px; margin-bottom: 24px; }
+.studio-tool #next-turn { font-size: var(--label-size); padding: 14px 26px; }
+.studio-tool .turn-controls .jsw-btn { justify-content: center; }
+
+/* turn order (rows built by the script) as the pack's results list */
+.studio-tool .jsw-results .combatant {
+  gap: 12px 14px; margin: 0; padding: 14px 4px 14px 14px; background: none; border: 0; border-bottom: 1px solid var(--line);
+  border-radius: 0; box-shadow: none; transform: none; transition: none;
+}
+/* the active row (whose turn it is): the pack's bar and a text tag, not colour alone. The script writes no word for
+   it, so the tag is drawn here; it is not part of the row's text. */
+.studio-tool .jsw-results .combatant.active { background: var(--bg-sunk); box-shadow: inset 4px 0 0 var(--accent); transform: none; border-color: var(--line); }
+/* on the active row's sunk ground, its fields sit on the raised ground so they still read as fields */
+.studio-tool .combatant.active :is(.hp-line input.hp, input.cond-add) { background: var(--bg-raised); }
+.studio-tool .combatant.active .who .nm::after {
+  content: "Current turn"; display: inline-block; margin-left: 8px; padding: 2px 8px; vertical-align: middle;
+  font-family: var(--font-label); font-size: .7rem; font-weight: var(--label-weight-strong); letter-spacing: .1em;
+  text-transform: uppercase; color: var(--on-accent); background: var(--accent); border-radius: var(--radius);
+}
+/* a combatant at 0 HP: struck through and named "Down" (the pack's word); no opacity, so every figure keeps 4.5:1 */
+.studio-tool .combatant.down { opacity: 1; }
+.studio-tool .combatant.down .who .nm { color: var(--text-muted); }
+.studio-tool .combatant.down .who .tp::after {
+  content: "Down"; display: inline-block; margin-left: 8px; padding: 1px 6px; color: var(--text);
+  border: 1px solid var(--line-strong); border-radius: var(--radius);
+}
+
+/* initiative: the numeric face on a sunk tile; the active row's tile is the accent pair */
+.studio-tool .combatant .init {
+  width: 44px; height: 44px; border-radius: var(--radius); background: var(--bg-sunk); border: 1px solid var(--line-strong);
+  font-family: var(--font-numeric); font-weight: var(--numeric-weight); font-variant-numeric: tabular-nums lining-nums;
+  font-size: 1rem; color: var(--heading);
+}
+.studio-tool .combatant.active .init { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
+
+/* name and side */
+.studio-tool .combatant .who .nm {
+  font-family: var(--font-display); font-weight: var(--display-weight); text-transform: var(--display-transform);
+  letter-spacing: var(--display-tracking); font-size: 1.125rem; line-height: 1.2; color: var(--heading);
+}
+.studio-tool .combatant .who .tp {
+  margin-top: 4px; font-family: var(--font-label); font-size: var(--label-size); font-weight: var(--label-weight);
+  letter-spacing: calc(var(--label-tracking) * .6); text-transform: uppercase; color: var(--text-muted);
+}
+.studio-tool .combatant .who .tp.pc { color: var(--success); }
+.studio-tool .combatant .who .tp.enemy { color: var(--alert); }
+
+/* HP: the numeric face; every button and field 44px */
+.studio-tool .c-mid { gap: 10px; }
+.studio-tool .hp-line { flex-wrap: wrap; gap: 8px; }
+.studio-tool .hp-line .hp-lbl {
+  margin-right: 0; font-family: var(--font-label); font-size: var(--label-size); font-weight: var(--label-weight);
+  letter-spacing: calc(var(--label-tracking) * .6); text-transform: uppercase; color: var(--text-muted);
+}
+.studio-tool .hp-line input.hp {
+  width: 68px; min-height: 44px; padding: 8px 6px; font-family: var(--font-numeric); font-weight: var(--numeric-weight);
+  font-variant-numeric: tabular-nums lining-nums; font-size: 1.0625rem; color: var(--heading);
+  background: var(--bg-sunk); border: 1px solid var(--line-strong); border-radius: var(--radius);
+}
+.studio-tool .hp-line input.hp:focus { border-color: var(--accent); }
+.studio-tool .hp-line .hp-max { font-family: var(--font-numeric); font-variant-numeric: tabular-nums lining-nums; font-size: 1rem; color: var(--text-muted); }
+.studio-tool .hp-btn {
+  width: 44px; height: 44px; font-family: var(--font-numeric); font-size: 1.125rem; color: var(--heading);
+  background: transparent; border: 1px solid var(--line-strong); border-radius: var(--radius);
+}
+.studio-tool .hp-btn:hover { background: transparent; color: var(--accent-strong); border-color: var(--accent); }
+.studio-tool .no-hp { font-family: var(--font-body); font-size: .95rem; color: var(--text-muted); }
+
+/* conditions: chips of the visitor's own words (body face), each with a 44px remove button; the add field 44px */
+.studio-tool .cond-line { gap: 8px; }
+.studio-tool .cond {
+  gap: 2px; min-height: 44px; padding: 0 0 0 12px; font-family: var(--font-body); font-size: .95rem; font-weight: 400;
+  letter-spacing: 0; text-transform: none; color: var(--heading); background: var(--bg-raised);
+  border: 1px solid var(--line-strong); border-left: 4px solid var(--warning); border-radius: var(--radius);
+}
+.studio-tool .cond button { min-width: 44px; min-height: 44px; font-size: 1.25rem; color: var(--text-muted); }
+.studio-tool .cond button:hover { color: var(--alert); }
+.studio-tool input.cond-add {
+  width: 150px; min-height: 44px; padding: 8px 12px; font-family: var(--font-body); font-size: .95rem; color: var(--heading);
+  background: var(--bg-sunk); border: 1px dashed var(--line-strong); border-radius: var(--radius);
+}
+.studio-tool input.cond-add::placeholder { color: var(--text-dim); opacity: 1; }
+.studio-tool input.cond-add:focus { border-color: var(--accent); border-style: solid; }
+
+/* remove a combatant */
+.studio-tool .c-remove {
+  width: 44px; height: 44px; font-size: 1.25rem; color: var(--text-muted);
+  background: transparent; border: 1px solid var(--line-strong); border-radius: var(--radius);
+}
+.studio-tool .c-remove:hover { color: var(--alert); border-color: var(--alert); }
+
+/* every control the script builds has the pack's focus ring (styles.css removes the outline on the fields) */
+.studio-tool :is(.hp-line input.hp, input.cond-add, .hp-btn, .cond button, .c-remove):focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.studio-tool .jsw-results .empty-note { margin: 0; padding: 22px 0; border: 0; border-radius: 0; text-align: center; color: var(--text-dim); font-size: .95rem; }
+
+/* the notes under the list */
+.studio-tool .note { max-width: none; font-size: .95rem; color: var(--text-muted); }
+.studio-tool #example-note { margin: 16px 0 0; }
+
+@media (max-width: 680px) {
+  .studio-tool .add-grid { gap: 14px 12px; }
+}
+/* phone: styles.css puts HP and conditions on their own row; the remove button stays on the name's row
+   (otherwise it falls to a row of its own under the conditions) */
+@media (max-width: 620px) {
+  .studio-tool .combatant .c-remove { grid-column: 3; grid-row: 1; }
+}

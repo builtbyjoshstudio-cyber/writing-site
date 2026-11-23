@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script>if(location.protocol.indexOf("http")===0&&/\/index\.html$/i.test(location.pathname))location.replace(location.pathname.slice(0,-10)+location.search+location.hash);</script>
+<script>
+(function(){var d=document.documentElement,t=null,ok=['warden','echoes','ebonspire','casefile'];
+d.className+=' js';
+try{t=localStorage.getItem('jsw-theme')}catch(e){}
+if(ok.indexOf(t)<0)t=d.getAttribute('data-theme-default');
+if(ok.indexOf(t)<0)t='warden';
+d.setAttribute('data-theme',t)})();
+</script>
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QDSPBB7S9J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      var gaKeep = new URLSearchParams(); new URLSearchParams(location.search).forEach(function (v, k) { if (k.indexOf('utm_') === 0) gaKeep.append(k, v); });
+      gtag('config', 'G-QDSPBB7S9J', { page_location: location.origin + location.pathname + (gaKeep.toString() ? '?' + gaKeep.toString() : ''), page_referrer: document.referrer.split(/[?#]/)[0] });
+    </script>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Random Table Roller | Roll on Your Own Custom TTRPG Tables</title>
+  <meta name="description" content="Paste or build your own random tables — d20 taverns, d100 loot — then roll on them with one tap. Weighted ranges, saved tables. Free, ad-free, no signup.">
+  <meta name="robots" content="max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://writing.builtbyjoshstudio.com/tabletop/random-table-roller/">
+
+  <!-- JSON-LD #1: WebApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Random Table Roller",
+    "url": "https://writing.builtbyjoshstudio.com/tabletop/random-table-roller/",
+    "description": "Build or paste your own random tables and roll on them with one tap — weighted ranges, multi-roll without repeats, a table library saved in your browser, and plain-text export.",
+    "applicationCategory": "GameApplication",
+    "operatingSystem": "Any (web browser)",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "publisher": {
+      "@type": "Organization",
+      "@id": "https://builtbyjoshstudio.com/#organization",
+      "name": "Built by Josh Studio LLC",
+      "legalName": "Built by Josh Studio LLC",
+      "alternateName": [
+        "BBJ Studio",
+        "Built by Josh Studio"
+      ],
+      "url": "https://builtbyjoshstudio.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://builtbyjoshstudio.com/images/logo/logo.webp",
+        "width": 512,
+        "height": 512
+      },
+      "image": "https://builtbyjoshstudio.com/images/logo/logo.webp",
+      "sameAs": [
+        "https://linktr.ee/builtbyjoshstudio",
+        "https://www.youtube.com/@TalesofInkShadowsStudio",
+        "https://www.youtube.com/@joshandjordanskitchen",
+        "https://tynkrtoolsandco.etsy.com",
+        "https://www.etsy.com/shop/BuiltByJoshStudio",
+        "https://www.redbubble.com/people/BBJStudio/shop"
+      ],
+      "identifier": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "Kansas Business ID",
+          "value": "10076138"
+        }
+      ]
+    }
+  }
+  </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "J.S. Warden", "item": "https://writing.builtbyjoshstudio.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Tabletop & RPG tools", "item": "https://writing.builtbyjoshstudio.com/tabletop/"},
+    {"@type": "ListItem", "position": 3, "name": "Random Table Roller", "item": "https://writing.builtbyjoshstudio.com/tabletop/random-table-roller/"}
+  ]
+}
+</script>
+
+  <!-- JSON-LD #2: FAQPage (mirrors the on-page FAQ) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What format can I paste tables in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Almost anything line-based. Plain lines get auto-numbered in order (twenty lines becomes a d20 table). Lines that start with a number ('7: a broken cart') keep that number, and ranges ('01-05: nothing happens') become weighted entries — the wider the range, the more likely the result. You can mix all three styles in one paste. Percentile numbering works too: 00 counts as 100 (as in 96-00), a d10's 0 counts as 10, and a table that counts from zero (00-09 through 90-99) moves up one so every entry keeps its odds."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do weighted entries work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The roller rolls a die as big as your table's highest number and finds the entry whose range covers the roll. An entry spanning 1-5 is five times likelier than one covering a single number. If your ranges leave gaps, a roll landing in a gap says so honestly instead of pretending."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where are my tables stored, and can I share them?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tables live in your browser's local storage — no account, nothing uploaded. The export button turns a table into plain numbered text you can save, send to a friend, or paste right back in on another device."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this table roller free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — free, no ads, no signup, and it runs entirely in your browser. Your tables stay on your own device."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Open Graph + Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://writing.builtbyjoshstudio.com/tabletop/random-table-roller/">
+  <meta property="og:title" content="Random Table Roller | Roll on Your Own Custom TTRPG Tables">
+  <meta property="og:description" content="Paste any list, get a rollable table — weighted ranges, no-repeat multi-rolls, and a saved library. Free, ad-free.">
+  <meta property="og:image" content="https://writing.builtbyjoshstudio.com/assets/brand/og-1200x630.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://writing.builtbyjoshstudio.com/tabletop/random-table-roller/">
+  <meta name="twitter:title" content="Random Table Roller | Roll on Your Own Custom TTRPG Tables">
+  <meta name="twitter:description" content="Paste any list, get a rollable table — weighted ranges, no-repeat multi-rolls, and a saved library. Free, ad-free.">
+  <meta name="twitter:image" content="https://writing.builtbyjoshstudio.com/assets/brand/og-1200x630.png">
+
+<link rel="stylesheet" href="/css/studio/tokens.css?v=f58e0d92c0">
+<link rel="stylesheet" href="/css/studio/components.css?v=09a4d9f402">
+<link rel="stylesheet" href="/css/studio/tools.css?v=76acb59400">
+<link rel="stylesheet" href="styles.css?v=d155c59415">
+<link rel="stylesheet" href="/fonts/fonts.css?v=aa0d83c07e">
+<link rel="stylesheet" href="/tokens/themes.css?v=47c6296e35">
+<link rel="stylesheet" href="/css/base.css?v=8e0c7377c5">
+<link rel="stylesheet" href="/css/site.css?v=013752c2a3">
+<link rel="stylesheet" href="/css/tool-parts.css?v=0d4d40d55a">
+<script defer src="/js/theme-switcher.js?v=9ca8cd26c0"></script>
+<script defer src="/js/site.js?v=f8e9bf1bb4"></script>
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16.png">
+<link rel="apple-touch-icon" href="/assets/favicons/favicon-180.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="/css/tool-bridge.css?v=dc0db3370f">
+<link rel="stylesheet" href="/css/pages/tabletop-tool.css?v=9031b10f0b">
+<link rel="stylesheet" href="/css/pages/random-table-roller.css?v=e4fb268025">
+</head>
+<body>
+<a class="jsw-skip" href="#main">Skip to content</a>
+<header class="jsw-header">
+  <div class="jsw-wrap jsw-header__bar">
+    <a class="jsw-brand" href="/">J.S. Warden</a>
+    <button type="button" class="jsw-nav-toggle" aria-expanded="false" aria-controls="jsw-menu">
+      <span class="jsw-nav-toggle__bars" aria-hidden="true"></span>Menu
+    </button>
+    <div class="jsw-header__panel" id="jsw-menu">
+      <nav aria-label="Main">
+        <ul class="jsw-nav">
+          <li><a href="/books/">Books</a></li>
+          <li><a href="/writing/">Writing</a></li>
+          <li><a href="/tabletop/" aria-current="page">Tabletop Tools</a></li>
+        </ul>
+      </nav>
+      <div class="jsw-themes" role="group" aria-label="Colour theme">
+        <span class="jsw-label jsw-themes__label" aria-hidden="true">Theme · <span data-theme-current></span></span>
+        <button type="button" class="jsw-theme-btn" data-theme-set="warden" title="Warden"><span class="jsw-swatch" aria-hidden="true"></span><span class="jsw-theme-btn__name">Warden</span></button>
+        <button type="button" class="jsw-theme-btn" data-theme-set="echoes" title="Echoes"><span class="jsw-swatch" aria-hidden="true"></span><span class="jsw-theme-btn__name">Echoes</span></button>
+        <button type="button" class="jsw-theme-btn" data-theme-set="ebonspire" title="Ebonspire"><span class="jsw-swatch" aria-hidden="true"></span><span class="jsw-theme-btn__name">Ebonspire</span></button>
+        <button type="button" class="jsw-theme-btn" data-theme-set="casefile" title="Case File"><span class="jsw-swatch" aria-hidden="true"></span><span class="jsw-theme-btn__name">Case File</span></button>
+      </div>
+    </div>
+  </div>
+</header>
+
+  <div class="studio-tool jsw-wrap">
+<main class="jsw-main" id="main" tabindex="-1">
+
+    <header class="jsw-page-head jsw-page-head--compact">
+      <div>
+        <div class="jsw-row jsw-page-head__meta">
+          <span class="jsw-kicker">&#9679; Tabletop</span>
+          <span class="jsw-label">Your tables &middot; Weighted ranges &middot; Saves itself</span>
+          <span class="updated-date jsw-label">Updated November <span class="jsw-num">2026</span></span>
+        </div>
+        <h1>Random Table <span class="jsw-accent">Roller</span></h1>
+        <div class="jsw-divider" aria-hidden="true"></div>
+        <p class="jsw-lede">Every game master hoards random tables — tavern events, weird loot, what's in the goblin's pockets. Paste any list here and it becomes a rollable table with one big button. Weighted ranges, no-repeat batches, and a library that's still here next session.</p>
+      </div>
+    </header>
+
+    <!-- ROLL (the point of the tool — first) -->
+    <div class="jsw-tool__panel">
+      <div class="role"><span class="jsw-num">1</span>. Pick a table &amp; roll</div>
+      <div class="roll-bar">
+        <div class="jsw-field">
+          <label for="table-select">Table</label>
+          <select id="table-select" class="jsw-select"></select>
+        </div>
+        <button type="button" class="jsw-btn" id="roll-one">Roll</button>
+        <button type="button" class="jsw-btn jsw-btn--ghost" id="roll-three" title="Three distinct results — great for encounters and loot batches">Roll <span class="jsw-num">3</span>, no repeats</button>
+      </div>
+      <div class="jsw-result" role="status" aria-live="polite">
+        <span class="jsw-label" id="result-label">Result</span>
+        <span class="jsw-result__value jsw-result__value--text" id="result-text">Pick a table and hit Roll.</span>
+        <span class="jsw-result__detail jsw-formula" id="result-sub"></span>
+      </div>
+      <div class="hist-head">
+        <div class="role">Recent rolls</div>
+        <button type="button" id="clear-history" class="jsw-btn jsw-btn--small jsw-btn--danger">Clear</button>
+      </div>
+      <div class="hist-strip jsw-results" id="history"></div>
+    </div>
+
+    <!-- BUILD -->
+    <div class="jsw-tool__panel">
+      <div class="role"><span class="jsw-num">2</span>. Build your own table</div>
+      <div class="jsw-field paste-field">
+      <label for="paste-box">Paste any list — one result per line. Numbers optional: <span class="jsw-formula">7: text</span> keeps its number, <span class="jsw-formula">01-05: text</span> makes a weighted range</label>
+      <textarea id="paste-box" class="jsw-textarea" spellcheck="false" placeholder="A hooded stranger buys a round for the house&#10;Two farmers argue over a pig neither of them owns&#10;01-05: nothing happens&hellip;"></textarea>
+      </div>
+      <div class="entry-actions">
+        <button type="button" class="jsw-btn" id="parse-btn">Add to table</button>
+        <button type="button" class="jsw-btn jsw-btn--danger" id="clear-entries" title="Remove every entry — keeps the table name">Clear entries</button>
+      </div>
+      <div class="add-one">
+        <div class="jsw-field">
+          <label for="one-entry">Or add one line at a time</label>
+          <input type="text" id="one-entry" class="jsw-input" placeholder="The bard knows exactly one song&hellip;" maxlength="200">
+        </div>
+        <button type="button" class="jsw-btn jsw-btn--ghost" id="one-add">+ Add</button>
+      </div>
+      <p class="die-note" id="die-note">Empty table</p>
+      <div id="entry-list" class="jsw-results"></div>
+      <p class="note">Everything above lands in whichever table is selected up top (adding to the untouched example starts a new table of your own instead; a paste numbered from <span class="jsw-num">11</span> up extends it). Rolls use the same unbiased crypto randomness as the dice roller, and your tables never leave this device.</p>
+    </div>
+
+    <!-- MANAGE -->
+    <div class="jsw-tool__panel">
+      <div class="role"><span class="jsw-num">3</span>. More tables</div>
+      <div class="lib-grid">
+        <div class="jsw-field">
+          <label for="new-table-name">Name a new table</label>
+          <input type="text" id="new-table-name" class="jsw-input" placeholder="Weird loot, wilderness events&hellip;" maxlength="60">
+        </div>
+        <button type="button" id="new-table-btn" class="jsw-btn">+ New table</button>
+        <span></span>
+      </div>
+      <div class="lib-actions">
+        <button type="button" class="jsw-btn jsw-btn--ghost" id="export-btn" title="Download the selected table as numbered plain text">Export selected table (.txt)</button>
+        <button type="button" class="jsw-btn jsw-btn--danger" id="delete-table" title="Delete the selected table and its entries">Delete selected table</button>
+      </div>
+      <a class="xlink" href="/tabletop/session-notes/">
+        Rolled something worth keeping? Log it in your session notes &rarr;
+      </a>
+    </div>
+
+  <!-- AT A GLANCE (P2-c) -->
+  <div class="jsw-tool__panel jsw-glance">
+    <h2>At a glance</h2>
+    <div class="jsw-table-wrap">
+    <table class="jsw-table">
+      <tbody>
+        <tr><th scope="row">What it does</th><td>Turns any pasted list into a rollable random table.</td></tr>
+        <tr><th scope="row">Inputs</th><td>Paste one result per line (numbers and weighted ranges like <span class="jsw-num">1-3</span> optional), or build tables by hand — <span class="jsw-formula">d20</span> taverns, <span class="jsw-formula">d100</span> loot, anything.</td></tr>
+        <tr><th scope="row">Outputs</th><td>One-tap rolls on your table with the result highlighted; tables are saved for reuse.</td></tr>
+        <tr><th scope="row">Cost &amp; privacy</th><td>Free, ad-free, no signup. Runs and saves in this browser's local storage — nothing leaves your device.</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+    <!-- PROSE -->
+    <section class="jsw-section jsw-prose">
+      <h2>Your tables deserve better than a bookmark</h2>
+      <p>Random tables are the great shared hobby of game masters — collected from books, blogs, forums, and <span class="jsw-num">2</span> a.m. bursts of inspiration, then lost across screenshots and notebooks precisely when the party walks into the tavern. This tool is the machine half of the bargain: you bring the tables, it makes them rollable, findable, and permanent.</p>
+
+      <h3>Paste anything line-shaped</h3>
+      <p>Twenty plain lines become a <span class="jsw-formula">d20</span> table, numbered automatically. Lines that carry their own numbers — <code>7: the fireplace spits green sparks</code> — keep them, and ranges like <code>01-05: nothing happens</code> become weighted entries, five times likelier than a single number. Mix all three in one paste; the parser sorts it out.</p>
+
+      <h3>Weighted the way published tables are</h3>
+      <p>The <span class="jsw-formula">d100</span> tables in your favorite books lean hard on ranges — common results span ten numbers, the dragon gets exactly one. The roller respects that math: it rolls a die as big as your table's highest number and lands where the ranges say. And if your homemade table has a gap, a roll that falls in it tells you so instead of quietly rerolling — that's your cue to finish the table.</p>
+
+      <h3>Batches without repeats</h3>
+      <p>"Roll <span class="jsw-num">3</span>, no repeats" is for the moments a single result isn't enough — stocking a ruin, three rumors at the tavern, a fistful of trinkets. Distinct entries, one tap, no re-rolling the same goblin twice.</p>
+
+      <h3>A library, not a session</h3>
+      <p>Tables save themselves in your browser and stack up into a collection over time — the same quiet accumulation as the campaign journal next door. The plain-text export means nothing is trapped here: send a table you wrote to a friend, or paste it back in on another machine.</p>
+    </section>
+
+    <!-- FAQ -->
+    <section class="jsw-section jsw-faq">
+      <details>
+        <summary>What format can I paste tables in?</summary>
+        <p>Almost anything line-based. Plain lines get auto-numbered in order (twenty lines becomes a <span class="jsw-formula">d20</span> table). Lines that start with a number ('<span class="jsw-num">7</span>: a broken cart') keep that number, and ranges ('<span class="jsw-num">01-05</span>: nothing happens') become weighted entries — the wider the range, the more likely the result. You can mix all three styles in one paste. Percentile numbering works too: <span class="jsw-num">00</span> counts as <span class="jsw-num">100</span> (as in <span class="jsw-num">96-00</span>), a <span class="jsw-formula">d10</span>'s <span class="jsw-num">0</span> counts as <span class="jsw-num">10</span>, and a table that counts from zero (<span class="jsw-num">00-09</span> through <span class="jsw-num">90-99</span>) moves up one so every entry keeps its odds.</p>
+      </details>
+      <details>
+        <summary>How do weighted entries work?</summary>
+        <p>The roller rolls a die as big as your table's highest number and finds the entry whose range covers the roll. An entry spanning <span class="jsw-num">1-5</span> is five times likelier than one covering a single number. If your ranges leave gaps, a roll landing in a gap says so honestly instead of pretending.</p>
+      </details>
+      <details>
+        <summary>Where are my tables stored, and can I share them?</summary>
+        <p>Tables live in your browser's local storage — no account, nothing uploaded. The export button turns a table into plain numbered text you can save, send to a friend, or paste right back in on another device.</p>
+      </details>
+      <details>
+        <summary>Is this table roller free?</summary>
+        <p>Yes — free, no ads, no signup, and it runs entirely in your browser. Your tables stay on your own device.</p>
+      </details>
+    </section>
+
+  </main>
+
+  <section class="jsw-section net-band" id="more-tabletop-tools">
+    <h2 class="section-title"><span class="num">&#8599;</span>More tabletop tools<span class="rule"></span></h2>
+    <div class="net-rows">
+      <a class="glass-lite anatomy-row" href="/tabletop/initiative-tracker/">
+        <div class="ix">IT</div>
+        <div class="lbl"><h3>Initiative Tracker</h3><p>Turn order, rounds, HP and conditions for any RPG combat</p></div>
+        <code>&rarr;</code>
+      </a>
+      <a class="glass-lite anatomy-row" href="/tabletop/dice-roller/">
+        <div class="ix">D20</div>
+        <div class="lbl"><h3>Dice Roller</h3><p>Full dice notation, advantage/disadvantage, roll history</p></div>
+        <code>&rarr;</code>
+      </a>
+      <a class="glass-lite anatomy-row" href="/tabletop/session-notes/">
+        <div class="ix">SN</div>
+        <div class="lbl"><h3>Session Notes &amp; NPC Log</h3><p>Session notes, NPC log and loot, saved in your browser</p></div>
+        <code>&rarr;</code>
+      </a>
+      <a class="glass-lite anatomy-row" href="/tabletop/wargame-score-tracker/">
+        <div class="ix">WS</div>
+        <div class="lbl"><h3>Wargame Score Tracker</h3><p>Victory points, command points and rounds for two players</p></div>
+        <code>&rarr;</code>
+      </a>
+      <a class="glass-lite anatomy-row" href="/tabletop/character-name-generator/">
+        <div class="ix">CN</div>
+        <div class="lbl"><h3>Character Name Generator</h3><p>Original fantasy names in four styles, six at a time</p></div>
+        <code>&rarr;</code>
+      </a>
+      <a class="glass-lite anatomy-row" href="/tabletop/npc-generator/">
+        <div class="ix">NPC</div>
+        <div class="lbl"><h3>NPC Generator</h3><p>A complete NPC in one click: name, quirk, motivation, secret</p></div>
+        <code>&rarr;</code>
+      </a>
+      <a class="glass-lite anatomy-row" href="/tabletop/loot-generator/">
+        <div class="ix">LT</div>
+        <div class="lbl"><h3>Loot Generator</h3><p>Flavorful, system-free treasure with texture and history</p></div>
+        <code>&rarr;</code>
+      </a>
+      <a class="glass-lite anatomy-row" href="/tabletop/plot-hook-generator/">
+        <div class="ix">PH</div>
+        <div class="lbl"><h3>Plot Hook Generator</h3><p>One-line adventure hooks with a built-in twist</p></div>
+        <code>&rarr;</code>
+      </a>
+      <a class="glass-lite anatomy-row" href="/tabletop/tavern-generator/">
+        <div class="ix">TV</div>
+        <div class="lbl"><h3>Tavern Generator</h3><p>A complete fantasy tavern: name, atmosphere, patron, rumor</p></div>
+        <code>&rarr;</code>
+      </a>
+      <a class="glass-lite anatomy-row" href="/tabletop/">
+        <div class="ix">ALL</div>
+        <div class="lbl"><h3>All tabletop tools</h3><p>The full Tabletop &amp; RPG hub</p></div>
+        <code>&rarr;</code>
+      </a>
+    </div>
+  </section>
+  <section class="jsw-section net-band">
+    <h2 class="section-title"><span class="num">&#8599;</span>Network<span class="rule"></span></h2>
+    <div class="net-rows">
+      <a class="glass-lite anatomy-row" href="/books/">
+        <div class="ix">JSW</div>
+        <div class="lbl"><h3>Books by J.S. Warden</h3><p>Ebonspire Chronicles and Overlayed Echoes</p></div>
+        <code>&rarr;</code>
+      </a>
+    </div>
+  </section>
+
+  <div class="footer">
+    <p>This roller is system-agnostic and is not affiliated with, endorsed by, or associated with any game publisher. The tables you create are your own content; respect the copyright of published material you paste for personal use. Nothing you enter is sent anywhere — your tables are stored only in your own browser.</p>
+</div>
+</div>
+
+<footer class="jsw-footer">
+  <div class="jsw-wrap">
+    <div class="jsw-footer__grid">
+      <div>
+        <span class="jsw-label">J.S. Warden</span>
+        <ul>
+          <li><a href="/books/">Books</a></li>
+          <li><a href="/writing/">Writing</a></li>
+          <li><a href="/tabletop/">Tabletop Tools</a></li>
+          <li><a href="https://www.youtube.com/@TalesofInkShadowsStudio" rel="noopener">Tales of Ink &amp; Shadows on YouTube</a></li>
+        </ul>
+        <p>Contact: <a href="mailto:support@builtbyjoshstudio.com">support@builtbyjoshstudio.com</a></p>
+      </div>
+      <nav aria-label="Studio sites">
+        <span class="jsw-label">More from the studio</span>
+        <ul>
+          <li><a href="https://builtbyjoshstudio.com/">Built by Josh Studio</a></li>
+          <li><a href="https://tynkr.builtbyjoshstudio.com/">Tynkr apps</a></li>
+          <li><a href="https://tools.builtbyjoshstudio.com/money/">Money tools</a></li>
+          <li><a href="https://cooking.builtbyjoshstudio.com/">Josh &amp; Jordan&#39;s Kitchen</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Site">
+        <span class="jsw-label">This site</span>
+        <ul>
+          <li><a href="/privacy/">Privacy</a></li>
+          <li><a href="https://builtbyjoshstudio.com/terms.html">Terms</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="jsw-footer__base">
+      <span class="jsw-label">&copy; <span class="jsw-num">2026</span> Built by Josh Studio LLC. All rights reserved.</span>
+      <button type="button" class="jsw-theme-btn" data-theme-reset>Reset theme</button>
+    </div>
+    <p>Tynkr Tools &amp; Co and <a href="https://littleacrelearning.com" rel="noopener">Little Acre Learning</a> are brands of Built by Josh Studio LLC.</p>
+  </div>
+</footer>
+
+  <script src="script.js?v=94c3f639cd" defer></script>
+  <script src="../kinetic.js?v=ffe4b73997" defer></script>
+  <script src="/js/ga4-events.js?v=c398073a2c" defer></script>
+  <script src="/js/migrate-import.js?v=3bf55fbeb9" defer></script>
+</body>
+</html>

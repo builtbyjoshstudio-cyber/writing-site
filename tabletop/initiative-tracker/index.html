@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script>if(location.protocol.indexOf("http")===0&&/\/index\.html$/i.test(location.pathname))location.replace(location.pathname.slice(0,-10)+location.search+location.hash);</script>
+<script>
+(function(){var d=document.documentElement,t=null,ok=['warden','echoes','ebonspire','casefile'];
+d.className+=' js';
+try{t=localStorage.getItem('jsw-theme')}catch(e){}
+if(ok.indexOf(t)<0)t=d.getAttribute('data-theme-default');
+if(ok.indexOf(t)<0)t='warden';
+d.setAttribute('data-theme',t)})();
+</script>
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QDSPBB7S9J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      var gaKeep = new URLSearchParams(); new URLSearchParams(location.search).forEach(function (v, k) { if (k.indexOf('utm_') === 0) gaKeep.append(k, v); });
+      gtag('config', 'G-QDSPBB7S9J', { page_location: location.origin + location.pathname + (gaKeep.toString() ? '?' + gaKeep.toString() : ''), page_referrer: document.referrer.split(/[?#]/)[0] });
+    </script>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Initiative Tracker | Free TTRPG Combat Tracker, Any System</title>
+  <meta name="description" content="Track turn order, rounds, HP, and conditions for any tabletop RPG combat — D&amp;D, Pathfinder, or any system. Saves between sessions. Free, ad-free, no signup.">
+  <meta name="robots" content="max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://writing.builtbyjoshstudio.com/tabletop/initiative-tracker/">
+
+  <!-- JSON-LD #1: WebApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Initiative Tracker",
+    "url": "https://writing.builtbyjoshstudio.com/tabletop/initiative-tracker/",
+    "description": "Track turn order, rounds, HP, and conditions for tabletop RPG combat in any system. Your encounter saves itself in the browser between sessions.",
+    "applicationCategory": "GameApplication",
+    "operatingSystem": "Any (web browser)",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "publisher": {
+      "@type": "Organization",
+      "@id": "https://builtbyjoshstudio.com/#organization",
+      "name": "Built by Josh Studio LLC",
+      "legalName": "Built by Josh Studio LLC",
+      "alternateName": [
+        "BBJ Studio",
+        "Built by Josh Studio"
+      ],
+      "url": "https://builtbyjoshstudio.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://builtbyjoshstudio.com/images/logo/logo.webp",
+        "width": 512,
+        "height": 512
+      },
+      "image": "https://builtbyjoshstudio.com/images/logo/logo.webp",
+      "sameAs": [
+        "https://linktr.ee/builtbyjoshstudio",
+        "https://www.youtube.com/@TalesofInkShadowsStudio",
+        "https://www.youtube.com/@joshandjordanskitchen",
+        "https://tynkrtoolsandco.etsy.com",
+        "https://www.etsy.com/shop/BuiltByJoshStudio",
+        "https://www.redbubble.com/people/BBJStudio/shop"
+      ],
+      "identifier": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "Kansas Business ID",
+          "value": "10076138"
+        }
+      ]
+    }
+  }
+  </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "J.S. Warden", "item": "https://writing.builtbyjoshstudio.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Tabletop & RPG tools", "item": "https://writing.builtbyjoshstudio.com/tabletop/"},
+    {"@type": "ListItem", "position": 3, "name": "Initiative Tracker", "item": "https://writing.builtbyjoshstudio.com/tabletop/initiative-tracker/"}
+  ]
+}
+</script>
+
+  <!-- JSON-LD #2: FAQPage (mirrors the on-page FAQ) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Does this initiative tracker work for games other than D&D?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. It tracks names, initiative values, hit points, rounds, and conditions — the pieces almost every tabletop RPG shares — without assuming any ruleset. Use it for D&D, Pathfinder, Call of Cthulhu, or any homebrew system."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will my encounter still be here if I close the tab?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The encounter saves itself in your browser's local storage on every change, so you can close the tab mid-session and pick up exactly where you left off — same combatants, same round, same turn. It stays on this device and browser; nothing is uploaded anywhere."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How are ties in initiative handled?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Combatants with the same initiative keep the order you added them in. If your table breaks ties differently, nudge one combatant's initiative by a decimal — 15.5 sorts above 15."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this initiative tracker free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — free, no ads, no signup, and it runs entirely in your browser. Nothing you enter is sent anywhere; your encounter is stored only on your own device."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Open Graph + Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://writing.builtbyjoshstudio.com/tabletop/initiative-tracker/">
+  <meta property="og:title" content="Initiative Tracker | Free TTRPG Combat Tracker, Any System">
+  <meta property="og:description" content="Turn order, rounds, HP, and conditions for any tabletop RPG. Saves between sessions. Free, ad-free.">
+  <meta property="og:image" content="https://writing.builtbyjoshstudio.com/assets/brand/og-1200x630.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://writing.builtbyjoshstudio.com/tabletop/initiative-tracker/">
+  <meta name="twitter:title" content="Initiative Tracker | Free TTRPG Combat Tracker, Any System">
+  <meta name="twitter:description" content="Turn order, rounds, HP, and conditions for any tabletop RPG. Saves between sessions. Free, ad-free.">
+  <meta name="twitter:image" content="https://writing.builtbyjoshstudio.com/assets/brand/og-1200x630.png">
+
+<link rel="stylesheet" href="/css/studio/tokens.css?v=f58e0d92c0">
+<link rel="stylesheet" href="/css/studio/components.css?v=09a4d9f402">
+<link rel="stylesheet" href="/css/studio/tools.css?v=76acb59400">
+<link rel="stylesheet" href="styles.css?v=c9bb3dac43">
+<link rel="stylesheet" href="/fonts/fonts.css?v=aa0d83c07e">
+<link rel="stylesheet" href="/tokens/themes.css?v=47c6296e35">
+<link rel="stylesheet" href="/css/base.css?v=8e0c7377c5">
+<link rel="stylesheet" href="/css/site.css?v=013752c2a3">
+<link rel="stylesheet" href="/css/tool-parts.css?v=0d4d40d55a">
+<script defer src="/js/theme-switcher.js?v=9ca8cd26c0"></script>
+<script defer src="/js/site.js?v=f8e9bf1bb4"></script>
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16.png">
+<link rel="apple-touch-icon" href="/assets/favicons/favicon-180.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="/css/tool-bridge.css?v=dc0db3370f">
+<link rel="stylesheet" href="/css/pages/tabletop-tool.css?v=9031b10f0b">
+<link rel="stylesheet" href="/css/pages/initiative-tracker.css?v=c979b8b1ae">
+</head>
+<body>
+<a class="jsw-skip" href="#main">Skip to content</a>
+<header class="jsw-header">
+  <div class="jsw-wrap jsw-header__bar">
+    <a class="jsw-brand" href="/">J.S. Warden</a>
+    <button type="button" class="jsw-nav-toggle" aria-expanded="false" aria-controls="jsw-menu">
+      <span class="jsw-nav-toggle__bars" aria-hidden="true"></span>Menu
+    </button>
+    <div class="jsw-header__panel" id="jsw-menu">
+      <nav aria-label="Main">
+        <ul class="jsw-nav">
+          <li><a href="/books/">Books</a></li>
+          <li><a href="/writing/">Writing</a></li>
+          <li><a href="/tabletop/" aria-current="page">Tabletop Tools</a></li>
+        </ul>
+      </nav>
+      <div class="jsw-themes" role="group" aria-label="Colour theme">
+        <span class="jsw-label jsw-themes__label" aria-hidden="true">Theme · <span data-theme-current></span></span>
+        <button type="button" class="jsw-theme-btn" data-theme-set="warden" title="Warden"><span class="jsw-swatch" aria-hidden="true"></span><span class="jsw-theme-btn__name">Warden</span></button>
+        <button type="button" class="jsw-theme-btn" data-theme-set="echoes" title="Echoes"><span class="jsw-swatch" aria-hidden="true"></span><span class="jsw-theme-btn__name">Echoes</span></button>
+        <button type="button" class="jsw-theme-btn" data-theme-set="ebonspire" title="Ebonspire"><span class="jsw-swatch" aria-hidden="true"></span><span class="jsw-theme-btn__name">Ebonspire</span></button>
+        <button type="button" class="jsw-theme-btn" data-theme-set="casefile" title="Case File"><span class="jsw-swatch" aria-hidden="true"></span><span class="jsw-theme-btn__name">Case File</span></button>
+      </div>
+    </div>
+  </div>
+</header>
+
+  <div class="studio-tool jsw-wrap">
+<main class="jsw-main" id="main" tabindex="-1">
+
+    <header class="jsw-page-head jsw-page-head--compact">
+      <div>
+        <div class="jsw-row jsw-page-head__meta">
+          <span class="jsw-kicker">&#9679; Tabletop</span>
+          <span class="jsw-label">Any system &middot; Saves itself</span>
+          <span class="updated-date jsw-label">Updated November <span class="jsw-num">2026</span></span>
+        </div>
+        <h1>Initiative <span class="jsw-accent">Tracker</span></h1>
+        <div class="jsw-divider" aria-hidden="true"></div>
+        <p class="jsw-lede">Run the whole fight from one screen — turn order, rounds, HP, and conditions. Your encounter saves itself in this browser, so you can set it up before the session and it'll still be here at the table.</p>
+      </div>
+    </header>
+
+    <!-- ADD COMBATANTS -->
+    <div class="jsw-tool__panel">
+      <div class="role"><span class="jsw-num">1</span>. Add combatants</div>
+      <div class="add-grid">
+        <div class="jsw-field ag-name">
+          <label for="c-name">Name</label>
+          <input type="text" id="c-name" class="jsw-input" placeholder="Goblin, Bandit, Wolf&hellip;" maxlength="40">
+        </div>
+        <div class="jsw-field">
+          <label for="c-init">Initiative</label>
+          <input type="number" id="c-init" class="jsw-input" placeholder="14" step="0.5">
+        </div>
+        <div class="jsw-field">
+          <label for="c-hp">HP <span class="lbl-opt">(optional)</span></label>
+          <input type="number" id="c-hp" class="jsw-input" placeholder="22" min="0">
+        </div>
+        <div class="jsw-field">
+          <label for="c-type">Side</label>
+          <select id="c-type" class="jsw-select">
+            <option value="pc">Player</option>
+            <option value="ally">Ally / NPC</option>
+            <option value="enemy" selected>Enemy</option>
+          </select>
+        </div>
+        <button type="button" id="add-combatant" class="jsw-btn">+ Add</button>
+      </div>
+      <p class="add-hint">Enter adds too. Same name twice? It auto-numbers — Goblin, Goblin <span class="jsw-num">2</span>, Goblin <span class="jsw-num">3</span>.</p>
+    </div>
+
+    <!-- TRACKER -->
+    <div class="jsw-tool__panel">
+      <div class="jsw-result" role="status" aria-live="polite">
+        <span class="jsw-label" id="round-label">Round <span class="jsw-num">1</span></span>
+        <span class="jsw-result__value jsw-result__value--text" id="current-name">Add combatants to start</span>
+        <span class="jsw-result__detail" id="on-deck"></span>
+      </div>
+
+      <div class="turn-controls">
+        <button type="button" class="jsw-btn" id="next-turn">Next turn &rarr;</button>
+        <button type="button" class="jsw-btn jsw-btn--ghost" id="prev-turn">&larr; Back</button>
+        <span class="tc-spacer"></span>
+        <button type="button" class="jsw-btn jsw-btn--danger" id="reset-encounter" title="Back to round 1, turn 1 — keeps combatants">Reset rounds</button>
+        <button type="button" class="jsw-btn jsw-btn--danger" id="clear-encounter" title="Remove every combatant">Clear all</button>
+      </div>
+
+      <div class="role">Turn order</div>
+      <div id="combatant-list" class="jsw-results"></div>
+      <p class="note" id="example-note" hidden>Example loaded: two heroes against two bandits and a wolf. Press Next turn to watch it run; add your own to replace it, or Clear all to start empty.</p>
+      <p class="note">Ties keep the order you added them in — nudge with a decimal (<span class="jsw-num">15.5</span> beats <span class="jsw-num">15</span>) if your table rules differently. Everything here stays on this device.</p>
+      <a class="xlink" href="/tabletop/dice-roller/">
+        Need to roll initiative first? Open the dice roller &rarr;
+      </a>
+      <br>
+      <a class="xlink" href="/tabletop/session-notes/">
+        Fight's over? Log what happened in the session notes &rarr;
+      </a>
+    </div>
+
+  <!-- AT A GLANCE (P2-c) -->
+  <div class="jsw-tool__panel jsw-glance">
+    <h2>At a glance</h2>
+    <div class="jsw-table-wrap">
+    <table class="jsw-table">
+      <tbody>
+        <tr><th scope="row">What it does</th><td>Runs a tabletop RPG combat from one screen: turn order, rounds, HP, and conditions.</td></tr>
+        <tr><th scope="row">Inputs</th><td>Each combatant's name, initiative, optional HP, and side — works for D&amp;D, Pathfinder, or any system.</td></tr>
+        <tr><th scope="row">Outputs</th><td>A sorted initiative order with round counting, next-turn cycling, HP tracking, and condition tags.</td></tr>
+        <tr><th scope="row">Cost &amp; privacy</th><td>Free, ad-free, no signup. Runs and saves in this browser's local storage — nothing leaves your device.</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+    <!-- PROSE -->
+    <section class="jsw-section jsw-prose">
+      <h2>Run combat faster at the table</h2>
+      <p>Most combat slowdown isn't rules — it's bookkeeping. Whose turn is it, what round are we on, how hurt is the ogre, and wasn't somebody poisoned? This tracker keeps all four answers on one screen so the game master can spend the pause between turns describing the fight instead of reconstructing it.</p>
+
+      <h3>Set up before the session</h3>
+      <p>Add your players and the monsters for tonight's encounter ahead of time — the tracker saves itself in your browser, so it's still loaded when the fight actually starts. When initiative is rolled, type the values in and the order sorts itself.</p>
+
+      <h3>Conditions are the thing everyone forgets</h3>
+      <p>Poisoned, prone, frightened, concentrating — the effects that quietly fall off the table's collective memory two rounds after they land. Tag them on the combatant and they stay visible every time that turn comes around.</p>
+
+      <h3>Works with whatever you play</h3>
+      <p>Names, initiative values, hit points, rounds, and free-text conditions are the common core of nearly every tabletop RPG. Nothing here assumes a specific ruleset, so the same tracker works for your fantasy campaign, your horror one-shot, and the homebrew system your group half-invented.</p>
+    </section>
+
+    <!-- FAQ -->
+    <section class="jsw-section jsw-faq">
+      <details>
+        <summary><span class="faq-q">Does this initiative tracker work for games other than D&amp;D?</span></summary>
+        <p>Yes. It tracks names, initiative values, hit points, rounds, and conditions — the pieces almost every tabletop RPG shares — without assuming any ruleset. Use it for D&amp;D, Pathfinder, Call of Cthulhu, or any homebrew system.</p>
+      </details>
+      <details>
+        <summary><span class="faq-q">Will my encounter still be here if I close the tab?</span></summary>
+        <p>Yes. The encounter saves itself in your browser's local storage on every change, so you can close the tab mid-session and pick up exactly where you left off — same combatants, same round, same turn. It stays on this device and browser; nothing is uploaded anywhere.</p>
+      </details>
+      <details>
+        <summary><span class="faq-q">How are ties in initiative handled?</span></summary>
+        <p>Combatants with the same initiative keep the order you added them in. If your table breaks ties differently, nudge one combatant's initiative by a decimal — <span class="jsw-num">15.5</span> sorts above <span class="jsw-num">15</span>.</p>
+      </details>
+      <details>
+        <summary><span class="faq-q">Is this initiative tracker free?</span></summary>
+        <p>Yes — free, no ads, no signup, and it runs entirely in your browser. Nothing you enter is sent anywhere; your encounter is stored only on your own device.</p>
+      </details>
+    </section>
+
+  </main>
+
+  <section class="jsw-section net-band" id="more-tabletop-tools">
+    <h2 class="section-title"><span class="num">&#8599;</span>More tabletop tools<span class="rule"></span></h2>
+    <div class="net-rows">
+      <a class="glass-lite anatomy-row" href="/tabletop/dice-roller/">
+        <div class="ix">D20</div>
+        <div class="lbl"><h3>Dice Roller</h3><p>Full dice notation, advantage/disadvantage, roll history</p></div>
+        <code>&rarr;</code>
+      </a>
+      <a class="glass-lite anatomy-row" href="/tabletop/session-notes/">
+        <div class="ix">SN</div>
+        <div class="lbl"><h3>Session Notes &amp; NPC Log</h3><p>Session notes, NPC log and loot, saved in your browser</p></div>
+        <code>&rarr;</code>
+      </a>
+      <a class="glass-lite anatomy-row" href="/tabletop/wargame-score-tracker/">
+        <div class="ix">WS</div>
+        <div class="lbl"><h3>Wargame Score Tracker</h3><p>Victory points, command points and rounds for two players</p></div>
+        <code>&rarr;</code>
+      </a>
+      <a class="glass-lite anatomy-row" href="/tabletop/character-name-generator/">
+        <div class="ix">CN</div>
+        <div class="lbl"><h3>Character Name Generator</h3><p>Original fantasy names in four styles, six at a time</p></div>
+        <code>&rarr;</code>
+      </a>
+      <a class="glass-lite anatomy-row" href="/tabletop/npc-generator/">
+        <div class="ix">NPC</div>
+        <div class="lbl"><h3>NPC Generator</h3><p>A complete NPC in one click: name, quirk, motivation, secret</p></div>
+        <code>&rarr;</code>
+      </a>
+      <a class="glass-lite anatomy-row" href="/tabletop/loot-generator/">
+        <div class="ix">LT</div>
+        <div class="lbl"><h3>Loot Generator</h3><p>Flavorful, system-free treasure with texture and history</p></div>
+        <code>&rarr;</code>
+      </a>
+      <a class="glass-lite anatomy-row" href="/tabletop/plot-hook-generator/">
+        <div class="ix">PH</div>
+        <div class="lbl"><h3>Plot Hook Generator</h3><p>One-line adventure hooks with a built-in twist</p></div>
+        <code>&rarr;</code>
+      </a>
+      <a class="glass-lite anatomy-row" href="/tabletop/random-table-roller/">
+        <div class="ix">RT</div>
+        <div class="lbl"><h3>Random Table Roller</h3><p>Paste or build your own random tables and roll on them</p></div>
+        <code>&rarr;</code>
+      </a>
+      <a class="glass-lite anatomy-row" href="/tabletop/tavern-generator/">
+        <div class="ix">TV</div>
+        <div class="lbl"><h3>Tavern Generator</h3><p>A complete fantasy tavern: name, atmosphere, patron, rumor</p></div>
+        <code>&rarr;</code>
+      </a>
+      <a class="glass-lite anatomy-row" href="/tabletop/">
+        <div class="ix">ALL</div>
+        <div class="lbl"><h3>All tabletop tools</h3><p>The full Tabletop &amp; RPG hub</p></div>
+        <code>&rarr;</code>
+      </a>
+    </div>
+  </section>
+  <section class="jsw-section net-band">
+    <h2 class="section-title"><span class="num">&#8599;</span>Network<span class="rule"></span></h2>
+    <div class="net-rows">
+      <a class="glass-lite anatomy-row" href="/books/">
+        <div class="ix">JSW</div>
+        <div class="lbl"><h3>Books by J.S. Warden</h3><p>Ebonspire Chronicles and Overlayed Echoes</p></div>
+        <code>&rarr;</code>
+      </a>
+    </div>
+  </section>
+
+  <div class="footer">
+    <p>This tracker is system-agnostic and is not affiliated with, endorsed by, or associated with any game publisher. Game names are mentioned only to describe compatibility; all trademarks are the property of their respective owners. Nothing you enter is sent anywhere — your encounter is stored only in your own browser.</p>
+</div>
+</div>
+
+<footer class="jsw-footer">
+  <div class="jsw-wrap">
+    <div class="jsw-footer__grid">
+      <div>
+        <span class="jsw-label">J.S. Warden</span>
+        <ul>
+          <li><a href="/books/">Books</a></li>
+          <li><a href="/writing/">Writing</a></li>
+          <li><a href="/tabletop/">Tabletop Tools</a></li>
+          <li><a href="https://www.youtube.com/@TalesofInkShadowsStudio" rel="noopener">Tales of Ink &amp; Shadows on YouTube</a></li>
+        </ul>
+        <p>Contact: <a href="mailto:support@builtbyjoshstudio.com">support@builtbyjoshstudio.com</a></p>
+      </div>
+      <nav aria-label="Studio sites">
+        <span class="jsw-label">More from the studio</span>
+        <ul>
+          <li><a href="https://builtbyjoshstudio.com/">Built by Josh Studio</a></li>
+          <li><a href="https://tynkr.builtbyjoshstudio.com/">Tynkr apps</a></li>
+          <li><a href="https://tools.builtbyjoshstudio.com/money/">Money tools</a></li>
+          <li><a href="https://cooking.builtbyjoshstudio.com/">Josh &amp; Jordan&#39;s Kitchen</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Site">
+        <span class="jsw-label">This site</span>
+        <ul>
+          <li><a href="/privacy/">Privacy</a></li>
+          <li><a href="https://builtbyjoshstudio.com/terms.html">Terms</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="jsw-footer__base">
+      <span class="jsw-label">&copy; <span class="jsw-num">2026</span> Built by Josh Studio LLC. All rights reserved.</span>
+      <button type="button" class="jsw-theme-btn" data-theme-reset>Reset theme</button>
+    </div>
+    <p>Tynkr Tools &amp; Co and <a href="https://littleacrelearning.com" rel="noopener">Little Acre Learning</a> are brands of Built by Josh Studio LLC.</p>
+  </div>
+</footer>
+
+  <script src="script.js?v=6e3a2cf31c" defer></script>
+  <script src="../kinetic.js?v=ffe4b73997" defer></script>
+  <script src="/js/ga4-events.js?v=c398073a2c" defer></script>
+  <script src="/js/migrate-import.js?v=3bf55fbeb9" defer></script>
+</body>
+</html>

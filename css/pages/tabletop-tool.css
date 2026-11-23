@@ -1,0 +1,87 @@
+/* Tabletop tool pages: the studio tool-page parts the pack has no component for, drawn with the pack's
+   tokens. Loads after tool-bridge.css on a restyled tool page (the pilot: /tabletop/dice-roller/).
+   Tokens only; no colour or font literals. */
+
+/* page width: the tool column, the network bands and the disclaimer share one container */
+.studio-tool.jsw-wrap { max-width: 1000px; }
+.studio-tool > .jsw-main { padding-bottom: 0; }
+
+/* page head: the kicker and label row above the headline */
+.studio-tool .jsw-page-head__meta { gap: 6px 18px; margin-bottom: 18px; }
+.studio-tool .jsw-page-head .jsw-kicker { margin-bottom: 0; }
+/* dice notation inside a label keeps its case (.jsw-formula, like .jsw-num, is not a label) */
+.studio-tool .jsw-label .jsw-formula, .studio-tool .jsw-label .jsw-num { text-transform: none; letter-spacing: 0; }
+
+/* panels stack with the pack's rhythm; the panel heading is the pack's panel h3 */
+.studio-tool .jsw-tool__panel + .jsw-tool__panel { margin-top: 24px; }
+.studio-tool .jsw-page-head + .jsw-tool__panel { margin-top: 36px; }
+.studio-tool .role {
+  display: block; margin: 0 0 18px; font-family: var(--font-display); font-weight: var(--display-weight);
+  text-transform: var(--display-transform); letter-spacing: var(--display-tracking); line-height: var(--display-leading);
+  font-size: 1.25rem; color: var(--heading);
+}
+.studio-tool .hist-head .role { margin-bottom: 0; }
+
+/* buttons that a tool's own styles.css draws by ID keep the pack's button look */
+.studio-tool .jsw-btn { box-shadow: none; transform: none; }
+
+/* a cross-link under a panel */
+.studio-tool .xlink {
+  display: inline-flex; align-items: center; min-height: 44px; margin-top: 14px;
+  font-family: var(--font-label); font-size: var(--label-size); font-weight: var(--label-weight);
+  letter-spacing: calc(var(--label-tracking) * .5); text-transform: uppercase; text-decoration: none;
+}
+
+/* at a glance */
+.studio-tool .jsw-glance { margin-top: 24px; }
+.studio-tool .jsw-table tbody th { white-space: nowrap; font-family: var(--font-label); font-size: var(--label-size);
+  letter-spacing: calc(var(--label-tracking) * .6); text-transform: uppercase; color: var(--text-muted); vertical-align: top; }
+.studio-tool .jsw-table td { color: var(--text); }
+@media (max-width: 560px) {
+  .studio-tool .jsw-table tbody tr { display: grid; }
+  .studio-tool .jsw-table tbody th { border-bottom: 0; padding-bottom: 0; }
+}
+
+/* prose: the pack's long-reading column */
+.studio-tool .jsw-prose h2 { margin-top: 0; }
+
+/* FAQ (no pack part): flat sheets, the question in the heading face */
+.studio-tool .jsw-faq { display: grid; gap: 10px; }
+.studio-tool .jsw-faq details { background: var(--bg-raised); border: 1px solid var(--line); border-radius: var(--radius); padding: 0 clamp(16px, 3vw, 24px); }
+.studio-tool .jsw-faq summary {
+  display: flex; justify-content: space-between; align-items: center; gap: 16px; min-height: 44px; padding: 14px 0;
+  cursor: pointer; list-style: none; font-family: var(--font-display); font-weight: var(--display-weight);
+  text-transform: var(--display-transform); letter-spacing: var(--display-tracking); line-height: 1.2;
+  font-size: 1.125rem; color: var(--heading);
+}
+.studio-tool .jsw-faq summary::-webkit-details-marker { display: none; }
+.studio-tool .jsw-faq summary::after { content: "+"; flex: none; font-family: var(--font-numeric); color: var(--accent); }
+.studio-tool .jsw-faq details[open] summary::after { content: "\2212"; }
+.studio-tool .jsw-faq details p { margin: 0; padding-bottom: 18px; color: var(--text); max-width: 68ch; }
+
+/* network bands: a section head and rows of links (no pack part for the row) */
+.studio-tool .net-band { max-width: none; margin: clamp(48px, 8vw, 96px) 0 0; padding: 0; }
+.studio-tool .net-band .section-title { margin: 0; display: flex; align-items: center; gap: 14px; font-size: clamp(1.375rem, 3vw, 1.75rem); }
+.studio-tool .net-band .section-title .num { min-width: 0; height: auto; padding: 0; background: none; color: var(--accent); font-family: var(--font-numeric); font-size: 1em; }
+.studio-tool .net-band .section-title .rule { flex: 1; height: 1px; border: 0; background: linear-gradient(90deg, var(--accent-line), transparent); }
+.studio-tool .net-rows { margin-top: 20px; }
+.studio-tool a.anatomy-row { background: var(--bg-raised); border: 1px solid var(--line); border-radius: var(--radius); color: var(--text); }
+.studio-tool a.anatomy-row:hover { border-color: var(--accent); }
+.studio-tool .anatomy-row .ix { border-radius: var(--radius); font-family: var(--font-numeric); }
+.studio-tool .anatomy-row h3 { font-family: var(--font-display); font-weight: var(--display-weight); font-size: 1.125rem; color: var(--heading); margin: 0 0 4px; }
+.studio-tool .anatomy-row p { font-size: .9rem; color: var(--text-muted); }
+.studio-tool .anatomy-row code { font-family: var(--font-numeric); color: var(--accent); }
+
+/* the tool's disclaimer footer, above the site footer */
+.studio-tool > .footer { max-width: none; margin: clamp(40px, 6vw, 64px) 0 clamp(40px, 6vw, 64px); padding: 20px 0 0; border-top: 1px solid var(--line); font-size: .9rem; }
+.studio-tool > .footer p { margin: 0; max-width: 80ch; color: var(--text-muted); }
+
+@media (prefers-reduced-motion: reduce) {
+  .studio-tool * { transition: none !important; transform: none !important; }
+}
+
+/* "Bring my saved data from the old tools site" (js/migrate-import.js): shown just above the tool, only when the
+   hidden frame could not reach the old tools site */
+.jsw-migrate { margin-top: 24px; }   /* .jsw-wrap centres it; keep its auto side margins */
+.jsw-migrate p { margin: 8px 0 0; color: var(--text-muted); }
+.jsw-migrate p:empty { display: none; }

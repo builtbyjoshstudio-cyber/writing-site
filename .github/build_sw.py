@@ -175,11 +175,11 @@ TEMPLATE = r'''/* =========================================================
       '<link rel="stylesheet" href="/css/base.css"><link rel="stylesheet" href="/css/site.css">' +
       '<script>(function(){var d=document.documentElement,t=null,ok=["warden","echoes","ebonspire","casefile"];' +
       'try{t=localStorage.getItem("jsw-theme")}catch(e){}if(ok.indexOf(t)<0)t="warden";d.setAttribute("data-theme",t)})();</script>' +
-      '<body><main class="container section"><div class="empty">' +
+      '<body><main class="jsw-main" id="main"><div class="jsw-wrap">' +
       '<h1>You are offline</h1>' +
-      '<p class="lede">This page has not been opened on this device yet, so there is no saved copy to show. ' +
+      '<p class="jsw-lede">This page has not been opened on this device yet, so there is no saved copy to show. ' +
       'The tabletop tools still work offline.</p>' +
-      '<p><a class="btn" href="/tabletop/">Go to the tabletop tools</a></p>' +
+      '<p><a class="jsw-btn" href="/tabletop/">Go to the tabletop tools</a></p>' +
       '</div></main>',
       { status: 503, headers: { 'Content-Type': 'text/html; charset=utf-8' } }
     );
@@ -241,6 +241,15 @@ def expected(root):
     pages += ['/tabletop/%s/' % n for n in tool_names]
     assets = ['/site.webmanifest', '/fonts/fonts.css', '/tokens/themes.css', '/css/base.css', '/css/site.css',
               '/css/tool-parts.css', '/js/theme-switcher.js', '/js/site.js', '/assets/icons/icon-192.png']
+    # the home page and the hub: the CSS/JS and images they load, so they render offline too
+    for p in [p for p in pages if p in ('/', '/tabletop/')]:
+        s = open(os.path.join(root, p.lstrip('/'), 'index.html'), encoding='utf-8').read()
+        refs = re.findall(r'(?:href|src)="([^"#?]+\.(?:css|js))(?:\?[^"]*)?"', s)
+        refs += [u.strip().split(' ')[0] for v in re.findall(r'(?:<img[^>]*\ssrc|srcset)="([^"]+)"', s) for u in v.split(',')]
+        for ref in refs:
+            if ref.startswith(('http', '//', 'data:')): continue
+            a = ref if ref.startswith('/') else p + ref
+            if a not in assets: assets.append(a)
     for name in tool_names:
         s = open(os.path.join(tools_root, name, 'index.html'), encoding='utf-8').read()
         for ref in re.findall(r'(?:href|src)="([^"#?]+\.(?:css|js))(?:\?[^"]*)?"', s):
@@ -249,6 +258,11 @@ def expected(root):
             if a not in assets: assets.append(a)
     for f in font_files(root):
         if f not in assets: assets.append(f)
+    # every page stylesheet (small): the first page a visitor opens is saved on activation, and its own CSS must be
+    # here too, since it loaded before this worker took over (review, stage 2)
+    for f in sorted(glob.glob(os.path.join(root, 'css', 'pages', '*.css'))):
+        a = '/css/pages/' + os.path.basename(f)
+        if a not in assets: assets.append(a)
     path_of = lambda a: os.path.join(root, a.lstrip('/') + ('index.html' if a.endswith('/') else ''))
     missing = [a for a in pages + assets if not os.path.isfile(path_of(a))]
     if missing: raise SystemExit('build_sw: files the service worker must precache are missing: %s' % missing)

@@ -1,0 +1,90 @@
+/* Session Notes & NPC Log (restyle, as the dice-roller pilot): the parts the tool's script builds (session
+   entries with their date and text, NPC and loot rows, the backup status line) and the controls its styles.css
+   draws by ID, in the pack's tool-part look. Loads after tool-bridge.css and tabletop-tool.css. Tokens only. */
+
+/* primary buttons styles.css draws by ID in the heading face with a lift: the pack's primary button */
+.studio-tool :is(#new-campaign-btn, #new-session) {
+  font-family: var(--font-label); font-size: var(--label-size); font-weight: var(--label-weight-strong);
+  letter-spacing: calc(var(--label-tracking) * .6); text-transform: uppercase; line-height: 1.2;
+  padding: 14px 22px; min-height: 44px; border-radius: var(--radius); box-shadow: none; transition: background-color .16s ease;
+}
+.studio-tool :is(#new-campaign-btn, #new-session):hover { background: var(--accent-strong); border-color: var(--accent-strong); color: var(--on-accent); transform: none; box-shadow: none; }
+.studio-tool #new-session { display: inline-flex; margin-bottom: 18px; }
+
+/* 1. campaign */
+.studio-tool .camp-grid { gap: 14px; }
+.studio-tool .camp-actions { gap: 10px; margin-top: 18px; }
+
+/* the backup status line (the script writes its text; empty, it takes no room): the pack's neutral message
+   with its word. Counts and the date are in it, so it is set in the numeric face. */
+.studio-tool .backup-status { max-width: none; font-family: var(--font-body); font-size: .95rem; line-height: 1.5; color: var(--text); }
+.studio-tool .backup-status:not(:empty) {
+  margin-top: 16px; padding: 12px 16px; background: var(--bg-sunk);
+  border: 1px solid var(--line); border-left: 4px solid var(--text-muted); border-radius: var(--radius);
+}
+.studio-tool .backup-status:not(:empty)::before {
+  content: "Note"; margin-right: .6em; font-family: var(--font-label); font-size: var(--label-size);
+  font-weight: var(--label-weight-strong); letter-spacing: calc(var(--label-tracking) * .6); text-transform: uppercase; color: var(--text-muted);
+}
+
+/* 2. session entries (built by the script) as rows of the pack's results list */
+.studio-tool .jsw-results .session { margin: 0; padding: 16px 2px; background: none; border: 0; border-bottom: 1px solid var(--line); border-radius: 0; }
+.studio-tool .session-head { gap: 12px; margin-bottom: 12px; }
+.studio-tool .session-head input[type="date"] {
+  min-height: 44px; padding: 8px 12px; font-family: var(--font-numeric); font-weight: var(--numeric-weight);
+  font-variant-numeric: tabular-nums lining-nums; font-size: 1rem;
+  color: var(--heading); background: var(--bg-sunk); border: 1px solid var(--line-strong); border-radius: var(--radius);
+}
+.studio-tool .session textarea {
+  min-height: 120px; padding: 12px 14px; font-family: var(--font-body); font-size: 1rem; line-height: 1.6;
+  color: var(--heading); background: var(--bg-sunk); border: 1px solid var(--line-strong); border-radius: var(--radius);
+}
+.studio-tool .session textarea::placeholder { color: var(--text-dim); opacity: 1; }
+.studio-tool :is(.session-head input[type="date"], .session textarea):focus { border-color: var(--accent); }
+.studio-tool :is(.session-head input[type="date"], .session textarea):focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* remove buttons (sessions, NPCs, loot): 44px, the pack's quiet button */
+.studio-tool :is(.s-remove, .x-remove) {
+  width: 44px; height: 44px; font-size: 1.25rem;
+  background: transparent; color: var(--text-muted); border: 1px solid var(--line-strong); border-radius: var(--radius);
+}
+.studio-tool :is(.s-remove, .x-remove):hover { color: var(--alert); border-color: var(--alert); }
+.studio-tool :is(.s-remove, .x-remove):focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* 3-4. add rows */
+.studio-tool .add-row { gap: 10px; margin-bottom: 16px; }
+.studio-tool .add-row .jsw-btn { justify-content: center; white-space: nowrap; }
+.studio-tool #npc-filter { margin-bottom: 18px; }
+
+/* NPC and loot rows (built by the script) in the pack's results list */
+.studio-tool .jsw-results :is(.npc-row, .loot-row) {
+  gap: 6px 14px; margin: 0; padding: 10px 2px; background: none; border: 0; border-bottom: 1px solid var(--line); border-radius: 0;
+}
+.studio-tool .npc-row .nm {
+  font-family: var(--font-display); font-weight: var(--display-weight); text-transform: var(--display-transform);
+  letter-spacing: var(--display-tracking); font-size: 1.125rem; line-height: 1.2; color: var(--heading);
+}
+.studio-tool .npc-row .nt { font-size: .95rem; color: var(--text-muted); }
+/* loot: the whole label is the target (the pack's .jsw-check: 44px row, 20px box) */
+.studio-tool .loot-row label { min-height: 44px; }
+/* the box is drawn at 20px; its hit area is the full 44px row height (the browser centres the box in it) */
+.studio-tool .loot-row input[type="checkbox"] { width: 20px; height: 44px; margin: 0; accent-color: var(--accent); }
+.studio-tool .loot-row input[type="checkbox"]:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.studio-tool .loot-row .lt { font-size: 1rem; color: var(--text); }
+.studio-tool .loot-row.done .lt { color: var(--text-muted); }
+
+.studio-tool .jsw-results .empty-note {
+  margin: 0; padding: 22px 0; border: 0; border-radius: 0; text-align: center; color: var(--text-dim); font-size: .95rem;
+}
+
+/* the privacy note under the loot list */
+.studio-tool .note { margin: 18px 0 0; max-width: 68ch; font-size: .9rem; line-height: 1.55; color: var(--text-muted); }
+
+/* narrow screens: the remove button stays beside the NPC's name (styles.css puts it under the note), and the loot
+   field gets the full width above its button */
+@media (max-width: 620px) {
+  .studio-tool .npc-row .x-remove { grid-column: 2; grid-row: 1; }
+}
+@media (max-width: 420px) {
+  .studio-tool .add-row.single { grid-template-columns: 1fr; }
+}

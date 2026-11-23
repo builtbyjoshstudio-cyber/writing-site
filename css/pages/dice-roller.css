@@ -1,0 +1,83 @@
+/* Dice roller (pilot restyle): the parts the tool's script builds (pool chips, die faces, history rows,
+   the error line) and the controls its styles.css draws by ID, in the pack's tool-part look.
+   Loads after tool-bridge.css and tabletop-tool.css. Tokens only. */
+
+/* the die pad (.die-pad.jsw-dice / .die-btn.jsw-die): the pack's die buttons; drop the studio's lift and fill */
+.studio-tool .die-pad.jsw-dice { display: flex; }
+.studio-tool .die-btn { box-shadow: none; transition: border-color .15s ease, color .15s ease; }
+.studio-tool .die-btn:hover { background: var(--bg-sunk); transform: none; box-shadow: none; }
+
+/* the pool line (built by the script) */
+.studio-tool .pool-line { min-height: 44px; margin-top: 16px; }
+.studio-tool .pool-chip {
+  gap: 2px; min-height: 44px; padding: 0 0 0 14px; border: 1px solid var(--line-strong); border-radius: var(--radius);
+  background: var(--bg-sunk); color: var(--heading); font-family: var(--font-numeric); font-weight: var(--numeric-weight);
+  font-size: 1rem; font-variant-numeric: tabular-nums lining-nums;
+}
+.studio-tool .pool-chip button { min-width: 44px; min-height: 44px; font-size: 1.25rem; color: var(--text-muted); }
+.studio-tool .pool-chip button:hover { color: var(--alert); }
+.studio-tool .pool-empty { font-family: var(--font-body); font-size: .92rem; color: var(--text-muted); }
+
+/* notation, modifier and Roll */
+.studio-tool .roll-controls { margin-top: 18px; gap: 14px; }
+.studio-tool #roll-btn {
+  font-family: var(--font-label); font-size: var(--label-size); font-weight: var(--label-weight-strong);
+  letter-spacing: calc(var(--label-tracking) * .6); text-transform: uppercase; line-height: 1.2;
+  padding: 14px 26px; min-height: 44px; border-radius: var(--radius); box-shadow: none; transition: background-color .16s ease;
+}
+.studio-tool #roll-btn:hover { background: var(--accent-strong); border-color: var(--accent-strong); color: var(--on-accent); transform: none; box-shadow: none; }
+.studio-tool .quick-line { margin-top: 16px; gap: 10px; }
+
+/* notation inside a button keeps its case (the button face is the label face, uppercase) */
+.studio-tool .jsw-btn .jsw-formula { text-transform: none; letter-spacing: 0; }
+
+/* the error line (the script sets class "err" / "err on"): the pack's error message, with its word */
+.studio-tool .err { display: none; margin: 16px 0 0; padding: 12px 16px; max-width: none; background: var(--bg-raised);
+  border: 1px solid var(--line); border-left: 4px solid var(--alert); border-radius: var(--radius);
+  font-family: var(--font-body); font-size: 1rem; color: var(--text); }   /* a sentence: its own face, digits too (owner, November 23, 2026) */
+.studio-tool .err.on { display: block; }
+.studio-tool .err::before { content: "Error"; margin-right: .6em; font-family: var(--font-label); font-size: var(--label-size);
+  font-weight: var(--label-weight-strong); letter-spacing: calc(var(--label-tracking) * .6); text-transform: uppercase; color: var(--alert); }
+
+/* the result panel's dice (built by the script): each die as a small sunk tile in the numeric face.
+   Crit and fumble are marked by a heavier border (solid / dashed), not by colour alone;
+   dropped dice are struck through in the dim text colour (no opacity, so the figure keeps 4.5:1). */
+.studio-tool .jsw-result .jsw-result__detail { display: block; }
+.studio-tool .dice-out { justify-content: center; gap: 8px; margin-top: 18px; }
+.studio-tool .die-face {
+  min-width: 52px; height: 48px; padding: 0 10px; border: 1px solid var(--line-strong); border-radius: var(--radius);
+  background: var(--bg-sunk); color: var(--heading); font-family: var(--font-numeric); font-weight: var(--numeric-weight);
+  font-size: 1.15rem; font-variant-numeric: tabular-nums lining-nums;
+}
+.studio-tool .die-face .df-k { font-size: .7rem; color: var(--text-muted); }
+.studio-tool .die-face.crit { border: 2px solid var(--success); color: var(--success); }
+.studio-tool .die-face.fumble { border: 2px dashed var(--alert); color: var(--alert); }
+/* a natural 20 or 1 on a d20 is also named in words (status is never colour alone; owner's labels, since
+   crit rules vary by game). CSS only: the script is unchanged. */
+.studio-tool .die-face.crit::after, .studio-tool .die-face.fumble::after { margin-left: .45em;
+  font-family: var(--font-label); font-size: var(--label-size); letter-spacing: .04em; color: var(--text); }
+.studio-tool .die-face.crit::after { content: "Natural 20"; }
+.studio-tool .die-face.fumble::after { content: "Natural 1"; }
+.studio-tool .die-face.dropped { opacity: 1; color: var(--text-dim); text-decoration: line-through; }
+.studio-tool .mod-face { font-family: var(--font-numeric); font-weight: var(--numeric-weight); font-size: 1.15rem; color: var(--text-muted); }
+
+/* roll history (built by the script) in the pack's results list */
+.studio-tool .hist-head { margin-bottom: 18px; }
+.studio-tool #clear-history {
+  font-family: var(--font-label); font-size: var(--label-size); font-weight: var(--label-weight-strong);
+  letter-spacing: calc(var(--label-tracking) * .6); text-transform: uppercase; line-height: 1.2;
+  padding: 8px 14px; min-height: 44px; color: var(--alert); background: transparent; border: 1px solid var(--alert); border-radius: var(--radius);
+}
+.studio-tool #clear-history:hover { color: var(--heading); border-color: var(--heading); }
+.studio-tool .jsw-results .hist-row {
+  grid-template-columns: minmax(0, max-content) minmax(0, 1fr) auto; gap: 6px 16px; align-items: baseline;
+  margin: 0; padding: 12px 2px; background: none; border: 0; border-bottom: 1px solid var(--line); border-radius: 0;
+}
+.studio-tool .hist-row .hx { font-family: var(--font-numeric); font-weight: var(--numeric-weight); font-size: .95rem; color: var(--text); white-space: normal; overflow-wrap: anywhere; }
+.studio-tool .hist-row .hd { font-family: var(--font-numeric); font-size: .9rem; color: var(--text-muted); }
+.studio-tool .hist-row .hv { font-family: var(--font-numeric); font-weight: var(--numeric-weight); font-size: 1.25rem; color: var(--heading); }
+.studio-tool .jsw-results .empty-note { margin: 0; padding: 22px 0; border: 0; border-radius: 0; text-align: center; color: var(--text-dim); font-size: .95rem; font-family: var(--font-body); }   /* a sentence */
+
+@media (max-width: 680px) {
+  .studio-tool .roll-controls #roll-btn { justify-content: center; }
+}

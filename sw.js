@@ -29,13 +29,26 @@
    ========================================================= */
 (function () {
   'use strict';
-  var CACHE_VERSION = 'eac0ca24c50a';
+  var CACHE_VERSION = '26a7beb55f09';
   var PAGES = 'jsw-pages-' + CACHE_VERSION;
   var ASSETS = 'jsw-assets-' + CACHE_VERSION;
 
   /* The home page and the tabletop hub (the manifest start_url) once they exist, and every tabletop tool
      page with everything it loads, so an installed app opens any tool offline; plus every font. */
-  var SHELL_PAGES = [];
+  var SHELL_PAGES = [
+      "/",
+      "/tabletop/",
+      "/tabletop/character-name-generator/",
+      "/tabletop/dice-roller/",
+      "/tabletop/initiative-tracker/",
+      "/tabletop/loot-generator/",
+      "/tabletop/npc-generator/",
+      "/tabletop/plot-hook-generator/",
+      "/tabletop/random-table-roller/",
+      "/tabletop/session-notes/",
+      "/tabletop/tavern-generator/",
+      "/tabletop/wargame-score-tracker/"
+  ];
   var SHELL_ASSETS = [
       "/site.webmanifest",
       "/fonts/fonts.css?v=aa0d83c07e",
@@ -46,6 +59,53 @@
       "/js/theme-switcher.js?v=9ca8cd26c0",
       "/js/site.js?v=f8e9bf1bb4",
       "/assets/icons/icon-192.png",
+      "/css/pages/home.css?v=8a25d1c160",
+      "/tabletop/kinetic.js?v=ffe4b73997",
+      "/js/ga4-events.js?v=c398073a2c",
+      "/images/books/thumbs/overlayed-echoes-cover-600.webp",
+      "/images/books/thumbs/overlayed-echoes-cover-600.jpg",
+      "/images/books/thumbs/overlayed-echoes-cover-200.webp",
+      "/images/books/thumbs/overlayed-echoes-cover-200.jpg",
+      "/images/books/thumbs/ebonspire-chronicles-front-cover-200.webp",
+      "/images/books/thumbs/ebonspire-chronicles-front-cover-200.jpg",
+      "/css/studio/tokens.css?v=f58e0d92c0",
+      "/css/studio/components.css?v=09a4d9f402",
+      "/css/studio/tools.css?v=76acb59400",
+      "/tabletop/character-name-generator/styles.css?v=6d2448c243",
+      "/css/tool-bridge.css?v=dc0db3370f",
+      "/css/pages/tabletop-tool.css?v=9031b10f0b",
+      "/css/pages/kept-generators.css?v=bf10455c76",
+      "/tabletop/character-name-generator/script.js?v=911adc986d",
+      "/js/migrate-import.js?v=3bf55fbeb9",
+      "/tabletop/dice-roller/styles.css?v=2c4cc1a9da",
+      "/css/pages/dice-roller.css?v=8661c9c975",
+      "/tabletop/dice-roller/script.js?v=295e83153b",
+      "/tabletop/initiative-tracker/styles.css?v=c9bb3dac43",
+      "/css/pages/initiative-tracker.css?v=c979b8b1ae",
+      "/tabletop/initiative-tracker/script.js?v=6e3a2cf31c",
+      "/tabletop/loot-generator/styles.css?v=714b7232e1",
+      "/tabletop/loot-generator/script.js?v=3f2ce13dd6",
+      "/tabletop/npc-generator/styles.css?v=f3c5e385d4",
+      "/css/pages/npc-generator.css?v=ea37473c8d",
+      "/tabletop/npc-generator/script.js?v=a98c02d35f",
+      "/tabletop/plot-hook-generator/styles.css?v=b79465d71e",
+      "/tabletop/plot-hook-generator/script.js?v=060517c1ee",
+      "/tabletop/random-table-roller/styles.css?v=d155c59415",
+      "/css/pages/random-table-roller.css?v=e4fb268025",
+      "/tabletop/random-table-roller/script.js?v=94c3f639cd",
+      "/tabletop/session-notes/styles.css?v=487762b0eb",
+      "/css/pages/session-notes.css?v=f9846352a7",
+      "/tabletop/session-notes/script.js?v=89aabc4b1d",
+      "/tabletop/tavern-generator/styles.css?v=4aa95e3153",
+      "/tabletop/tavern-generator/script.js?v=a6cf037afe",
+      "/tabletop/wargame-score-tracker/styles.css?v=6abeeeafb3",
+      "/css/pages/wargame-score-tracker.css?v=553832962d",
+      "/tabletop/wargame-score-tracker/script.js?v=3212c86ed8",
+      "/css/fonts/PlusJakartaSans-Variable.woff2",
+      "/css/fonts/jetbrains-mono-500-latin-ext.woff2",
+      "/css/fonts/jetbrains-mono-500-latin.woff2",
+      "/css/fonts/jetbrains-mono-700-latin-ext.woff2",
+      "/css/fonts/jetbrains-mono-700-latin.woff2",
       "/fonts/anton/anton-latin-400-normal.woff2",
       "/fonts/cormorant-garamond/cormorant-garamond-latin-500-normal.woff2",
       "/fonts/cormorant-garamond/cormorant-garamond-latin-500-italic.woff2",
@@ -59,7 +119,10 @@
       "/fonts/space-grotesk/space-grotesk-latin-700-normal.woff2",
       "/fonts/space-mono/space-mono-latin-400-normal.woff2",
       "/fonts/space-mono/space-mono-latin-700-normal.woff2",
-      "/fonts/special-elite/special-elite-latin-400-normal.woff2"
+      "/fonts/special-elite/special-elite-latin-400-normal.woff2",
+      "/css/pages/books.css?v=6f994a3da1",
+      "/css/pages/post.css?v=12fc9d8e74",
+      "/css/pages/writing.css?v=18f59a813e"
   ];
 
   var CODE = /\.(css|js)$/;
@@ -176,11 +239,11 @@
       '<link rel="stylesheet" href="/css/base.css"><link rel="stylesheet" href="/css/site.css">' +
       '<script>(function(){var d=document.documentElement,t=null,ok=["warden","echoes","ebonspire","casefile"];' +
       'try{t=localStorage.getItem("jsw-theme")}catch(e){}if(ok.indexOf(t)<0)t="warden";d.setAttribute("data-theme",t)})();</script>' +
-      '<body><main class="container section"><div class="empty">' +
+      '<body><main class="jsw-main" id="main"><div class="jsw-wrap">' +
       '<h1>You are offline</h1>' +
-      '<p class="lede">This page has not been opened on this device yet, so there is no saved copy to show. ' +
+      '<p class="jsw-lede">This page has not been opened on this device yet, so there is no saved copy to show. ' +
       'The tabletop tools still work offline.</p>' +
-      '<p><a class="btn" href="/tabletop/">Go to the tabletop tools</a></p>' +
+      '<p><a class="jsw-btn" href="/tabletop/">Go to the tabletop tools</a></p>' +
       '</div></main>',
       { status: 503, headers: { 'Content-Type': 'text/html; charset=utf-8' } }
     );

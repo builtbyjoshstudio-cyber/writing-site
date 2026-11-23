@@ -1,0 +1,25 @@
+/* The tabletop blog post: the main site's summary box, inline call to action, related reading, author note,
+   sidebar card and closing band, rebuilt from the pack's card, label and button classes.
+   Tokens only (no colours or font names). Text sits on --bg or --bg-raised only. */
+.jsw-prose .jsw-post-box { margin: 1.8em 0; }
+.jsw-prose .jsw-post-box h3 { margin: .4em 0 .5em; }
+.jsw-prose .jsw-post-box p { font-size: .92em; }
+.jsw-prose .jsw-post-box .jsw-label { font-size: var(--label-size); margin-bottom: .6em; }
+.jsw-prose .jsw-post-box .jsw-btn { margin-top: .4em; }
+
+.jsw-post-related { margin: 2.4em 0; }
+.jsw-post-related .jsw-grid { gap: 16px; }
+.jsw-post-card { position: relative; font-size: .9em; }
+.jsw-prose .jsw-post-card h3 { margin: 0 0 .5em; font-size: 1.15em; }
+.jsw-post-card a::after { content: ""; position: absolute; inset: 0; }
+/* 44px targets: "Read the post" and the author note's "Learn more" */
+.jsw-post-card > a, .jsw-post-box > a { display: inline-flex; align-items: center; min-height: 44px; }
+.jsw-post-card:hover, .jsw-post-card:focus-within { border-color: var(--accent); }
+
+.jsw-post-side, .jsw-post-band { margin-top: 40px; }
+.jsw-post-side h2, .jsw-post-band h2 { margin: 10px 0 12px; font-size: calc(clamp(1.5rem, 4vw, 2.25rem) * var(--display-scale)); }
+.jsw-post-price { font-family: var(--font-numeric); font-weight: var(--numeric-weight); color: var(--heading); font-size: 1.25em; }
+.jsw-post-side ul { margin: 22px 0 0; padding-left: 1.3em; }
+.jsw-post-side li { margin-bottom: .4em; }
+.jsw-post-side li::marker { color: var(--accent); }
+.jsw-post-band .jsw-row { margin: 22px 0; }

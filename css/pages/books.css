@@ -1,0 +1,39 @@
+/* /books/ and the two free-chapter previews: the few parts the pack has no class for.
+   Tokens only (no colours or font names). Text sits on --bg or --bg-raised only. */
+
+/* ---- click-to-load video (js/lite-yt.js): poster + play button, nothing from YouTube until pressed ---- */
+.yt-facade { position: relative; display: block; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; background: var(--bg-sunk); border: 1px solid var(--line-strong); border-radius: var(--radius); }
+.yt-facade-btn { position: absolute; inset: 0; display: block; width: 100%; height: 100%; padding: 0; border: 0; background: none; cursor: pointer; }
+/* the poster covers anything drawn inside the button: draw the focus ring around the facade instead */
+.yt-facade-btn:focus-visible { outline: none; }
+.yt-facade:has(.yt-facade-btn:focus-visible) { outline: 2px solid var(--accent); outline-offset: 3px; }
+.yt-facade-poster, .yt-facade iframe { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; border: 0; }
+.yt-facade-play { position: absolute; left: 50%; top: 50%; width: 72px; height: 72px; border-radius: 50%; transform: translate(-50%, -50%); background: var(--accent); color: var(--on-accent); box-shadow: var(--shadow); transition: transform .16s ease, background-color .16s ease; }
+.yt-facade-play::after { content: ""; position: absolute; left: 54%; top: 50%; transform: translate(-50%, -50%); border-style: solid; border-width: 11px 0 11px 18px; border-color: transparent transparent transparent currentColor; }
+.yt-facade-btn:hover .yt-facade-play, .yt-facade-btn:focus-visible .yt-facade-play { background: var(--accent-strong); transform: translate(-50%, -50%) scale(1.06); }
+
+/* ---- /books/ ---- */
+.jsw-books .jsw-book { scroll-margin-top: 24px; }
+.jsw-books .jsw-book h2 { margin: 0; }
+.jsw-pen-name { color: var(--text-muted); }
+.jsw-book-formats { color: var(--heading); }
+.jsw-book-links { list-style: none; margin: 0; padding: 0; }
+.jsw-book-links li + li { margin-top: 8px; }
+.jsw-book-links a { display: inline-flex; align-items: center; min-height: 44px; }
+.jsw-books-cta .jsw-row { padding-top: 40px; }
+
+/* ---- previews: hero extras, trailer, chapter parts ---- */
+.jsw-preview-note { font-size: .92em; color: var(--text-muted); }
+.jsw-trailer { margin-top: 40px; }
+.jsw-trailer .jsw-label { margin: 0 0 14px; }
+.jsw-reader-rule { margin: 48px 0 8px; }
+.jsw-reader h2:first-child { margin-top: 1em; scroll-margin-top: 24px; }
+.jsw-scene-break { text-align: center; letter-spacing: .6em; color: var(--text-muted); }
+.jsw-prose .jsw-scene-hr { height: 0; margin: 0; background: none; }
+.jsw-notebook { margin: 2em 0; padding: 1.1em 1.4em; background: var(--bg-raised); border-left: var(--rule-weight) solid var(--accent); border-radius: 0 var(--radius) var(--radius) 0; }
+.jsw-notebook p { font-style: italic; }
+.jsw-notebook p:last-child { margin-bottom: 0; }
+.jsw-notebook .jsw-notebook__head { font-style: normal; font-weight: 700; color: var(--heading); }
+.jsw-sample-end { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--line); }
+.jsw-sample-end h2 { margin: 0; }
+.jsw-fineprint { font-size: .85em; color: var(--text-muted); }

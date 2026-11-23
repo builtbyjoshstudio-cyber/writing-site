@@ -1,0 +1,75 @@
+/* Kept-list generators (full pilot restyle): Character Name, Loot, Plot Hook and Tavern Generator.
+   The parts the tools' scripts build (the result rows, the picked name, the kept rows and their buttons) and the
+   controls their styles.css draws by ID (#generate, #clear-kept), in the pack's tool-part look, as
+   css/pages/dice-roller.css does for the pilot. Loads after tool-bridge.css and tabletop-tool.css. Tokens only. */
+
+/* generate bar: the style field (name generator) and the Generate button */
+.studio-tool .gen-bar { display: flex; flex-wrap: wrap; align-items: end; gap: 14px; margin-bottom: 18px; }
+.studio-tool .gen-bar .jsw-field { flex: 0 1 260px; }
+.studio-tool #generate {
+  font-family: var(--font-label); font-size: var(--label-size); font-weight: var(--label-weight-strong);
+  letter-spacing: calc(var(--label-tracking) * .6); text-transform: uppercase; line-height: 1.2;
+  padding: 14px 26px; min-height: 44px; border-radius: var(--radius); box-shadow: none; transition: background-color .16s ease;
+}
+.studio-tool #generate:hover { background: var(--accent-strong); border-color: var(--accent-strong); color: var(--on-accent); transform: none; box-shadow: none; }
+
+/* the stage the script fills: the pack's result panel, read left to right (rows, not one big number) */
+.studio-tool .jsw-result.gen-stage { display: flex; flex-direction: column; gap: 0; margin: 0; padding: clamp(16px, 3vw, 24px); text-align: left; }
+.studio-tool .gen-stage .stage-label {
+  margin-bottom: 6px; font-family: var(--font-label); font-size: var(--label-size); font-weight: var(--label-weight);
+  letter-spacing: calc(var(--label-tracking) * .6); text-transform: uppercase; color: var(--text-muted);
+}
+.studio-tool .gen-stage .result-line { gap: 6px 16px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.studio-tool .gen-stage .result-line:last-child { border-bottom: 0; }
+.studio-tool .gen-stage .rk {
+  flex: 0 0 104px; font-family: var(--font-label); font-size: var(--label-size); font-weight: var(--label-weight-strong);
+  letter-spacing: calc(var(--label-tracking) * .6); text-transform: uppercase; color: var(--accent);
+}
+.studio-tool .gen-stage .rv { flex: 1 1 16rem; min-width: 0; font-family: var(--font-body); font-size: 1.05rem; line-height: 1.55; color: var(--text); }
+.studio-tool .gen-stage .rv.big {
+  font-family: var(--font-display); font-weight: var(--display-weight); text-transform: var(--display-transform);
+  letter-spacing: var(--display-tracking); font-size: clamp(1.5rem, 4.5vw, 2.25rem); line-height: 1.15; color: var(--heading);
+}
+/* loot and plot hook: the script sets the first row's size inline (script.js, unchanged), which wins over this */
+
+/* name generator: each of the six names is a button; the picked one carries a bar and the words "picked" */
+.studio-tool .gen-stage button.result-line.pickable { min-height: 44px; padding: 12px 0; border-left: 0; border-radius: 0; }
+.studio-tool .gen-stage button.result-line.pickable:hover { background: var(--bg-raised); }
+.studio-tool .gen-stage button.result-line.pickable:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.studio-tool .gen-stage button.result-line.pickable.picked { padding-left: 12px; box-shadow: inset 4px 0 0 var(--accent); }
+
+/* Copy and Keep (ghost buttons); the script's "Copied" flash keeps its word and takes the theme's success colour */
+.studio-tool .result-actions { gap: 10px; margin-top: 16px; }
+.studio-tool .result-actions .jsw-btn { font-size: var(--label-size); padding: 12px 20px; }
+
+/* the kept list */
+.studio-tool .kept-head { margin: 0 0 18px; }
+.studio-tool .kept-head .role { margin-bottom: 0; }
+.studio-tool #clear-kept {
+  margin: 0; font-family: var(--font-label); font-size: var(--label-size); font-weight: var(--label-weight-strong);
+  letter-spacing: calc(var(--label-tracking) * .6); text-transform: uppercase; line-height: 1.2;
+  padding: 8px 14px; min-height: 44px; color: var(--alert); background: transparent; border: 1px solid var(--alert); border-radius: var(--radius);
+}
+.studio-tool #clear-kept:hover { color: var(--heading); border-color: var(--heading); }
+.studio-tool .jsw-results .kept-item {
+  grid-template-columns: minmax(0, 1fr) auto auto; gap: 8px; align-items: center;
+  margin: 0; padding: 10px 2px; background: none; border: 0; border-bottom: 1px solid var(--line); border-radius: 0;
+  font-size: 1rem;
+}
+.studio-tool .kept-item .kt { color: var(--text); line-height: 1.5; }
+.studio-tool .k-btn {
+  width: 44px; height: 44px; border: 1px solid var(--line-strong); border-radius: var(--radius);
+  background: transparent; color: var(--text-muted); font-size: 1.05rem;
+}
+.studio-tool .k-btn:hover { color: var(--accent); border-color: var(--accent); }
+.studio-tool .k-btn.x:hover { color: var(--alert); border-color: var(--alert); }
+.studio-tool .k-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.studio-tool .jsw-results .empty-note { margin: 0; padding: 22px 0; border: 0; border-radius: 0; text-align: center; color: var(--text-dim); font-size: .95rem; }
+
+/* the privacy note under the list */
+.studio-tool .jsw-tool__panel .note { margin: 16px 0 0; max-width: 68ch; font-size: .9rem; line-height: 1.55; color: var(--text-muted); }
+
+@media (max-width: 680px) {
+  .studio-tool .gen-bar .jsw-field { flex: 1 1 100%; }
+  .studio-tool .gen-stage .rk { flex-basis: 100%; }
+}

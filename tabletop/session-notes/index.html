@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script>if(location.protocol.indexOf("http")===0&&/\/index\.html$/i.test(location.pathname))location.replace(location.pathname.slice(0,-10)+location.search+location.hash);</script>
+<script>
+(function(){var d=document.documentElement,t=null,ok=['warden','echoes','ebonspire','casefile'];
+d.className+=' js';
+try{t=localStorage.getItem('jsw-theme')}catch(e){}
+if(ok.indexOf(t)<0)t=d.getAttribute('data-theme-default');
+if(ok.indexOf(t)<0)t='warden';
+d.setAttribute('data-theme',t)})();
+</script>
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QDSPBB7S9J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      var gaKeep = new URLSearchParams(); new URLSearchParams(location.search).forEach(function (v, k) { if (k.indexOf('utm_') === 0) gaKeep.append(k, v); });
+      gtag('config', 'G-QDSPBB7S9J', { page_location: location.origin + location.pathname + (gaKeep.toString() ? '?' + gaKeep.toString() : ''), page_referrer: document.referrer.split(/[?#]/)[0] });
+    </script>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Session Notes &amp; NPC Log | Free TTRPG Campaign Journal</title>
+  <meta name="description" content="Keep session notes, NPC names, and loot for your TTRPG campaign — saved in your browser between sessions, exportable to Markdown. Free, ad-free, no signup.">
+  <meta name="robots" content="max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://writing.builtbyjoshstudio.com/tabletop/session-notes/">
+
+  <!-- JSON-LD #1: WebApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Session Notes & NPC Log",
+    "url": "https://writing.builtbyjoshstudio.com/tabletop/session-notes/",
+    "description": "A campaign journal for tabletop RPGs — session log, NPC name list, and loot tracker, saved in your browser between sessions and exportable to Markdown.",
+    "applicationCategory": "GameApplication",
+    "operatingSystem": "Any (web browser)",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "publisher": {
+      "@type": "Organization",
+      "@id": "https://builtbyjoshstudio.com/#organization",
+      "name": "Built by Josh Studio LLC",
+      "legalName": "Built by Josh Studio LLC",
+      "alternateName": [
+        "BBJ Studio",
+        "Built by Josh Studio"
+      ],
+      "url": "https://builtbyjoshstudio.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://builtbyjoshstudio.com/images/logo/logo.webp",
+        "width": 512,
+        "height": 512
+      },
+      "image": "https://builtbyjoshstudio.com/images/logo/logo.webp",
+      "sameAs": [
+        "https://linktr.ee/builtbyjoshstudio",
+        "https://www.youtube.com/@TalesofInkShadowsStudio",
+        "https://www.youtube.com/@joshandjordanskitchen",
+        "https://tynkrtoolsandco.etsy.com",
+        "https://www.etsy.com/shop/BuiltByJoshStudio",
+        "https://www.redbubble.com/people/BBJStudio/shop"
+      ],
+      "identifier": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "Kansas Business ID",
+          "value": "10076138"
+        }
+      ]
+    }
+  }
+  </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "J.S. Warden", "item": "https://writing.builtbyjoshstudio.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Tabletop & RPG tools", "item": "https://writing.builtbyjoshstudio.com/tabletop/"},
+    {"@type": "ListItem", "position": 3, "name": "Session Notes & NPC Log", "item": "https://writing.builtbyjoshstudio.com/tabletop/session-notes/"}
+  ]
+}
+</script>
+
+  <!-- JSON-LD #2: FAQPage (mirrors the on-page FAQ) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Where are my campaign notes stored?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In your browser's local storage, on your own device. Nothing is uploaded anywhere and there's no account. That also means clearing your browser data erases them — use Back up journal now and then to download a .json copy you own, which Restore backup loads back in here, in another browser, or on another device."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I keep notes for more than one campaign?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Create as many campaigns as you like and switch between them from the campaign picker — each keeps its own session log, NPC list, and loot list."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I get my notes out of the tool?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — one click exports the whole campaign as a Markdown file: every session entry with its date, the full NPC list, and your loot and quest items. It's plain text, so it opens anywhere and pastes cleanly into Notion, Obsidian, or a plain document. To move the whole journal to another browser or device, use Back up journal (.json) and Restore backup instead."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this campaign journal free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — free, no ads, no signup, and it runs entirely in your browser. Your notes stay on your own device."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Open Graph + Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://writing.builtbyjoshstudio.com/tabletop/session-notes/">
+  <meta property="og:title" content="Session Notes &amp; NPC Log | Free TTRPG Campaign Journal">
+  <meta property="og:description" content="Session log, NPC name list, and loot tracker for any tabletop campaign. Saves in your browser, exports to Markdown. Free, ad-free.">
+  <meta property="og:image" content="https://writing.builtbyjoshstudio.com/assets/brand/og-1200x630.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://writing.builtbyjoshstudio.com/tabletop/session-notes/">
+  <meta name="twitter:title" content="Session Notes &amp; NPC Log | Free TTRPG Campaign Journal">
+  <meta name="twitter:description" content="Session log, NPC name list, and loot tracker for any tabletop campaign. Saves in your browser, exports to Markdown. Free, ad-free.">
+  <meta name="twitter:image" content="https://writing.builtbyjoshstudio.com/assets/brand/og-1200x630.png">
+
+<link rel="stylesheet" href="/css/studio/tokens.css?v=f58e0d92c0">
+<link rel="stylesheet" href="/css/studio/components.css?v=09a4d9f402">
+<link rel="stylesheet" href="/css/studio/tools.css?v=76acb59400">
+<link rel="stylesheet" href="styles.css?v=487762b0eb">
+<link rel="stylesheet" href="/fonts/fonts.css?v=aa0d83c07e">
+<link rel="stylesheet" href="/tokens/themes.css?v=47c6296e35">
+<link rel="stylesheet" href="/css/base.css?v=8e0c7377c5">
+<link rel="stylesheet" href="/css/site.css?v=013752c2a3">
+<link rel="stylesheet" href="/css/tool-parts.css?v=0d4d40d55a">
+<script defer src="/js/theme-switcher.js?v=9ca8cd26c0"></script>
+<script defer src="/js/site.js?v=f8e9bf1bb4"></script>
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16.png">
+<link rel="apple-touch-icon" href="/assets/favicons/favicon-180.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="/css/tool-bridge.css?v=dc0db3370f">
+<link rel="stylesheet" href="/css/pages/tabletop-tool.css?v=9031b10f0b">
+<link rel="stylesheet" href="/css/pages/session-notes.css?v=f9846352a7">
+</head>
+<body>
+<a class="jsw-skip" href="#main">Skip to content</a>
+<header class="jsw-header">
+  <div class="jsw-wrap jsw-header__bar">
+    <a class="jsw-brand" href="/">J.S. Warden</a>
+    <button type="button" class="jsw-nav-toggle" aria-expanded="false" aria-controls="jsw-menu">
+      <span class="jsw-nav-toggle__bars" aria-hidden="true"></span>Menu
+    </button>
+    <div class="jsw-header__panel" id="jsw-menu">
+      <nav aria-label="Main">
+        <ul class="jsw-nav">
+          <li><a href="/books/">Books</a></li>
+          <li><a href="/writing/">Writing</a></li>
+          <li><a href="/tabletop/" aria-current="page">Tabletop Tools</a></li>
+        </ul>
+      </nav>
+      <div class="jsw-themes" role="group" aria-label="Colour theme">
+        <span class="jsw-label jsw-themes__label" aria-hidden="true">Theme · <span data-theme-current></span></span>
+        <button type="button" class="jsw-theme-btn" data-theme-set="warden" title="Warden"><span class="jsw-swatch" aria-hidden="true"></span><span class="jsw-theme-btn__name">Warden</span></button>
+        <button type="button" class="jsw-theme-btn" data-theme-set="echoes" title="Echoes"><span class="jsw-swatch" aria-hidden="true"></span><span class="jsw-theme-btn__name">Echoes</span></button>
+        <button type="button" class="jsw-theme-btn" data-theme-set="ebonspire" title="Ebonspire"><span class="jsw-swatch" aria-hidden="true"></span><span class="jsw-theme-btn__name">Ebonspire</span></button>
+        <button type="button" class="jsw-theme-btn" data-theme-set="casefile" title="Case File"><span class="jsw-swatch" aria-hidden="true"></span><span class="jsw-theme-btn__name">Case File</span></button>
+      </div>
+    </div>
+  </div>
+</header>
+
+  <div class="studio-tool jsw-wrap">
+<main class="jsw-main" id="main" tabindex="-1">
+
+    <header class="jsw-page-head jsw-page-head--compact">
+      <div>
+        <div class="jsw-row jsw-page-head__meta">
+          <span class="jsw-kicker">&#9679; Tabletop</span>
+          <span class="jsw-label">Any system &middot; Saves itself &middot; Exports to Markdown</span>
+          <span class="updated-date jsw-label">Updated November <span class="jsw-num">2026</span></span>
+        </div>
+        <h1>Session Notes &amp; <span class="jsw-accent">NPC Log</span></h1>
+        <div class="jsw-divider" aria-hidden="true"></div>
+        <p class="jsw-lede">A campaign journal that remembers what the table forgets. Log each session, keep a running list of every NPC your party meets, track the loot — all saved in this browser, and yours to export as Markdown any time.</p>
+      </div>
+    </header>
+
+    <!-- CAMPAIGN -->
+    <div class="jsw-tool__panel">
+      <div class="role"><span class="jsw-num">1</span>. Campaign</div>
+      <div class="camp-grid">
+        <div class="jsw-field">
+          <label for="campaign-select">Current campaign</label>
+          <select id="campaign-select" class="jsw-select"></select>
+        </div>
+        <div class="jsw-field">
+          <label for="new-campaign-name">Start a new one</label>
+          <input type="text" id="new-campaign-name" class="jsw-input" placeholder="Curse of the Ebon Vale&hellip;" maxlength="60">
+        </div>
+        <button type="button" id="new-campaign-btn" class="jsw-btn">+ New campaign</button>
+      </div>
+      <div class="camp-actions">
+        <button type="button" class="jsw-btn jsw-btn--ghost" id="export-btn" title="Download this campaign as a .md file">Export campaign (.md)</button>
+        <button type="button" class="jsw-btn jsw-btn--ghost" id="backup-btn" title="Download every campaign as a .json file you can restore later">Back up journal (.json)</button>
+        <button type="button" class="jsw-btn jsw-btn--ghost" id="restore-btn" title="Replace this journal with a .json backup file">Restore backup</button>
+        <input type="file" id="restore-file" accept=".json,application/json" hidden>
+        <button type="button" class="jsw-btn jsw-btn--danger" id="delete-campaign" title="Delete this campaign and all its notes">Delete campaign</button>
+      </div>
+      <p class="backup-status" id="backup-status" role="status"></p>
+    </div>
+
+    <!-- SESSION LOG -->
+    <div class="jsw-tool__panel">
+      <div class="role"><span class="jsw-num">2</span>. Session log</div>
+      <button type="button" id="new-session" class="jsw-btn">+ New session entry</button>
+      <div id="session-list" class="jsw-results"></div>
+    </div>
+
+    <!-- NPC LOG -->
+    <div class="jsw-tool__panel">
+      <div class="role"><span class="jsw-num">3</span>. NPC log</div>
+      <div class="add-row">
+        <input type="text" id="npc-name" class="jsw-input" placeholder="Name &mdash; Brennik the innkeeper" maxlength="60" aria-label="NPC name">
+        <input type="text" id="npc-note" class="jsw-input" placeholder="Who they are &mdash; owes the party a favor" maxlength="200" aria-label="Who this NPC is">
+        <button type="button" class="jsw-btn jsw-btn--ghost" id="npc-add">+ Add NPC</button>
+      </div>
+      <input type="search" id="npc-filter" class="jsw-input" placeholder="Find a name&hellip;" aria-label="Filter NPCs">
+      <p class="sr-only" role="status" id="npc-status"></p>
+      <div id="npc-list" class="jsw-results"></div>
+    </div>
+
+    <!-- LOOT & QUESTS -->
+    <div class="jsw-tool__panel">
+      <div class="role"><span class="jsw-num">4</span>. Loot &amp; quests</div>
+      <div class="add-row single">
+        <input type="text" id="loot-text" class="jsw-input" placeholder="Sunblade (unidentified) &middot; Find the missing caravan&hellip;" maxlength="120" aria-label="Loot or quest item">
+        <button type="button" class="jsw-btn jsw-btn--ghost" id="loot-add">+ Add item</button>
+      </div>
+      <div id="loot-list" class="jsw-results"></div>
+      <p class="note">Everything on this page lives in this browser only — nothing is uploaded. Back up the journal now and then so your campaign history has a copy you own and can restore.</p>
+      <a class="xlink" href="/tabletop/initiative-tracker/">
+        Fight breaking out? Open the initiative tracker &rarr;
+      </a>
+    </div>
+
+  <!-- AT A GLANCE (P2-c) -->
+  <div class="jsw-tool__panel jsw-glance">
+    <h2>At a glance</h2>
+    <div class="jsw-table-wrap">
+    <table class="jsw-table">
+      <tbody>
+        <tr><th scope="row">What it does</th><td>A campaign journal that remembers what the table forgets.</td></tr>
+        <tr><th scope="row">Inputs</th><td>Free-form session entries, NPC names and details, and loot — organized per campaign, with support for multiple campaigns.</td></tr>
+        <tr><th scope="row">Outputs</th><td>A running campaign log, an NPC directory, and a loot ledger, exportable to Markdown, plus a .json backup of the whole journal you can restore.</td></tr>
+        <tr><th scope="row">Cost &amp; privacy</th><td>Free, ad-free, no signup. Runs and saves in this browser's local storage — nothing leaves your device.</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+    <!-- PROSE -->
+    <section class="jsw-section jsw-prose">
+      <h2>Every campaign has a memory problem</h2>
+      <p>Somewhere around session six, it happens: the party returns to town, someone says "let's go see&hellip; that innkeeper — the one who owes us," and the whole table goes quiet. Nobody wrote it down, or somebody did and the notebook's at home. Campaigns generate names, debts, rumors, and unidentified swords faster than any table's collective memory can hold them.</p>
+
+      <h3>The NPC list is the heart of it</h3>
+      <p>Prose notes are great for what happened; they're terrible for looking up a name mid-session. That's why the NPC log is its own list — name plus one line about who they are — with a filter box for the moment someone asks. Add the name the moment the game master says it, and future-you is covered.</p>
+
+      <h3>Write less, keep more</h3>
+      <p>A session entry here is just a date and a text box. No templates to fill in, no fields fighting you — a few sentences about what happened is worth more than the elaborate journal you'd abandon by session three. The entries stack newest-first, so last session's cliffhanger is always at the top when you sit back down.</p>
+
+      <h3>Your notes are yours — literally</h3>
+      <p>Everything stays in your browser's local storage: no account, no cloud, nothing sent anywhere. The flip side is that clearing your browser data clears the journal, so back it up — one click saves every campaign as a .json file you can restore here, in another browser, or on another device. The Markdown export turns a campaign into a file with every session, NPC, and loot item. Plain text, readable anywhere, pasteable into Notion or Obsidian if your campaign outgrows this page.</p>
+    </section>
+
+    <!-- FAQ -->
+    <section class="jsw-section jsw-faq">
+      <details>
+        <summary>Where are my campaign notes stored?</summary>
+        <p>In your browser's local storage, on your own device. Nothing is uploaded anywhere and there's no account. That also means clearing your browser data erases them — use Back up journal now and then to download a .json copy you own, which Restore backup loads back in here, in another browser, or on another device.</p>
+      </details>
+      <details>
+        <summary>Can I keep notes for more than one campaign?</summary>
+        <p>Yes. Create as many campaigns as you like and switch between them from the campaign picker — each keeps its own session log, NPC list, and loot list.</p>
+      </details>
+      <details>
+        <summary>Can I get my notes out of the tool?</summary>
+        <p>Yes — one click exports the whole campaign as a Markdown file: every session entry with its date, the full NPC list, and your loot and quest items. It's plain text, so it opens anywhere and pastes cleanly into Notion, Obsidian, or a plain document. To move the whole journal to another browser or device, use Back up journal (.json) and Restore backup instead.</p>
+      </details>
+      <details>
+        <summary>Is this campaign journal free?</summary>
+        <p>Yes — free, no ads, no signup, and it runs entirely in your browser. Your notes stay on your own device.</p>
+      </details>
+    </section>
+
+  </main>
+
+  <section class="jsw-section net-band" id="more-tabletop-tools">
+    <h2 class="section-title"><span class="num">&#8599;</span>More tabletop tools<span class="rule"></span></h2>
+    <div class="net-rows">
+      <a class="glass-lite anatomy-row" href="/tabletop/initiative-tracker/">
+        <div class="ix">IT</div>
+        <div class="lbl"><h3>Initiative Tracker</h3><p>Turn order, rounds, HP and conditions for any RPG combat</p></div>
+        <code>&rarr;</code>
+      </a>
+      <a class="glass-lite anatomy-row" href="/tabletop/dice-roller/">
+        <div class="ix">D20</div>
+        <div class="lbl"><h3>Dice Roller</h3><p>Full dice notation, advantage/disadvantage, roll history</p></div>
+        <code>&rarr;</code>
+      </a>
+      <a class="glass-lite anatomy-row" href="/tabletop/wargame-score-tracker/">
+        <div class="ix">WS</div>
+        <div class="lbl"><h3>Wargame Score Tracker</h3><p>Victory points, command points and rounds for two players</p></div>
+        <code>&rarr;</code>
+      </a>
+      <a class="glass-lite anatomy-row" href="/tabletop/character-name-generator/">
+        <div class="ix">CN</div>
+        <div class="lbl"><h3>Character Name Generator</h3><p>Original fantasy names in four styles, six at a time</p></div>
+        <code>&rarr;</code>
+      </a>
+      <a class="glass-lite anatomy-row" href="/tabletop/npc-generator/">
+        <div class="ix">NPC</div>
+        <div class="lbl"><h3>NPC Generator</h3><p>A complete NPC in one click: name, quirk, motivation, secret</p></div>
+        <code>&rarr;</code>
+      </a>
+      <a class="glass-lite anatomy-row" href="/tabletop/loot-generator/">
+        <div class="ix">LT</div>
+        <div class="lbl"><h3>Loot Generator</h3><p>Flavorful, system-free treasure with texture and history</p></div>
+        <code>&rarr;</code>
+      </a>
+      <a class="glass-lite anatomy-row" href="/tabletop/plot-hook-generator/">
+        <div class="ix">PH</div>
+        <div class="lbl"><h3>Plot Hook Generator</h3><p>One-line adventure hooks with a built-in twist</p></div>
+        <code>&rarr;</code>
+      </a>
+      <a class="glass-lite anatomy-row" href="/tabletop/random-table-roller/">
+        <div class="ix">RT</div>
+        <div class="lbl"><h3>Random Table Roller</h3><p>Paste or build your own random tables and roll on them</p></div>
+        <code>&rarr;</code>
+      </a>
+      <a class="glass-lite anatomy-row" href="/tabletop/tavern-generator/">
+        <div class="ix">TV</div>
+        <div class="lbl"><h3>Tavern Generator</h3><p>A complete fantasy tavern: name, atmosphere, patron, rumor</p></div>
+        <code>&rarr;</code>
+      </a>
+      <a class="glass-lite anatomy-row" href="/tabletop/">
+        <div class="ix">ALL</div>
+        <div class="lbl"><h3>All tabletop tools</h3><p>The full Tabletop &amp; RPG hub</p></div>
+        <code>&rarr;</code>
+      </a>
+    </div>
+  </section>
+  <section class="jsw-section net-band">
+    <h2 class="section-title"><span class="num">&#8599;</span>Network<span class="rule"></span></h2>
+    <div class="net-rows">
+      <a class="glass-lite anatomy-row" href="/books/">
+        <div class="ix">JSW</div>
+        <div class="lbl"><h3>Books by J.S. Warden</h3><p>Ebonspire Chronicles and Overlayed Echoes</p></div>
+        <code>&rarr;</code>
+      </a>
+    </div>
+  </section>
+
+  <div class="footer">
+    <p>This journal is system-agnostic and is not affiliated with, endorsed by, or associated with any game publisher. Game names are mentioned only to describe compatibility; all trademarks are the property of their respective owners. Nothing you write is sent anywhere — your notes are stored only in your own browser.</p>
+</div>
+</div>
+
+<footer class="jsw-footer">
+  <div class="jsw-wrap">
+    <div class="jsw-footer__grid">
+      <div>
+        <span class="jsw-label">J.S. Warden</span>
+        <ul>
+          <li><a href="/books/">Books</a></li>
+          <li><a href="/writing/">Writing</a></li>
+          <li><a href="/tabletop/">Tabletop Tools</a></li>
+          <li><a href="https://www.youtube.com/@TalesofInkShadowsStudio" rel="noopener">Tales of Ink &amp; Shadows on YouTube</a></li>
+        </ul>
+        <p>Contact: <a href="mailto:support@builtbyjoshstudio.com">support@builtbyjoshstudio.com</a></p>
+      </div>
+      <nav aria-label="Studio sites">
+        <span class="jsw-label">More from the studio</span>
+        <ul>
+          <li><a href="https://builtbyjoshstudio.com/">Built by Josh Studio</a></li>
+          <li><a href="https://tynkr.builtbyjoshstudio.com/">Tynkr apps</a></li>
+          <li><a href="https://tools.builtbyjoshstudio.com/money/">Money tools</a></li>
+          <li><a href="https://cooking.builtbyjoshstudio.com/">Josh &amp; Jordan&#39;s Kitchen</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Site">
+        <span class="jsw-label">This site</span>
+        <ul>
+          <li><a href="/privacy/">Privacy</a></li>
+          <li><a href="https://builtbyjoshstudio.com/terms.html">Terms</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="jsw-footer__base">
+      <span class="jsw-label">&copy; <span class="jsw-num">2026</span> Built by Josh Studio LLC. All rights reserved.</span>
+      <button type="button" class="jsw-theme-btn" data-theme-reset>Reset theme</button>
+    </div>
+    <p>Tynkr Tools &amp; Co and <a href="https://littleacrelearning.com" rel="noopener">Little Acre Learning</a> are brands of Built by Josh Studio LLC.</p>
+  </div>
+</footer>
+
+  <script src="script.js?v=89aabc4b1d" defer></script>
+  <script src="../kinetic.js?v=ffe4b73997" defer></script>
+  <script src="/js/ga4-events.js?v=c398073a2c" defer></script>
+  <script src="/js/migrate-import.js?v=3bf55fbeb9" defer></script>
+</body>
+</html>

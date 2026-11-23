@@ -1,0 +1,17 @@
+/* Homepage and 404: the spacing the pack's preview/index.html and templates/404.html set inline.
+   Tokens only (no colours or font names). Text sits on --bg or --bg-raised only. */
+.jsw-home-pen { color: var(--text-muted); }
+.jsw-home-actions { margin-top: 30px; }
+.jsw-home-chips { margin: 22px 0 32px; }
+.jsw-home-post { margin-top: 32px; }
+.jsw-home-post h3 { margin-top: 0; }
+
+.jsw-404 h1 { font-size: calc(clamp(2rem, 6vw, 3.5rem) * var(--display-scale)); margin-bottom: 22px; }
+.jsw-404 .jsw-divider { margin-bottom: 22px; }
+.jsw-404 .jsw-row { margin-top: 30px; }
+
+/* the line under the homepage headline (owner's wording): display face, heading colour */
+.jsw-home-sub { margin: .75rem 0 0; font-family: var(--font-display); font-size: clamp(1.375rem, 3vw, 1.75rem); color: var(--heading); }
+
+/* 44px targets: the plain link at the foot of each home card (review, stage 2) */
+.jsw-card > a:not(.jsw-btn) { display: inline-flex; align-items: center; min-height: 44px; }

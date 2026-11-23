@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script>if(location.protocol.indexOf("http")===0&&/\/index\.html$/i.test(location.pathname))location.replace(location.pathname.slice(0,-10)+location.search+location.hash);</script>
+<script>
+(function(){var d=document.documentElement,t=null,ok=['warden','echoes','ebonspire','casefile'];
+d.className+=' js';
+try{t=localStorage.getItem('jsw-theme')}catch(e){}
+if(ok.indexOf(t)<0)t=d.getAttribute('data-theme-default');
+if(ok.indexOf(t)<0)t='warden';
+d.setAttribute('data-theme',t)})();
+</script>
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QDSPBB7S9J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      var gaKeep = new URLSearchParams(); new URLSearchParams(location.search).forEach(function (v, k) { if (k.indexOf('utm_') === 0) gaKeep.append(k, v); });
+      gtag('config', 'G-QDSPBB7S9J', { page_location: location.origin + location.pathname + (gaKeep.toString() ? '?' + gaKeep.toString() : ''), page_referrer: document.referrer.split(/[?#]/)[0] });
+    </script>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Dice Roller | Free Online RPG Dice with Notation &amp; History</title>
+  <meta name="description" content="Roll d4 to d100 with full dice notation — 3d6+2, 4d6 keep highest 3, advantage and disadvantage. Roll history included. Free, ad-free, no signup.">
+  <meta name="robots" content="max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://writing.builtbyjoshstudio.com/tabletop/dice-roller/">
+
+  <!-- JSON-LD #1: WebApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Dice Roller",
+    "url": "https://writing.builtbyjoshstudio.com/tabletop/dice-roller/",
+    "description": "Roll every tabletop RPG die from d4 to d100 with full dice notation — 3d6+2, keep-highest, advantage and disadvantage — plus a roll history that survives the session.",
+    "applicationCategory": "GameApplication",
+    "operatingSystem": "Any (web browser)",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "publisher": {
+      "@type": "Organization",
+      "@id": "https://builtbyjoshstudio.com/#organization",
+      "name": "Built by Josh Studio LLC",
+      "legalName": "Built by Josh Studio LLC",
+      "alternateName": [
+        "BBJ Studio",
+        "Built by Josh Studio"
+      ],
+      "url": "https://builtbyjoshstudio.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://builtbyjoshstudio.com/images/logo/logo.webp",
+        "width": 512,
+        "height": 512
+      },
+      "image": "https://builtbyjoshstudio.com/images/logo/logo.webp",
+      "sameAs": [
+        "https://linktr.ee/builtbyjoshstudio",
+        "https://www.youtube.com/@TalesofInkShadowsStudio",
+        "https://www.youtube.com/@joshandjordanskitchen",
+        "https://tynkrtoolsandco.etsy.com",
+        "https://www.etsy.com/shop/BuiltByJoshStudio",
+        "https://www.redbubble.com/people/BBJStudio/shop"
+      ],
+      "identifier": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "Kansas Business ID",
+          "value": "10076138"
+        }
+      ]
+    }
+  }
+  </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "J.S. Warden", "item": "https://writing.builtbyjoshstudio.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Tabletop & RPG tools", "item": "https://writing.builtbyjoshstudio.com/tabletop/"},
+    {"@type": "ListItem", "position": 3, "name": "Dice Roller", "item": "https://writing.builtbyjoshstudio.com/tabletop/dice-roller/"}
+  ]
+}
+</script>
+
+  <!-- JSON-LD #2: FAQPage (mirrors the on-page FAQ) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What dice notation does this roller support?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard tabletop notation: NdX for dice (3d6), modifiers (+2, -1), multiple terms (2d6+1d8+3), and keep-highest or keep-lowest (4d6kh3, 2d20kl1). The quick buttons build the same expressions for you, so you never have to type if you don't want to."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I roll with advantage or disadvantage?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Use the Advantage or Disadvantage button — it rolls two d20s and keeps the higher (advantage) or lower (disadvantage), then adds your modifier. That's the same as typing 2d20kh1 or 2d20kl1."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are the rolls fair?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Rolls use your browser's cryptographically secure random number generator when available, with an unbiased mapping to each die's faces — every face is equally likely, every roll is independent, and nothing is weighted."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this dice roller free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — free, no ads, no signup, and it runs entirely in your browser. Your roll history is stored only on your own device."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Open Graph + Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://writing.builtbyjoshstudio.com/tabletop/dice-roller/">
+  <meta property="og:title" content="Dice Roller | Free Online RPG Dice with Notation &amp; History">
+  <meta property="og:description" content="d4 to d100, full notation, advantage/disadvantage, and roll history. Free, ad-free.">
+  <meta property="og:image" content="https://writing.builtbyjoshstudio.com/assets/brand/og-1200x630.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://writing.builtbyjoshstudio.com/tabletop/dice-roller/">
+  <meta name="twitter:title" content="Dice Roller | Free Online RPG Dice with Notation &amp; History">
+  <meta name="twitter:description" content="d4 to d100, full notation, advantage/disadvantage, and roll history. Free, ad-free.">
+  <meta name="twitter:image" content="https://writing.builtbyjoshstudio.com/assets/brand/og-1200x630.png">
+
+<link rel="stylesheet" href="/css/studio/tokens.css?v=f58e0d92c0">
+<link rel="stylesheet" href="/css/studio/components.css?v=09a4d9f402">
+<link rel="stylesheet" href="/css/studio/tools.css?v=76acb59400">
+<link rel="stylesheet" href="styles.css?v=2c4cc1a9da">
+<link rel="stylesheet" href="/fonts/fonts.css?v=aa0d83c07e">
+<link rel="stylesheet" href="/tokens/themes.css?v=47c6296e35">
+<link rel="stylesheet" href="/css/base.css?v=8e0c7377c5">
+<link rel="stylesheet" href="/css/site.css?v=013752c2a3">
+<link rel="stylesheet" href="/css/tool-parts.css?v=0d4d40d55a">
+<script defer src="/js/theme-switcher.js?v=9ca8cd26c0"></script>
+<script defer src="/js/site.js?v=f8e9bf1bb4"></script>
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16.png">
+<link rel="apple-touch-icon" href="/assets/favicons/favicon-180.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="/css/tool-bridge.css?v=dc0db3370f">
+<link rel="stylesheet" href="/css/pages/tabletop-tool.css?v=9031b10f0b">
+<link rel="stylesheet" href="/css/pages/dice-roller.css?v=8661c9c975">
+</head>
+<body>
+<a class="jsw-skip" href="#main">Skip to content</a>
+<header class="jsw-header">
+  <div class="jsw-wrap jsw-header__bar">
+    <a class="jsw-brand" href="/">J.S. Warden</a>
+    <button type="button" class="jsw-nav-toggle" aria-expanded="false" aria-controls="jsw-menu">
+      <span class="jsw-nav-toggle__bars" aria-hidden="true"></span>Menu
+    </button>
+    <div class="jsw-header__panel" id="jsw-menu">
+      <nav aria-label="Main">
+        <ul class="jsw-nav">
+          <li><a href="/books/">Books</a></li>
+          <li><a href="/writing/">Writing</a></li>
+          <li><a href="/tabletop/" aria-current="page">Tabletop Tools</a></li>
+        </ul>
+      </nav>
+      <div class="jsw-themes" role="group" aria-label="Colour theme">
+        <span class="jsw-label jsw-themes__label" aria-hidden="true">Theme · <span data-theme-current></span></span>
+        <button type="button" class="jsw-theme-btn" data-theme-set="warden" title="Warden"><span class="jsw-swatch" aria-hidden="true"></span><span class="jsw-theme-btn__name">Warden</span></button>
+        <button type="button" class="jsw-theme-btn" data-theme-set="echoes" title="Echoes"><span class="jsw-swatch" aria-hidden="true"></span><span class="jsw-theme-btn__name">Echoes</span></button>
+        <button type="button" class="jsw-theme-btn" data-theme-set="ebonspire" title="Ebonspire"><span class="jsw-swatch" aria-hidden="true"></span><span class="jsw-theme-btn__name">Ebonspire</span></button>
+        <button type="button" class="jsw-theme-btn" data-theme-set="casefile" title="Case File"><span class="jsw-swatch" aria-hidden="true"></span><span class="jsw-theme-btn__name">Case File</span></button>
+      </div>
+    </div>
+  </div>
+</header>
+
+  <div class="studio-tool jsw-wrap">
+<main class="jsw-main" id="main" tabindex="-1">
+
+    <header class="jsw-page-head jsw-page-head--compact">
+      <div>
+        <div class="jsw-row jsw-page-head__meta">
+          <span class="jsw-kicker">&#9679; Tabletop</span>
+          <span class="jsw-label"><span class="jsw-formula">d4</span> &ndash; <span class="jsw-formula">d100</span> &middot; Full notation</span>
+          <span class="updated-date jsw-label">Updated November <span class="jsw-num">2026</span></span>
+        </div>
+        <h1>Dice <span class="jsw-accent">Roller</span></h1>
+        <div class="jsw-divider" aria-hidden="true"></div>
+        <p class="jsw-lede">Tap dice to build a pool or type notation like <span class="jsw-formula">3d6+2</span> — advantage, disadvantage, and keep-highest included. Every roll lands in a history that stays on this device.</p>
+      </div>
+    </header>
+
+    <!-- BUILD A ROLL -->
+    <div class="jsw-tool__panel">
+      <div class="role"><span class="jsw-num">1</span>. Build a roll</div>
+      <div class="die-pad jsw-dice">
+        <button type="button" class="die-btn jsw-die" data-die="4">d4</button>
+        <button type="button" class="die-btn jsw-die" data-die="6">d6</button>
+        <button type="button" class="die-btn jsw-die" data-die="8">d8</button>
+        <button type="button" class="die-btn jsw-die" data-die="10">d10</button>
+        <button type="button" class="die-btn jsw-die" data-die="12">d12</button>
+        <button type="button" class="die-btn jsw-die" data-die="20">d20</button>
+        <button type="button" class="die-btn jsw-die" data-die="100">d100</button>
+      </div>
+      <div class="pool-line" id="pool"></div>
+
+      <div class="roll-controls">
+        <div class="jsw-field">
+          <label for="notation">Or type notation</label>
+          <input type="text" id="notation" class="jsw-input jsw-input--num" placeholder="3d6+2 &middot; 4d6kh3 &middot; 2d20kl1 &middot; 1d8+1d6+3" autocomplete="off" spellcheck="false">
+        </div>
+        <div class="jsw-field">
+          <label for="modifier">Modifier</label>
+          <input type="number" id="modifier" class="jsw-input" value="0" step="1">
+        </div>
+        <button type="button" id="roll-btn" class="jsw-btn">Roll</button>
+      </div>
+
+      <div class="quick-line">
+        <button type="button" class="jsw-btn jsw-btn--ghost" id="adv-btn" title="2d20 keep highest, plus modifier">Advantage</button>
+        <button type="button" class="jsw-btn jsw-btn--ghost" id="dis-btn" title="2d20 keep lowest, plus modifier">Disadvantage</button>
+        <button type="button" class="jsw-btn jsw-btn--ghost" id="stats-btn" title="4d6 keep highest 3 — classic ability score"><span class="jsw-formula">4d6</span> drop lowest</button>
+        <button type="button" class="jsw-btn jsw-btn--ghost" id="clear-pool">Clear pool</button>
+      </div>
+      <p class="err" id="err-msg" role="alert"></p>
+    </div>
+
+    <!-- RESULT -->
+    <div class="jsw-tool__panel">
+      <div class="jsw-result" role="status" aria-live="polite">
+        <span class="jsw-label" id="result-label">Result</span>
+        <span class="jsw-result__value" id="result-total">&mdash;</span>
+        <span class="jsw-result__detail jsw-formula" id="result-notation">Tap some dice and hit Roll.</span>
+      </div>
+      <div class="dice-out" id="dice-out"></div>
+    </div>
+
+    <!-- HISTORY -->
+    <div class="jsw-tool__panel">
+      <div class="hist-head">
+        <div class="role"><span class="jsw-num">2</span>. Roll history</div>
+        <button type="button" id="clear-history" class="jsw-btn jsw-btn--small jsw-btn--danger">Clear history</button>
+      </div>
+      <div id="history" class="jsw-results"></div>
+      <a class="xlink" href="/tabletop/initiative-tracker/">
+        Rolled initiative? Track the turn order &rarr;
+      </a>
+    </div>
+
+  <!-- AT A GLANCE (P2-c) -->
+  <div class="jsw-tool__panel jsw-glance">
+    <h2>At a glance</h2>
+    <div class="jsw-table-wrap">
+    <table class="jsw-table">
+      <tbody>
+        <tr><th scope="row">What it does</th><td>Rolls any dice pool with full tabletop notation.</td></tr>
+        <tr><th scope="row">Inputs</th><td>Tap dice (<span class="jsw-formula">d4</span>—<span class="jsw-formula">d100</span>) to build a pool, or type notation like <span class="jsw-formula">3d6+2</span> or <span class="jsw-formula">4d6</span> keep highest <span class="jsw-num">3</span> — advantage and disadvantage included.</td></tr>
+        <tr><th scope="row">Outputs</th><td>The total with every individual die shown, plus a roll history that stays on this device.</td></tr>
+        <tr><th scope="row">Cost &amp; privacy</th><td>Free, ad-free, no signup. Runs and saves in this browser's local storage — nothing leaves your device.</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+    <!-- PROSE -->
+    <section class="jsw-section jsw-prose">
+      <h2>Dice notation in thirty seconds</h2>
+      <p>Tabletop dice shorthand reads as <code>NdX</code> — roll <em>N</em> dice with <em>X</em> sides. <code>3d6</code> is three six-siders added together. Bolt on a modifier with <code>+2</code> or <code>-1</code>, and mix dice freely: <code>1d8+1d6+3</code> rolls both dice and adds three.</p>
+
+      <h3>Keep-highest and keep-lowest</h3>
+      <p><code>kh</code> and <code>kl</code> keep only some of what you rolled. <code>4d6kh3</code> rolls four six-siders and keeps the best three — the classic ability-score roll. <code>2d20kh1</code> keeps the better of two <span class="jsw-formula">d20</span>s, which is exactly what advantage means; <code>2d20kl1</code> keeps the worse one for disadvantage. The dropped dice still show in the result, struck through, so the table can see the whole roll.</p>
+
+      <h3>Why a <span class="jsw-formula">d100</span> is two dice in disguise</h3>
+      <p>Percentile rolls are just a <span class="jsw-formula">d100</span> — this roller treats it as a single <span class="jsw-num">1</span>&ndash;<span class="jsw-num">100</span> die, so <code>1d100</code> works the way your percentile pair does without any tens-and-ones bookkeeping.</p>
+
+      <h3>The history is for the table</h3>
+      <p>Every roll is logged with its full breakdown, so when someone asks "wait, what did you roll?" two turns later, the answer is right there. The history lives in your browser only — clear it whenever a new session starts.</p>
+    </section>
+
+    <!-- FAQ -->
+    <section class="jsw-section jsw-faq">
+      <details>
+        <summary>What dice notation does this roller support?</summary>
+        <p>Standard tabletop notation: <span class="jsw-formula">NdX</span> for dice (<span class="jsw-formula">3d6</span>), modifiers (<span class="jsw-num">+2</span>, <span class="jsw-num">-1</span>), multiple terms (<span class="jsw-formula">2d6+1d8+3</span>), and keep-highest or keep-lowest (<span class="jsw-formula">4d6kh3</span>, <span class="jsw-formula">2d20kl1</span>). The quick buttons build the same expressions for you, so you never have to type if you don't want to.</p>
+      </details>
+      <details>
+        <summary>How do I roll with advantage or disadvantage?</summary>
+        <p>Use the Advantage or Disadvantage button — it rolls two <span class="jsw-formula">d20</span>s and keeps the higher (advantage) or lower (disadvantage), then adds your modifier. That's the same as typing <span class="jsw-formula">2d20kh1</span> or <span class="jsw-formula">2d20kl1</span>.</p>
+      </details>
+      <details>
+        <summary>Are the rolls fair?</summary>
+        <p>Yes. Rolls use your browser's cryptographically secure random number generator when available, with an unbiased mapping to each die's faces — every face is equally likely, every roll is independent, and nothing is weighted.</p>
+      </details>
+      <details>
+        <summary>Is this dice roller free?</summary>
+        <p>Yes — free, no ads, no signup, and it runs entirely in your browser. Your roll history is stored only on your own device.</p>
+      </details>
+    </section>
+
+  </main>
+
+  <section class="jsw-section net-band" id="more-tabletop-tools">
+    <h2 class="section-title"><span class="num">&#8599;</span>More tabletop tools<span class="rule"></span></h2>
+    <div class="net-rows">
+      <a class="glass-lite anatomy-row" href="/tabletop/initiative-tracker/">
+        <div class="ix">IT</div>
+        <div class="lbl"><h3>Initiative Tracker</h3><p>Turn order, rounds, HP and conditions for any RPG combat</p></div>
+        <code>&rarr;</code>
+      </a>
+      <a class="glass-lite anatomy-row" href="/tabletop/session-notes/">
+        <div class="ix">SN</div>
+        <div class="lbl"><h3>Session Notes &amp; NPC Log</h3><p>Session notes, NPC log and loot, saved in your browser</p></div>
+        <code>&rarr;</code>
+      </a>
+      <a class="glass-lite anatomy-row" href="/tabletop/wargame-score-tracker/">
+        <div class="ix">WS</div>
+        <div class="lbl"><h3>Wargame Score Tracker</h3><p>Victory points, command points and rounds for two players</p></div>
+        <code>&rarr;</code>
+      </a>
+      <a class="glass-lite anatomy-row" href="/tabletop/character-name-generator/">
+        <div class="ix">CN</div>
+        <div class="lbl"><h3>Character Name Generator</h3><p>Original fantasy names in four styles, six at a time</p></div>
+        <code>&rarr;</code>
+      </a>
+      <a class="glass-lite anatomy-row" href="/tabletop/npc-generator/">
+        <div class="ix">NPC</div>
+        <div class="lbl"><h3>NPC Generator</h3><p>A complete NPC in one click: name, quirk, motivation, secret</p></div>
+        <code>&rarr;</code>
+      </a>
+      <a class="glass-lite anatomy-row" href="/tabletop/loot-generator/">
+        <div class="ix">LT</div>
+        <div class="lbl"><h3>Loot Generator</h3><p>Flavorful, system-free treasure with texture and history</p></div>
+        <code>&rarr;</code>
+      </a>
+      <a class="glass-lite anatomy-row" href="/tabletop/plot-hook-generator/">
+        <div class="ix">PH</div>
+        <div class="lbl"><h3>Plot Hook Generator</h3><p>One-line adventure hooks with a built-in twist</p></div>
+        <code>&rarr;</code>
+      </a>
+      <a class="glass-lite anatomy-row" href="/tabletop/random-table-roller/">
+        <div class="ix">RT</div>
+        <div class="lbl"><h3>Random Table Roller</h3><p>Paste or build your own random tables and roll on them</p></div>
+        <code>&rarr;</code>
+      </a>
+      <a class="glass-lite anatomy-row" href="/tabletop/tavern-generator/">
+        <div class="ix">TV</div>
+        <div class="lbl"><h3>Tavern Generator</h3><p>A complete fantasy tavern: name, atmosphere, patron, rumor</p></div>
+        <code>&rarr;</code>
+      </a>
+      <a class="glass-lite anatomy-row" href="/tabletop/">
+        <div class="ix">ALL</div>
+        <div class="lbl"><h3>All tabletop tools</h3><p>The full Tabletop &amp; RPG hub</p></div>
+        <code>&rarr;</code>
+      </a>
+    </div>
+  </section>
+  <section class="jsw-section net-band">
+    <h2 class="section-title"><span class="num">&#8599;</span>Network<span class="rule"></span></h2>
+    <div class="net-rows">
+      <a class="glass-lite anatomy-row" href="/books/">
+        <div class="ix">JSW</div>
+        <div class="lbl"><h3>Books by J.S. Warden</h3><p>Ebonspire Chronicles and Overlayed Echoes</p></div>
+        <code>&rarr;</code>
+      </a>
+    </div>
+  </section>
+
+  <div class="footer">
+    <p>This roller is system-agnostic and is not affiliated with, endorsed by, or associated with any game publisher. Game names are mentioned only to describe compatibility; all trademarks are the property of their respective owners. Nothing you roll is sent anywhere — your history is stored only in your own browser.</p>
+</div>
+</div>
+
+<footer class="jsw-footer">
+  <div class="jsw-wrap">
+    <div class="jsw-footer__grid">
+      <div>
+        <span class="jsw-label">J.S. Warden</span>
+        <ul>
+          <li><a href="/books/">Books</a></li>
+          <li><a href="/writing/">Writing</a></li>
+          <li><a href="/tabletop/">Tabletop Tools</a></li>
+          <li><a href="https://www.youtube.com/@TalesofInkShadowsStudio" rel="noopener">Tales of Ink &amp; Shadows on YouTube</a></li>
+        </ul>
+        <p>Contact: <a href="mailto:support@builtbyjoshstudio.com">support@builtbyjoshstudio.com</a></p>
+      </div>
+      <nav aria-label="Studio sites">
+        <span class="jsw-label">More from the studio</span>
+        <ul>
+          <li><a href="https://builtbyjoshstudio.com/">Built by Josh Studio</a></li>
+          <li><a href="https://tynkr.builtbyjoshstudio.com/">Tynkr apps</a></li>
+          <li><a href="https://tools.builtbyjoshstudio.com/money/">Money tools</a></li>
+          <li><a href="https://cooking.builtbyjoshstudio.com/">Josh &amp; Jordan&#39;s Kitchen</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Site">
+        <span class="jsw-label">This site</span>
+        <ul>
+          <li><a href="/privacy/">Privacy</a></li>
+          <li><a href="https://builtbyjoshstudio.com/terms.html">Terms</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="jsw-footer__base">
+      <span class="jsw-label">&copy; <span class="jsw-num">2026</span> Built by Josh Studio LLC. All rights reserved.</span>
+      <button type="button" class="jsw-theme-btn" data-theme-reset>Reset theme</button>
+    </div>
+    <p>Tynkr Tools &amp; Co and <a href="https://littleacrelearning.com" rel="noopener">Little Acre Learning</a> are brands of Built by Josh Studio LLC.</p>
+  </div>
+</footer>
+
+  <script src="script.js?v=295e83153b" defer></script>
+  <script src="../kinetic.js?v=ffe4b73997" defer></script>
+  <script src="/js/ga4-events.js?v=c398073a2c" defer></script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+/* Random Table Roller (restyle, as the dice-roller pilot): the parts the tool's script builds (the result
+   with its number, recent rolls, entry rows with their ranges, the table note) and the controls its styles.css
+   draws by ID, in the pack's tool-part look. Loads after tool-bridge.css and tabletop-tool.css. Tokens only. */
+
+/* primary buttons styles.css draws by ID (#roll-one larger, #new-table-btn in the heading face with a lift) */
+.studio-tool :is(#roll-one, #new-table-btn) {
+  font-family: var(--font-label); font-size: var(--label-size); font-weight: var(--label-weight-strong);
+  letter-spacing: calc(var(--label-tracking) * .6); text-transform: uppercase; line-height: 1.2;
+  padding: 14px 26px; min-height: 44px; border-radius: var(--radius); box-shadow: none; transition: background-color .16s ease;
+}
+.studio-tool :is(#roll-one, #new-table-btn):hover { background: var(--accent-strong); border-color: var(--accent-strong); color: var(--on-accent); transform: none; box-shadow: none; }
+.studio-tool :is(.roll-bar, .lib-grid, .add-one) .jsw-btn { justify-content: center; }
+.studio-tool .roll-bar { gap: 12px; }
+
+/* numbers and notation inside a field label or a button keep their case (those faces are uppercase) */
+.studio-tool .jsw-field > label .jsw-formula, .studio-tool .jsw-btn .jsw-num { text-transform: none; letter-spacing: 0; }
+.studio-tool .jsw-field > label .jsw-formula { font-size: 1.15em; }
+/* "Roll 3, no repeats": the number is a <span>, which the pack's inline-flex button would turn into its own flex
+   item (a gap before the comma); laid out as inline text instead, centred the same way */
+.studio-tool #roll-three { display: inline-block; text-align: center; }
+
+/* the result (the pack's text result): the script writes "<span class="num">7</span> — text", one line per
+   result in a batch; the number in the numeric face, the line in the body face (owner, November 23, 2026: a
+   table entry is a sentence, not a headline) */
+.studio-tool .roll-bar + .jsw-result { margin-top: 18px; }
+.studio-tool #result-text { font-family: var(--font-body); font-weight: var(--body-weight); text-transform: none; letter-spacing: normal;
+  font-size: clamp(1.25rem, 3.6vw, 1.875rem); line-height: 1.3; overflow-wrap: anywhere; margin: 10px 0 12px; }
+.studio-tool #result-text .num {
+  font-family: var(--font-numeric); font-weight: var(--numeric-weight); font-variant-numeric: tabular-nums lining-nums;
+  text-transform: none; letter-spacing: 0; color: var(--accent);
+}
+.studio-tool .jsw-result .jsw-result__detail { display: block; }
+.studio-tool #result-label { overflow-wrap: anywhere; }
+
+/* recent rolls (built by the script) in the pack's results list; styles.css draws #clear-history as bare text */
+.studio-tool .hist-head { margin: 26px 0 14px; }
+.studio-tool #clear-history {
+  font-family: var(--font-label); font-size: var(--label-size); font-weight: var(--label-weight-strong);
+  letter-spacing: calc(var(--label-tracking) * .6); text-transform: uppercase; line-height: 1.2;
+  padding: 8px 14px; min-height: 44px; color: var(--alert); background: transparent; border: 1px solid var(--alert); border-radius: var(--radius);
+}
+.studio-tool #clear-history:hover { color: var(--heading); border-color: var(--heading); }
+.studio-tool .hist-strip.jsw-results { gap: 0; }
+.studio-tool .jsw-results .hist-item {
+  gap: 6px 16px; margin: 0; padding: 12px 2px; background: none; border: 0; border-bottom: 1px solid var(--line); border-radius: 0; font-size: 1rem;
+}
+.studio-tool .hist-item .hn { font-family: var(--font-numeric); font-weight: var(--numeric-weight); font-variant-numeric: tabular-nums lining-nums; color: var(--heading); }
+.studio-tool .hist-item .ht { color: var(--text); }
+
+/* 2. the paste box (the pack's field and textarea; styles.css draws #paste-box by ID and removes its outline) */
+.studio-tool .paste-field { margin-bottom: 0; }
+.studio-tool #paste-box {
+  min-height: 140px; padding: 12px 14px; font-family: var(--font-numeric); font-size: 1rem; line-height: 1.6;
+  color: var(--heading); background: var(--bg-sunk); border: 1px solid var(--line-strong); border-radius: var(--radius);
+}
+.studio-tool #paste-box:focus { border-color: var(--accent); }
+.studio-tool #paste-box:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.studio-tool .entry-actions { gap: 10px; margin-top: 14px; }
+.studio-tool .add-one { gap: 10px; margin-top: 22px; }
+.studio-tool #one-add { align-self: end; white-space: nowrap; }
+
+/* the table note (the script writes "d10 table · 10 entries ..."): a generated sentence, so the body face, digits
+   included (owner, November 23, 2026: the numeric face only for standalone results) */
+.studio-tool .die-note {
+  margin: 22px 0 12px; font-family: var(--font-body); font-weight: var(--body-weight); font-size: .95rem;
+  letter-spacing: 0; text-transform: none; color: var(--text);
+}
+
+/* entry rows (built by the script) in the pack's results list */
+.studio-tool .jsw-results .entry-row {
+  gap: 8px 14px; margin: 0; padding: 10px 2px; background: none; border: 0; border-bottom: 1px solid var(--line); border-radius: 0;
+}
+.studio-tool .entry-row .rng {
+  min-width: 3.2em; text-align: center; padding: 4px 10px; font-family: var(--font-numeric); font-weight: var(--numeric-weight);
+  font-size: .95rem; font-variant-numeric: tabular-nums lining-nums;
+  color: var(--heading); background: var(--bg-sunk); border: 1px solid var(--line-strong); border-radius: var(--radius);
+}
+.studio-tool .entry-row .txt { font-size: 1rem; color: var(--text); }
+.studio-tool .x-remove {
+  width: 44px; height: 44px; font-size: 1.25rem;
+  background: transparent; color: var(--text-muted); border: 1px solid var(--line-strong); border-radius: var(--radius);
+}
+.studio-tool .x-remove:hover { color: var(--alert); border-color: var(--alert); }
+.studio-tool .x-remove:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* empty states (built by the script; sentences, so the body face even with numbers in them: "the last 12") */
+.studio-tool .jsw-results .empty-note {
+  margin: 0; padding: 22px 0; border: 0; border-radius: 0; text-align: center; color: var(--text-dim); font-size: .95rem;
+  font-family: var(--font-body);
+}
+
+/* 3. more tables */
+.studio-tool .lib-grid { gap: 14px; }
+.studio-tool .lib-actions { gap: 10px; margin-top: 18px; }
+
+/* the note under the entries */
+.studio-tool .note { margin: 18px 0 0; max-width: 68ch; font-size: .9rem; line-height: 1.55; color: var(--text-muted); }

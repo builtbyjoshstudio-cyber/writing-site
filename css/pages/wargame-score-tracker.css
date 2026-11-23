@@ -1,0 +1,96 @@
+/* Wargame Score Tracker (restyle, as the dice-roller pilot): the scoreboard, the two player panels and the parts the
+   tool's script builds (primary cells by round, secondary rows), in the pack's tool-part look.
+   Loads after tool-bridge.css and tabletop-tool.css. Tokens only. */
+
+/* 1. match setup */
+.studio-tool .setup-grid { gap: 14px; }
+.studio-tool #rounds-select { font-family: var(--font-numeric); font-weight: var(--numeric-weight); font-variant-numeric: tabular-nums lining-nums; }
+.studio-tool #new-match { justify-content: center; }
+
+/* 2. the scoreboard: the pack's result panel. The round label and the lead line carry numbers the script writes,
+   so they are set in the numeric face (never the label face). */
+.studio-tool .jsw-result { margin-bottom: 20px; }
+.studio-tool #round-label { font-family: var(--font-numeric); font-weight: var(--numeric-weight); font-variant-numeric: tabular-nums lining-nums; }
+.studio-tool .score-line { gap: 10px 18px; margin: 10px 0 12px; }
+.studio-tool .score-line .pn {
+  font-family: var(--font-label); font-size: var(--label-size); font-weight: var(--label-weight);
+  letter-spacing: calc(var(--label-tracking) * .6); text-transform: uppercase; color: var(--text-muted);
+}
+.studio-tool .score-line .pv {
+  display: inline; margin: 0; font-family: var(--font-numeric); font-weight: var(--numeric-weight);
+  font-variant-numeric: tabular-nums lining-nums; font-size: clamp(3rem, 12vw, 5rem); line-height: 1; color: var(--heading);
+}
+.studio-tool .score-line .vs { font-family: var(--font-numeric); font-size: 1.5rem; color: var(--text-muted); }
+.studio-tool .jsw-result .jsw-result__detail { display: block; font-family: var(--font-body); font-size: 1rem; }   /* "… leads by 3.": a sentence */
+
+/* round controls: Next round is the primary action (styles.css sets its size by ID) */
+.studio-tool .round-controls { gap: 10px; margin-bottom: 0; }
+.studio-tool #next-round { font-size: var(--label-size); padding: 14px 26px; }
+.studio-tool .round-controls .jsw-btn { justify-content: center; }
+
+/* player panels: flat sheets with the pack's rule on top (both players alike, as the original) */
+.studio-tool .panels { gap: 18px; margin-top: 24px; }
+.studio-tool .panel {
+  padding: clamp(16px, 3vw, 22px); background: var(--bg-raised); border: 1px solid var(--line); border-top: 4px solid var(--accent);
+  border-radius: var(--radius); box-shadow: none;
+}
+
+/* command points: 44px buttons, the count in the numeric face */
+.studio-tool .cp-row { gap: 10px; margin-bottom: 18px; }
+.studio-tool .cp-row .cp-lbl, .studio-tool .prim-lbl {
+  font-family: var(--font-label); font-size: var(--label-size); font-weight: var(--label-weight);
+  letter-spacing: calc(var(--label-tracking) * .6); text-transform: uppercase; color: var(--text-muted);
+}
+.studio-tool .cp-btn {
+  width: 44px; height: 44px; font-family: var(--font-numeric); font-size: 1.125rem; color: var(--heading);
+  background: transparent; border: 1px solid var(--line-strong); border-radius: var(--radius);
+}
+.studio-tool .cp-btn:hover { background: transparent; color: var(--accent-strong); border-color: var(--accent); }
+.studio-tool .cp-val { min-width: 2.5ch; font-family: var(--font-numeric); font-weight: var(--numeric-weight); font-variant-numeric: tabular-nums lining-nums; font-size: 1.5rem; color: var(--heading); }
+.studio-tool .prim-lbl { margin-bottom: 10px; }
+
+/* primary points by round (cells built by the script) */
+.studio-tool .prim-row { grid-template-columns: repeat(auto-fit, minmax(52px, 1fr)); gap: 8px; margin-bottom: 18px; align-items: start; }
+.studio-tool .prim-cell .r { font-family: var(--font-numeric); font-variant-numeric: tabular-nums lining-nums; font-size: .85rem; color: var(--text-muted); }
+.studio-tool .prim-cell input {
+  min-height: 44px; padding: 8px 2px; font-family: var(--font-numeric); font-weight: var(--numeric-weight);
+  font-variant-numeric: tabular-nums lining-nums; font-size: 1.0625rem; color: var(--heading);
+  background: var(--bg-sunk); border: 1px solid var(--line-strong); border-radius: var(--radius);
+}
+.studio-tool .prim-cell input:focus { border-color: var(--accent); }
+/* the current battle round: the pack's bar and a text tag, not colour alone. The script writes no word for it,
+   so the tag is drawn here; it is not part of the cell's text. */
+.studio-tool .prim-cell.now .r { color: var(--heading); font-weight: var(--numeric-weight); }
+.studio-tool .prim-cell.now input { border-color: var(--accent); box-shadow: inset 0 -4px 0 var(--accent); }
+.studio-tool .prim-cell.now::after {
+  content: "Now"; align-self: center; padding: 2px 8px; font-family: var(--font-label); font-size: .7rem;
+  font-weight: var(--label-weight-strong); letter-spacing: .1em; text-transform: uppercase;
+  color: var(--on-accent); background: var(--accent); border-radius: var(--radius);
+}
+
+/* secondaries: add row, then rows of the pack's results list */
+.studio-tool .sec-add { gap: 10px; margin-bottom: 14px; }
+.studio-tool .sec-add .jsw-btn { justify-content: center; white-space: nowrap; }
+.studio-tool .jsw-results .sec-row {
+  grid-template-columns: minmax(0, 1fr) 80px auto; gap: 10px; margin: 0; padding: 10px 2px;
+  background: none; border: 0; border-bottom: 1px solid var(--line); border-radius: 0;
+}
+.studio-tool .sec-row .sn { font-size: 1rem; color: var(--text); }
+.studio-tool .sec-row input {
+  min-height: 44px; padding: 8px 2px; font-family: var(--font-numeric); font-weight: var(--numeric-weight);
+  font-variant-numeric: tabular-nums lining-nums; font-size: 1rem; color: var(--heading);
+  background: var(--bg-sunk); border: 1px solid var(--line-strong); border-radius: var(--radius);
+}
+.studio-tool .sec-row input:focus { border-color: var(--accent); }
+.studio-tool .x-remove {
+  width: 44px; height: 44px; font-size: 1.25rem; color: var(--text-muted);
+  background: transparent; border: 1px solid var(--line-strong); border-radius: var(--radius);
+}
+.studio-tool .x-remove:hover { color: var(--alert); border-color: var(--alert); }
+.studio-tool .jsw-results .empty-note { margin: 0; padding: 18px 0; border: 0; border-radius: 0; text-align: center; color: var(--text-dim); font-size: .95rem; }
+
+/* every control the script builds has the pack's focus ring (styles.css removes the outline on the fields) */
+.studio-tool :is(.prim-cell input, .sec-row input, .cp-btn, .x-remove):focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* the note under the panels */
+.studio-tool .note { max-width: none; font-size: .95rem; color: var(--text-muted); }

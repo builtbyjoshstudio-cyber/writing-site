@@ -1,0 +1,149 @@
+/* ==========================================================================
+   tool-bridge.css: the tabletop tools' studio styles follow the pack's four
+   themes without being rewritten.
+
+   Each tool page wraps the tool's own markup (its <main>, the network bands
+   and its disclaimer footer) in one container, <div class="studio-tool">.
+   The studio variable names get their meanings on that container only
+   (owner decision 1), so the pack's header and footer outside it keep the
+   pack's meanings.
+
+   The studio files in /css/studio/ stay byte-identical (sync-shared.py).
+   Load order on a tool page: /css/studio/tokens.css, components.css,
+   tools.css, the tool's styles.css, then the pack (fonts, tokens/themes.css,
+   base.css, site.css, tool-parts.css), then this file. The studio files load
+   before the pack's tokens because tools.css declares --text on :root and
+   components.css styles body, h1-h4, p and a: loaded later, either would
+   replace the pack's meaning in the header and footer.
+
+   Left-hand side: the studio names (css/studio/tokens.css and tools.css).
+   Right-hand side: the pack's tokens only. No colour or font literals.
+
+   Names both systems define keep the pack's value inside the container,
+   because they mean the same thing there:
+     --accent       primary action, links, focus ring
+     --line         hairline border
+     --shadow       card shadow (the studio value carries a colour; the pack's
+                    --shadow is that theme's shadow)
+     --font-display heading font
+     --font-body    body font (the studio's is var(--font-ui))
+     --text         the studio sets it to var(--ink) in tools.css; no studio
+                    rule and no tabletop tool reads it, so it stays the pack's
+                    body text
+   ========================================================================== */
+
+.studio-tool {
+  /* grounds */
+  --canvas:      var(--bg);            /* page background */
+  --surface:     var(--bg-raised);     /* cards, panels, inputs, .btn */
+  --surface-2:   var(--bg-sunk);       /* insets, table heads, chips */
+  --surface-3:   var(--line-strong);   /* range-slider track only (tools.css:160); never behind text */
+
+  /* text */
+  --ink:         var(--heading);       /* headings, strongest text */
+  --ink-2:       var(--text);          /* body text */
+  --muted:       var(--text-muted);    /* secondary text, labels */
+  --text-soft:   var(--text-muted);    /* tools.css alias of --muted */
+  --body-read:   var(--text);          /* tokens.css alias of --ink-2 */
+
+  /* lines (composites are redeclared so they resolve here, not on :root) */
+  --line-2:      var(--line-strong);
+  --hair:        1px solid var(--line);
+  --rule:        1px solid var(--line-strong);
+  --nav-border:  var(--line);
+
+  /* action */
+  --accent-ink:  var(--on-accent);     /* text on a primary button */
+  /* PROVISIONAL (tinted background, no pack equivalent): the studio's pale tint behind
+     accent text (pills, .ix, section numbers, input focus halo). A flat --bg-sunk keeps
+     every pack text token at 4.5:1; the tint itself is lost. Listed for the owner. */
+  --accent-soft: var(--bg-sunk);
+
+  /* status */
+  --pos:         var(--success);
+  --neg:         var(--alert);
+  --warn:        var(--warning);       /* tools.css:97 is a literal colour */
+  /* PROVISIONAL (tinted status backgrounds): flat, as --accent-soft above. */
+  --pos-soft:    var(--bg-sunk);
+  --neg-soft:    var(--bg-sunk);
+
+  /* elevation: the studio's larger hover shadow carries its own colour; the pack has one shadow */
+  --shadow-lg:   var(--shadow);
+
+  /* type: UI text uses the pack's body face (it carries numbers, so never the label face);
+     every studio number and notation uses the pack's numeric face */
+  --font-ui:     var(--font-body);
+  --font-mono:   var(--font-numeric);
+
+  /* shape: every studio corner radius follows the theme's */
+  --r:           var(--radius);
+  --r-s:         var(--radius);
+  --r-lg:        var(--radius);
+  --r-xs:        var(--radius);
+  --r-pill:      var(--radius);
+
+  /* old names (tokens.css declares them on :root, where they resolved to the studio's values) */
+  --bbj-canvas: var(--canvas);   --tynkr-canvas: var(--canvas);
+  --bbj-surface: var(--surface); --tynkr-surface: var(--surface);
+  --bbj-surface-2: var(--surface-2); --tynkr-surface-2: var(--surface-2);
+  --bbj-ink: var(--ink);         --tynkr-ink: var(--ink);
+  --bbj-muted: var(--muted);     --tynkr-muted: var(--muted);
+  --bbj-line: var(--line);       --tynkr-line: var(--line);
+  --bbj-line-2: var(--line-2);   --tynkr-line-2: var(--line-2);
+  --bbj-accent: var(--accent);   --tynkr-accent: var(--accent);
+  --bbj-accent-2: var(--accent); --tynkr-accent-2: var(--accent);
+  --bbj-shadow: var(--shadow);   --tynkr-shadow: var(--shadow);
+  --bbj-font-display: var(--font-display); --tynkr-font-display: var(--font-display);
+  --bbj-font-ui: var(--font-ui);           --tynkr-font-ui: var(--font-ui);
+  --bbj-font-mono: var(--font-mono);       --tynkr-font-mono: var(--font-mono);
+  --bbj-bg: var(--canvas);       --tynkr-bg: var(--canvas);
+  --bbj-text: var(--ink);        --tynkr-text: var(--ink);
+  --bbj-border: var(--line);     --tynkr-border: var(--line);
+  --tynkr-orange: var(--accent);
+
+  /* NOT MAPPED (listed for the owner; no tabletop tool uses them):
+     --accent-2      second accent, warm brass for a display phrase (4:1, large text only)
+     --accent-deep   navy panel ground, always paired with literal white text
+                     (.panel--navy, .cover, .poster, .footer in components.css)
+     --nebula-1..3   the cosmic theme's glow; that theme never applies here */
+}
+
+/* ---------- values the studio CSS writes as literals ---------- */
+
+/* primary hover: components.css:53 and tools.css:139 are literal colours */
+.studio-tool :is(.btn--primary, .btn.primary, .primary-btn, .affiliate-btn):hover,
+.studio-tool .gear-item:hover .affiliate-btn {
+  background: var(--accent-strong); border-color: var(--accent-strong); color: var(--on-accent);
+}
+
+/* form fields: the inset shadow is a literal (components.css:268, tools.css:154);
+   their focus ring is a tint halo with the outline removed: the pack's ring instead */
+.studio-tool :is(.input, .form-input, .input-group input, .input-group select, textarea) { box-shadow: none; }
+.studio-tool :is(.input, .form-input, .input-group input, .input-group select, textarea):focus { box-shadow: none; }
+.studio-tool :is(.input, .form-input, .input-group input, .input-group select, textarea):focus-visible {
+  outline: 2px solid var(--accent); outline-offset: 2px; border-color: var(--accent);
+}
+.studio-tool :is(.form-input, .input-group input, textarea)::placeholder { color: var(--text-dim); opacity: 1; }
+.studio-tool input[type="range"].form-input-range:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+
+/* result stage: tools.css draws a grid of lines under the result text; text sits on a
+   flat pack surface only (pack rule), so the stage is plain --bg-sunk */
+.studio-tool .anatomy-stage { background: var(--bg-sunk) !important; }
+
+/* links outside the tool: components.css sets every link page-wide to no underline and weight 500;
+   the pack's base.css leaves both to the browser. Same specificity as that rule, loaded after it,
+   so the pack's own class rules (header, footer) still win. */
+a:where(:not(.studio-tool a)) { text-decoration: revert; font-weight: revert; }
+a:where(:not(.studio-tool a)):hover { text-decoration: revert; }
+
+/* selection: components.css sets ::selection page-wide with the studio's --accent-ink (its literal white).
+   Outside the tool, the browser's own selection colours, as on every other page of this site;
+   inside the tool, the pack's accent pair. */
+::selection { background: Highlight; color: HighlightText; }
+.studio-tool::selection, .studio-tool ::selection { background: var(--accent); color: var(--on-accent); }
+
+/* owner decision 12: the studio grid background is off on tool pages
+   (components.css:136 draws it on body; the pack's own texture is on body::before) */
+@media screen {
+  :root:not([data-theme="cosmic"]) body:not(.cosmos) { background-image: none; }
+}
