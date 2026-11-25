@@ -7,3 +7,7 @@ User-agent: *
 Allow: /
 
 Sitemap: https://writing.builtbyjoshstudio.com/sitemap.xml
+
+# LLMs:
+# https://writing.builtbyjoshstudio.com/llms.txt
+# https://writing.builtbyjoshstudio.com/llms-full.txt

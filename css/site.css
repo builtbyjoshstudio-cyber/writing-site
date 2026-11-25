@@ -155,3 +155,31 @@
 .jsw-404__code { display: block; font-size: clamp(5rem, 22vw, 12rem); line-height: .9; color: var(--accent); text-shadow: var(--display-accent-shadow); margin-bottom: 18px; }
 .jsw-404 p { margin-left: auto; margin-right: auto; }
 .jsw-404 .jsw-divider, .jsw-404 .jsw-row { justify-content: center; }
+
+/* ---- Quick-reference tables & FAQs (books, writing, blog) ---- */
+.jsw-ref-wrap { border: 1px solid var(--line); border-radius: var(--radius); background: var(--bg-raised); overflow: hidden; margin-top: 18px; }
+.jsw-ref-table { width: 100%; border-collapse: collapse; font-size: .95em; }
+.jsw-ref-table th, .jsw-ref-table td { padding: 12px 14px; text-align: left; border-bottom: 1px solid var(--line); vertical-align: top; overflow-wrap: anywhere; }
+.jsw-ref-table thead th { font-family: var(--font-label); font-size: var(--label-size); font-weight: var(--label-weight); letter-spacing: calc(var(--label-tracking) * .6); text-transform: uppercase; color: var(--text-muted); background: var(--bg-sunk); }
+.jsw-ref-table tbody th { font-weight: 700; color: var(--heading); }
+.jsw-ref-table tbody tr:last-child td, .jsw-ref-table tbody tr:last-child th { border-bottom: 0; }
+@media (max-width: 640px) {
+  .jsw-ref-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+  .jsw-ref-table tbody tr { display: grid; gap: 6px; padding: 14px; border-bottom: 1px solid var(--line); }
+  .jsw-ref-table tbody tr:last-child { border-bottom: 0; }
+  .jsw-ref-table tbody th, .jsw-ref-table tbody td { display: block; padding: 0; border-bottom: 0; }
+  .jsw-ref-table td[data-label]::before { content: attr(data-label) " — "; font-family: var(--font-label); font-size: var(--label-size); font-weight: var(--label-weight); letter-spacing: calc(var(--label-tracking) * .5); text-transform: uppercase; color: var(--text-muted); }
+}
+
+.jsw-faq { display: grid; gap: 10px; }
+.jsw-faq details { background: var(--bg-raised); border: 1px solid var(--line); border-radius: var(--radius); padding: 0 clamp(16px, 3vw, 24px); }
+.jsw-faq summary {
+  display: flex; justify-content: space-between; align-items: center; gap: 16px; min-height: 44px; padding: 14px 0;
+  cursor: pointer; list-style: none; font-family: var(--font-display); font-weight: var(--display-weight);
+  text-transform: var(--display-transform); letter-spacing: var(--display-tracking); line-height: 1.2;
+  font-size: 1.125rem; color: var(--heading);
+}
+.jsw-faq summary::-webkit-details-marker { display: none; }
+.jsw-faq summary::after { content: "+"; flex: none; font-family: var(--font-numeric); color: var(--accent); }
+.jsw-faq details[open] summary::after { content: "\2212"; }
+.jsw-faq details p, .jsw-prose .jsw-faq details p { margin: 0; padding-bottom: 18px; color: var(--text); max-width: 68ch; }

@@ -24,111 +24,169 @@ d.setAttribute('data-theme',t)})();
   <meta name="description" content="Generate a complete NPC in one click — name, occupation, quirk, motivation, and a secret. Sends straight to your session notes. Free, ad-free, any system.">
   <meta name="robots" content="max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <link rel="canonical" href="https://writing.builtbyjoshstudio.com/tabletop/npc-generator/">
-
-  <!-- JSON-LD #1: WebApplication -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "NPC Generator",
-    "url": "https://writing.builtbyjoshstudio.com/tabletop/npc-generator/",
-    "description": "Generates a complete tabletop RPG NPC in one click — original name, occupation, quirk, motivation, and secret — with one-tap export to the Session Notes NPC log.",
-    "applicationCategory": "GameApplication",
-    "operatingSystem": "Any (web browser)",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "publisher": {
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://writing.builtbyjoshstudio.com/#website",
+      "name": "J.S. Warden",
+      "url": "https://writing.builtbyjoshstudio.com/",
+      "description": "Dark LitRPG and fantasy noir by J.S. Warden — books, in-world field dispatches, character profiles, and free browser tabletop tools.",
+      "inLanguage": "en-US",
+      "author": {
+        "@id": "https://writing.builtbyjoshstudio.com/#jswarden"
+      },
+      "publisher": {
+        "@id": "https://builtbyjoshstudio.com/#organization"
+      }
+    },
+    {
       "@type": "Organization",
       "@id": "https://builtbyjoshstudio.com/#organization",
       "name": "Built by Josh Studio LLC",
       "legalName": "Built by Josh Studio LLC",
-      "alternateName": [
-        "BBJ Studio",
-        "Built by Josh Studio"
-      ],
-      "url": "https://builtbyjoshstudio.com",
+      "url": "https://builtbyjoshstudio.com/",
+      "email": "mailto:support@builtbyjoshstudio.com",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://builtbyjoshstudio.com/images/logo/logo.webp",
+        "url": "https://writing.builtbyjoshstudio.com/assets/favicons/favicon-512.png",
         "width": 512,
         "height": 512
-      },
-      "image": "https://builtbyjoshstudio.com/images/logo/logo.webp",
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://writing.builtbyjoshstudio.com/#jswarden",
+      "name": "J.S. Warden",
+      "url": "https://writing.builtbyjoshstudio.com/",
+      "description": "Fiction author of dark LitRPG and dark fantasy detective noir, including Overlayed Echoes and Ebonspire Chronicles.",
       "sameAs": [
-        "https://linktr.ee/builtbyjoshstudio",
-        "https://www.youtube.com/@TalesofInkShadowsStudio",
-        "https://www.youtube.com/@joshandjordanskitchen",
-        "https://tynkrtoolsandco.etsy.com",
-        "https://www.etsy.com/shop/BuiltByJoshStudio",
-        "https://www.redbubble.com/people/BBJStudio/shop"
-      ],
-      "identifier": [
-        {
-          "@type": "PropertyValue",
-          "propertyID": "Kansas Business ID",
-          "value": "10076138"
-        }
+        "https://builtbyjoshstudio.com/about.html",
+        "https://www.amazon.com/stores/author/B0FPQ3RWWF",
+        "https://www.youtube.com/@TalesofInkShadowsStudio"
       ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "J.S. Warden",
+          "item": "https://writing.builtbyjoshstudio.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tabletop & RPG tools",
+          "item": "https://writing.builtbyjoshstudio.com/tabletop/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "NPC Generator",
+          "item": "https://writing.builtbyjoshstudio.com/tabletop/npc-generator/"
+        }
+      ],
+      "@id": "https://writing.builtbyjoshstudio.com/tabletop/npc-generator/#breadcrumb"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://writing.builtbyjoshstudio.com/tabletop/npc-generator/#webpage",
+      "url": "https://writing.builtbyjoshstudio.com/tabletop/npc-generator/",
+      "name": "NPC Generator | Name, Quirk, Motivation & Secret, Free",
+      "description": "Generate a complete NPC in one click — name, occupation, quirk, motivation, and a secret. Sends straight to your session notes. Free, ad-free, any system.",
+      "inLanguage": "en-US",
+      "isPartOf": {
+        "@id": "https://writing.builtbyjoshstudio.com/#website"
+      },
+      "breadcrumb": {
+        "@id": "https://writing.builtbyjoshstudio.com/tabletop/npc-generator/#breadcrumb"
+      },
+      "mainEntity": {
+        "@id": "https://writing.builtbyjoshstudio.com/tabletop/npc-generator/#app"
+      },
+      "primaryImageOfPage": "https://writing.builtbyjoshstudio.com/assets/brand/og-1200x630.png"
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://writing.builtbyjoshstudio.com/tabletop/npc-generator/#app",
+      "name": "NPC Generator",
+      "url": "https://writing.builtbyjoshstudio.com/tabletop/npc-generator/",
+      "description": "Generate a complete NPC in one click — name, occupation, quirk, motivation, and a secret. Sends straight to your session notes. Free, ad-free, any system.",
+      "image": "https://writing.builtbyjoshstudio.com/assets/brand/og-1200x630.png",
+      "applicationCategory": "GameApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript. Runs locally in any modern web browser.",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "One-click playable NPC with name, occupation, quirk, motivation, and secret",
+        "One-click copy to clipboard",
+        "Kept list of up to 20 NPCs saved in browser localStorage",
+        "One-tap Add to Session Notes integration via local browser storage"
+      ],
+      "author": {
+        "@id": "https://writing.builtbyjoshstudio.com/#jswarden"
+      },
+      "publisher": {
+        "@id": "https://builtbyjoshstudio.com/#organization"
+      },
+      "isPartOf": {
+        "@id": "https://writing.builtbyjoshstudio.com/#website"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Does this work with D&D, Pathfinder, or other systems?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes — the NPCs are system-free: no stats, no rules text, just character. They drop into D&D, Pathfinder, Call of Cthulhu, or any homebrew game unchanged. Game names are mentioned here only to describe compatibility."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does \"Add to Session Notes\" do?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It saves the generated NPC's name and description line into the NPC log of the Session Notes tool on this site — both tools store data in the same browser, so nothing is uploaded anywhere. Open Session Notes afterward and the NPC is waiting in the log."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this NPC generator free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes — free, no ads, no signup, and it runs entirely in your browser. Kept NPCs are stored only on your own device."
+          }
+        }
+      ],
+      "@id": "https://writing.builtbyjoshstudio.com/tabletop/npc-generator/#faq"
     }
-  }
-  </script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {"@type": "ListItem", "position": 1, "name": "J.S. Warden", "item": "https://writing.builtbyjoshstudio.com/"},
-    {"@type": "ListItem", "position": 2, "name": "Tabletop & RPG tools", "item": "https://writing.builtbyjoshstudio.com/tabletop/"},
-    {"@type": "ListItem", "position": 3, "name": "NPC Generator", "item": "https://writing.builtbyjoshstudio.com/tabletop/npc-generator/"}
   ]
 }
 </script>
-
-  <!-- JSON-LD #2: FAQPage (mirrors the on-page FAQ) -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Does this work with D&D, Pathfinder, or other systems?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes — the NPCs are system-free: no stats, no rules text, just character. They drop into D&D, Pathfinder, Call of Cthulhu, or any homebrew game unchanged. Game names are mentioned here only to describe compatibility."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What does \"Add to Session Notes\" do?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "It saves the generated NPC's name and description line into the NPC log of the Session Notes tool on this site — both tools store data in the same browser, so nothing is uploaded anywhere. Open Session Notes afterward and the NPC is waiting in the log."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is this NPC generator free?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes — free, no ads, no signup, and it runs entirely in your browser. Kept NPCs are stored only on your own device."
-      }
-    }
-  ]
-}
-  </script>
-
   <!-- Open Graph + Twitter -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://writing.builtbyjoshstudio.com/tabletop/npc-generator/">
   <meta property="og:title" content="NPC Generator | Name, Quirk, Motivation &amp; Secret, Free">
-  <meta property="og:description" content="A whole NPC in one click — name, occupation, quirk, motivation, secret. Free, ad-free.">
+  <meta property="og:description" content="Generate a complete NPC in one click — name, occupation, quirk, motivation, and a secret. Sends straight to your session notes. Free, ad-free, any system.">
   <meta property="og:image" content="https://writing.builtbyjoshstudio.com/assets/brand/og-1200x630.png">
+  <meta property="og:site_name" content="J.S. Warden">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://writing.builtbyjoshstudio.com/tabletop/npc-generator/">
   <meta name="twitter:title" content="NPC Generator | Name, Quirk, Motivation &amp; Secret, Free">
-  <meta name="twitter:description" content="A whole NPC in one click — name, occupation, quirk, motivation, secret. Free, ad-free.">
+  <meta name="twitter:description" content="Generate a complete NPC in one click — name, occupation, quirk, motivation, and a secret. Sends straight to your session notes. Free, ad-free, any system.">
   <meta name="twitter:image" content="https://writing.builtbyjoshstudio.com/assets/brand/og-1200x630.png">
-
 <link rel="stylesheet" href="/css/studio/tokens.css?v=f58e0d92c0">
 <link rel="stylesheet" href="/css/studio/components.css?v=09a4d9f402">
 <link rel="stylesheet" href="/css/studio/tools.css?v=76acb59400">
@@ -136,7 +194,7 @@ d.setAttribute('data-theme',t)})();
 <link rel="stylesheet" href="/fonts/fonts.css?v=00fd9dd53c">
 <link rel="stylesheet" href="/tokens/themes.css?v=a10c66c644">
 <link rel="stylesheet" href="/css/base.css?v=fa70b1d88f">
-<link rel="stylesheet" href="/css/site.css?v=bf15793f00">
+<link rel="stylesheet" href="/css/site.css?v=214148b14f">
 <link rel="stylesheet" href="/css/tool-parts.css?v=0d4d40d55a">
 <script defer src="/js/theme-switcher.js?v=8278cc8676"></script>
 <script defer src="/js/site.js?v=f8e9bf1bb4"></script>
@@ -220,7 +278,20 @@ d.setAttribute('data-theme',t)})();
         <tr><th scope="row">What it does</th><td>Produces a playable NPC in one click, not just a name.</td></tr>
         <tr><th scope="row">Inputs</th><td>One click; reroll until someone fits the scene.</td></tr>
         <tr><th scope="row">Outputs</th><td>Name, occupation, a quirk the table will remember, a motivation, and a secret — sendable straight to the Session Notes tool.</td></tr>
-        <tr><th scope="row">Cost &amp; privacy</th><td>Free, ad-free, no signup. Runs entirely in your browser — nothing is uploaded.</td></tr>
+        <tr><th scope="row">Cost &amp; privacy</th><td>Free, ad-free, no signup. Runs in your browser and saves your kept list (and any NPCs sent to Session Notes) in local storage — nothing leaves your device.</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <div class="jsw-tool__panel jsw-glance" id="quick-reference">
+    <h2>Quick reference</h2>
+    <div class="jsw-table-wrap">
+    <table class="jsw-table">
+      <tbody>
+        <tr><th scope="row">Fields generated</th><td>Name, occupation, memorable quirk, motivation, and hidden secret</td></tr>
+        <tr><th scope="row">Copy &amp; keep list</th><td>One-click copy to clipboard; save up to <span class="jsw-num">20</span> kept NPCs in browser local storage</td></tr>
+        <tr><th scope="row">Campaign handoff</th><td>Add to Session Notes writes the NPC directly into your Session Notes &amp; NPC Log in local storage</td></tr>
       </tbody>
     </table>
     </div>

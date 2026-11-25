@@ -24,119 +24,178 @@ d.setAttribute('data-theme',t)})();
   <meta name="description" content="Paste or build your own random tables — d20 taverns, d100 loot — then roll on them with one tap. Weighted ranges, saved tables. Free, ad-free, no signup.">
   <meta name="robots" content="max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <link rel="canonical" href="https://writing.builtbyjoshstudio.com/tabletop/random-table-roller/">
-
-  <!-- JSON-LD #1: WebApplication -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Random Table Roller",
-    "url": "https://writing.builtbyjoshstudio.com/tabletop/random-table-roller/",
-    "description": "Build or paste your own random tables and roll on them with one tap — weighted ranges, multi-roll without repeats, a table library saved in your browser, and plain-text export.",
-    "applicationCategory": "GameApplication",
-    "operatingSystem": "Any (web browser)",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "publisher": {
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://writing.builtbyjoshstudio.com/#website",
+      "name": "J.S. Warden",
+      "url": "https://writing.builtbyjoshstudio.com/",
+      "description": "Dark LitRPG and fantasy noir by J.S. Warden — books, in-world field dispatches, character profiles, and free browser tabletop tools.",
+      "inLanguage": "en-US",
+      "author": {
+        "@id": "https://writing.builtbyjoshstudio.com/#jswarden"
+      },
+      "publisher": {
+        "@id": "https://builtbyjoshstudio.com/#organization"
+      }
+    },
+    {
       "@type": "Organization",
       "@id": "https://builtbyjoshstudio.com/#organization",
       "name": "Built by Josh Studio LLC",
       "legalName": "Built by Josh Studio LLC",
-      "alternateName": [
-        "BBJ Studio",
-        "Built by Josh Studio"
-      ],
-      "url": "https://builtbyjoshstudio.com",
+      "url": "https://builtbyjoshstudio.com/",
+      "email": "mailto:support@builtbyjoshstudio.com",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://builtbyjoshstudio.com/images/logo/logo.webp",
+        "url": "https://writing.builtbyjoshstudio.com/assets/favicons/favicon-512.png",
         "width": 512,
         "height": 512
-      },
-      "image": "https://builtbyjoshstudio.com/images/logo/logo.webp",
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://writing.builtbyjoshstudio.com/#jswarden",
+      "name": "J.S. Warden",
+      "url": "https://writing.builtbyjoshstudio.com/",
+      "description": "Fiction author of dark LitRPG and dark fantasy detective noir, including Overlayed Echoes and Ebonspire Chronicles.",
       "sameAs": [
-        "https://linktr.ee/builtbyjoshstudio",
-        "https://www.youtube.com/@TalesofInkShadowsStudio",
-        "https://www.youtube.com/@joshandjordanskitchen",
-        "https://tynkrtoolsandco.etsy.com",
-        "https://www.etsy.com/shop/BuiltByJoshStudio",
-        "https://www.redbubble.com/people/BBJStudio/shop"
-      ],
-      "identifier": [
-        {
-          "@type": "PropertyValue",
-          "propertyID": "Kansas Business ID",
-          "value": "10076138"
-        }
+        "https://builtbyjoshstudio.com/about.html",
+        "https://www.amazon.com/stores/author/B0FPQ3RWWF",
+        "https://www.youtube.com/@TalesofInkShadowsStudio"
       ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "J.S. Warden",
+          "item": "https://writing.builtbyjoshstudio.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tabletop & RPG tools",
+          "item": "https://writing.builtbyjoshstudio.com/tabletop/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Random Table Roller",
+          "item": "https://writing.builtbyjoshstudio.com/tabletop/random-table-roller/"
+        }
+      ],
+      "@id": "https://writing.builtbyjoshstudio.com/tabletop/random-table-roller/#breadcrumb"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://writing.builtbyjoshstudio.com/tabletop/random-table-roller/#webpage",
+      "url": "https://writing.builtbyjoshstudio.com/tabletop/random-table-roller/",
+      "name": "Random Table Roller | Roll on Your Own Custom TTRPG Tables",
+      "description": "Paste or build your own random tables — d20 taverns, d100 loot — then roll on them with one tap. Weighted ranges, saved tables. Free, ad-free, no signup.",
+      "inLanguage": "en-US",
+      "isPartOf": {
+        "@id": "https://writing.builtbyjoshstudio.com/#website"
+      },
+      "breadcrumb": {
+        "@id": "https://writing.builtbyjoshstudio.com/tabletop/random-table-roller/#breadcrumb"
+      },
+      "mainEntity": {
+        "@id": "https://writing.builtbyjoshstudio.com/tabletop/random-table-roller/#app"
+      },
+      "primaryImageOfPage": "https://writing.builtbyjoshstudio.com/assets/brand/og-1200x630.png"
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://writing.builtbyjoshstudio.com/tabletop/random-table-roller/#app",
+      "name": "Random Table Roller",
+      "url": "https://writing.builtbyjoshstudio.com/tabletop/random-table-roller/",
+      "description": "Paste or build your own random tables — d20 taverns, d100 loot — then roll on them with one tap. Weighted ranges, saved tables. Free, ad-free, no signup.",
+      "image": "https://writing.builtbyjoshstudio.com/assets/brand/og-1200x630.png",
+      "applicationCategory": "GameApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript. Runs locally in any modern web browser.",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "Paste plain, numbered, weighted-range, or percentile tables (00=100, 0=10, zero-indexed shift)",
+        "Saved table library (up to 50 tables, 500 entries per table, max die face 1000)",
+        "One-tap single rolls and distinct no-repeat batch rolls",
+        "Plain-text (.txt) table export",
+        "12-roll history saved in browser localStorage"
+      ],
+      "author": {
+        "@id": "https://writing.builtbyjoshstudio.com/#jswarden"
+      },
+      "publisher": {
+        "@id": "https://builtbyjoshstudio.com/#organization"
+      },
+      "isPartOf": {
+        "@id": "https://writing.builtbyjoshstudio.com/#website"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What format can I paste tables in?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Almost anything line-based. Plain lines get auto-numbered in order (twenty lines becomes a d20 table). Lines that start with a number ('7: a broken cart') keep that number, and ranges ('01-05: nothing happens') become weighted entries — the wider the range, the more likely the result. You can mix all three styles in one paste. Percentile numbering works too: 00 counts as 100 (as in 96-00), a d10's 0 counts as 10, and a table that counts from zero (00-09 through 90-99) moves up one so every entry keeps its odds."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do weighted entries work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The roller rolls a die as big as your table's highest number and finds the entry whose range covers the roll. An entry spanning 1-5 is five times likelier than one covering a single number. If your ranges leave gaps, a roll landing in a gap says so honestly instead of pretending."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where are my tables stored, and can I share them?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tables live in your browser's local storage — no account, nothing uploaded. The export button turns a table into plain numbered text you can save, send to a friend, or paste right back in on another device."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this table roller free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes — free, no ads, no signup, and it runs entirely in your browser. Your tables stay on your own device."
+          }
+        }
+      ],
+      "@id": "https://writing.builtbyjoshstudio.com/tabletop/random-table-roller/#faq"
     }
-  }
-  </script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {"@type": "ListItem", "position": 1, "name": "J.S. Warden", "item": "https://writing.builtbyjoshstudio.com/"},
-    {"@type": "ListItem", "position": 2, "name": "Tabletop & RPG tools", "item": "https://writing.builtbyjoshstudio.com/tabletop/"},
-    {"@type": "ListItem", "position": 3, "name": "Random Table Roller", "item": "https://writing.builtbyjoshstudio.com/tabletop/random-table-roller/"}
   ]
 }
 </script>
-
-  <!-- JSON-LD #2: FAQPage (mirrors the on-page FAQ) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What format can I paste tables in?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Almost anything line-based. Plain lines get auto-numbered in order (twenty lines becomes a d20 table). Lines that start with a number ('7: a broken cart') keep that number, and ranges ('01-05: nothing happens') become weighted entries — the wider the range, the more likely the result. You can mix all three styles in one paste. Percentile numbering works too: 00 counts as 100 (as in 96-00), a d10's 0 counts as 10, and a table that counts from zero (00-09 through 90-99) moves up one so every entry keeps its odds."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How do weighted entries work?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "The roller rolls a die as big as your table's highest number and finds the entry whose range covers the roll. An entry spanning 1-5 is five times likelier than one covering a single number. If your ranges leave gaps, a roll landing in a gap says so honestly instead of pretending."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Where are my tables stored, and can I share them?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Tables live in your browser's local storage — no account, nothing uploaded. The export button turns a table into plain numbered text you can save, send to a friend, or paste right back in on another device."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is this table roller free?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes — free, no ads, no signup, and it runs entirely in your browser. Your tables stay on your own device."
-        }
-      }
-    ]
-  }
-  </script>
-
   <!-- Open Graph + Twitter -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://writing.builtbyjoshstudio.com/tabletop/random-table-roller/">
   <meta property="og:title" content="Random Table Roller | Roll on Your Own Custom TTRPG Tables">
-  <meta property="og:description" content="Paste any list, get a rollable table — weighted ranges, no-repeat multi-rolls, and a saved library. Free, ad-free.">
+  <meta property="og:description" content="Paste or build your own random tables — d20 taverns, d100 loot — then roll on them with one tap. Weighted ranges, saved tables. Free, ad-free, no signup.">
   <meta property="og:image" content="https://writing.builtbyjoshstudio.com/assets/brand/og-1200x630.png">
+  <meta property="og:site_name" content="J.S. Warden">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://writing.builtbyjoshstudio.com/tabletop/random-table-roller/">
   <meta name="twitter:title" content="Random Table Roller | Roll on Your Own Custom TTRPG Tables">
-  <meta name="twitter:description" content="Paste any list, get a rollable table — weighted ranges, no-repeat multi-rolls, and a saved library. Free, ad-free.">
+  <meta name="twitter:description" content="Paste or build your own random tables — d20 taverns, d100 loot — then roll on them with one tap. Weighted ranges, saved tables. Free, ad-free, no signup.">
   <meta name="twitter:image" content="https://writing.builtbyjoshstudio.com/assets/brand/og-1200x630.png">
-
 <link rel="stylesheet" href="/css/studio/tokens.css?v=f58e0d92c0">
 <link rel="stylesheet" href="/css/studio/components.css?v=09a4d9f402">
 <link rel="stylesheet" href="/css/studio/tools.css?v=76acb59400">
@@ -144,7 +203,7 @@ d.setAttribute('data-theme',t)})();
 <link rel="stylesheet" href="/fonts/fonts.css?v=00fd9dd53c">
 <link rel="stylesheet" href="/tokens/themes.css?v=a10c66c644">
 <link rel="stylesheet" href="/css/base.css?v=fa70b1d88f">
-<link rel="stylesheet" href="/css/site.css?v=bf15793f00">
+<link rel="stylesheet" href="/css/site.css?v=214148b14f">
 <link rel="stylesheet" href="/css/tool-parts.css?v=0d4d40d55a">
 <script defer src="/js/theme-switcher.js?v=8278cc8676"></script>
 <script defer src="/js/site.js?v=f8e9bf1bb4"></script>
@@ -272,6 +331,20 @@ d.setAttribute('data-theme',t)})();
         <tr><th scope="row">Inputs</th><td>Paste one result per line (numbers and weighted ranges like <span class="jsw-num">1-3</span> optional), or build tables by hand — <span class="jsw-formula">d20</span> taverns, <span class="jsw-formula">d100</span> loot, anything.</td></tr>
         <tr><th scope="row">Outputs</th><td>One-tap rolls on your table with the result highlighted; tables are saved for reuse.</td></tr>
         <tr><th scope="row">Cost &amp; privacy</th><td>Free, ad-free, no signup. Runs and saves in this browser's local storage — nothing leaves your device.</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <div class="jsw-tool__panel jsw-glance" id="quick-reference">
+    <h2>Quick reference</h2>
+    <div class="jsw-table-wrap">
+    <table class="jsw-table">
+      <tbody>
+        <tr><th scope="row">Library limits</th><td>Up to <span class="jsw-num">50</span> saved tables, <span class="jsw-num">500</span> entries per table, and die faces up to <span class="jsw-formula">d1000</span></td></tr>
+        <tr><th scope="row">Paste formats</th><td>Plain lines (auto-numbered), explicit numbers, weighted ranges (e.g. <span class="jsw-formula">01-05</span>), and percentile rules (<span class="jsw-num">00</span>=<span class="jsw-num">100</span>, <span class="jsw-num">0</span>=<span class="jsw-num">10</span>, zero-indexed shift)</td></tr>
+        <tr><th scope="row">Rolling modes</th><td>Single rolls or distinct no-repeat batches, plus a <span class="jsw-num">12</span>-roll history saved in browser local storage</td></tr>
+        <tr><th scope="row">Export</th><td>One-click plain-text (.txt) download for any table in your library</td></tr>
       </tbody>
     </table>
     </div>

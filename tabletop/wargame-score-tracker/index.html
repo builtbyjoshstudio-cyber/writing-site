@@ -24,119 +24,178 @@ d.setAttribute('data-theme',t)})();
   <meta name="description" content="Track victory points, command points, secondaries, and battle rounds for two players in any miniature wargame. Saves mid-game. Free, ad-free, no signup.">
   <meta name="robots" content="max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <link rel="canonical" href="https://writing.builtbyjoshstudio.com/tabletop/wargame-score-tracker/">
-
-  <!-- JSON-LD #1: WebApplication -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Wargame Score Tracker",
-    "url": "https://writing.builtbyjoshstudio.com/tabletop/wargame-score-tracker/",
-    "description": "A two-player score sheet for miniature wargames — primary points by battle round, free-text secondary objectives, command points, and running totals. Saves itself mid-game.",
-    "applicationCategory": "GameApplication",
-    "operatingSystem": "Any (web browser)",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "publisher": {
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://writing.builtbyjoshstudio.com/#website",
+      "name": "J.S. Warden",
+      "url": "https://writing.builtbyjoshstudio.com/",
+      "description": "Dark LitRPG and fantasy noir by J.S. Warden — books, in-world field dispatches, character profiles, and free browser tabletop tools.",
+      "inLanguage": "en-US",
+      "author": {
+        "@id": "https://writing.builtbyjoshstudio.com/#jswarden"
+      },
+      "publisher": {
+        "@id": "https://builtbyjoshstudio.com/#organization"
+      }
+    },
+    {
       "@type": "Organization",
       "@id": "https://builtbyjoshstudio.com/#organization",
       "name": "Built by Josh Studio LLC",
       "legalName": "Built by Josh Studio LLC",
-      "alternateName": [
-        "BBJ Studio",
-        "Built by Josh Studio"
-      ],
-      "url": "https://builtbyjoshstudio.com",
+      "url": "https://builtbyjoshstudio.com/",
+      "email": "mailto:support@builtbyjoshstudio.com",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://builtbyjoshstudio.com/images/logo/logo.webp",
+        "url": "https://writing.builtbyjoshstudio.com/assets/favicons/favicon-512.png",
         "width": 512,
         "height": 512
-      },
-      "image": "https://builtbyjoshstudio.com/images/logo/logo.webp",
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://writing.builtbyjoshstudio.com/#jswarden",
+      "name": "J.S. Warden",
+      "url": "https://writing.builtbyjoshstudio.com/",
+      "description": "Fiction author of dark LitRPG and dark fantasy detective noir, including Overlayed Echoes and Ebonspire Chronicles.",
       "sameAs": [
-        "https://linktr.ee/builtbyjoshstudio",
-        "https://www.youtube.com/@TalesofInkShadowsStudio",
-        "https://www.youtube.com/@joshandjordanskitchen",
-        "https://tynkrtoolsandco.etsy.com",
-        "https://www.etsy.com/shop/BuiltByJoshStudio",
-        "https://www.redbubble.com/people/BBJStudio/shop"
-      ],
-      "identifier": [
-        {
-          "@type": "PropertyValue",
-          "propertyID": "Kansas Business ID",
-          "value": "10076138"
-        }
+        "https://builtbyjoshstudio.com/about.html",
+        "https://www.amazon.com/stores/author/B0FPQ3RWWF",
+        "https://www.youtube.com/@TalesofInkShadowsStudio"
       ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "J.S. Warden",
+          "item": "https://writing.builtbyjoshstudio.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tabletop & RPG tools",
+          "item": "https://writing.builtbyjoshstudio.com/tabletop/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Wargame Score Tracker",
+          "item": "https://writing.builtbyjoshstudio.com/tabletop/wargame-score-tracker/"
+        }
+      ],
+      "@id": "https://writing.builtbyjoshstudio.com/tabletop/wargame-score-tracker/#breadcrumb"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://writing.builtbyjoshstudio.com/tabletop/wargame-score-tracker/#webpage",
+      "url": "https://writing.builtbyjoshstudio.com/tabletop/wargame-score-tracker/",
+      "name": "Wargame Score Tracker | Free VP & CP Tracker, Any System",
+      "description": "Track victory points, command points, secondaries, and battle rounds for two players in any miniature wargame. Saves mid-game. Free, ad-free, no signup.",
+      "inLanguage": "en-US",
+      "isPartOf": {
+        "@id": "https://writing.builtbyjoshstudio.com/#website"
+      },
+      "breadcrumb": {
+        "@id": "https://writing.builtbyjoshstudio.com/tabletop/wargame-score-tracker/#breadcrumb"
+      },
+      "mainEntity": {
+        "@id": "https://writing.builtbyjoshstudio.com/tabletop/wargame-score-tracker/#app"
+      },
+      "primaryImageOfPage": "https://writing.builtbyjoshstudio.com/assets/brand/og-1200x630.png"
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://writing.builtbyjoshstudio.com/tabletop/wargame-score-tracker/#app",
+      "name": "Wargame Score Tracker",
+      "url": "https://writing.builtbyjoshstudio.com/tabletop/wargame-score-tracker/",
+      "description": "Track victory points, command points, secondaries, and battle rounds for two players in any miniature wargame. Saves mid-game. Free, ad-free, no signup.",
+      "image": "https://writing.builtbyjoshstudio.com/assets/brand/og-1200x630.png",
+      "applicationCategory": "GameApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript. Runs locally in any modern web browser.",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "Two-player score sheet with 3 to 6 configurable battle rounds",
+        "Per-round primary victory point tracking",
+        "Up to 12 custom named secondary objectives per player",
+        "Command point counters and live running totals",
+        "Automatic mid-game browser localStorage persistence"
+      ],
+      "author": {
+        "@id": "https://writing.builtbyjoshstudio.com/#jswarden"
+      },
+      "publisher": {
+        "@id": "https://builtbyjoshstudio.com/#organization"
+      },
+      "isPartOf": {
+        "@id": "https://writing.builtbyjoshstudio.com/#website"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Does this work for Warhammer 40,000, Age of Sigmar, or other miniature games?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes — it's system-agnostic. It tracks the numbers nearly every miniature wargame shares: victory points by battle round, named secondary objectives you type yourself, command points, and a round counter. Nothing is tied to any publisher's missions or rules, so it works for any game, edition, or homebrew scenario."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will the score survive if the tab closes mid-game?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Every change saves to your browser's local storage instantly, so a closed tab, a dead battery, or a lunch break mid-tournament round doesn't lose the score — reopen the page and the match is exactly where you left it. It stays on this device; nothing is uploaded."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do secondary objectives work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Type each player's secondaries in as free text — whatever your mission pack or scenario calls them — and update their points as you score. Each secondary's points feed straight into that player's total alongside the per-round primary scores."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this score tracker free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes — free, no ads, no signup, and it runs entirely in your browser. The score stays on your own device."
+          }
+        }
+      ],
+      "@id": "https://writing.builtbyjoshstudio.com/tabletop/wargame-score-tracker/#faq"
     }
-  }
-  </script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {"@type": "ListItem", "position": 1, "name": "J.S. Warden", "item": "https://writing.builtbyjoshstudio.com/"},
-    {"@type": "ListItem", "position": 2, "name": "Tabletop & RPG tools", "item": "https://writing.builtbyjoshstudio.com/tabletop/"},
-    {"@type": "ListItem", "position": 3, "name": "Wargame Score Tracker", "item": "https://writing.builtbyjoshstudio.com/tabletop/wargame-score-tracker/"}
   ]
 }
 </script>
-
-  <!-- JSON-LD #2: FAQPage (mirrors the on-page FAQ) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Does this work for Warhammer 40,000, Age of Sigmar, or other miniature games?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes — it's system-agnostic. It tracks the numbers nearly every miniature wargame shares: victory points by battle round, named secondary objectives you type yourself, command points, and a round counter. Nothing is tied to any publisher's missions or rules, so it works for any game, edition, or homebrew scenario."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Will the score survive if the tab closes mid-game?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. Every change saves to your browser's local storage instantly, so a closed tab, a dead battery, or a lunch break mid-tournament round doesn't lose the score — reopen the page and the match is exactly where you left it. It stays on this device; nothing is uploaded."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How do secondary objectives work?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Type each player's secondaries in as free text — whatever your mission pack or scenario calls them — and update their points as you score. Each secondary's points feed straight into that player's total alongside the per-round primary scores."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is this score tracker free?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes — free, no ads, no signup, and it runs entirely in your browser. The score stays on your own device."
-        }
-      }
-    ]
-  }
-  </script>
-
   <!-- Open Graph + Twitter -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://writing.builtbyjoshstudio.com/tabletop/wargame-score-tracker/">
   <meta property="og:title" content="Wargame Score Tracker | Free VP &amp; CP Tracker, Any System">
-  <meta property="og:description" content="Two players, battle rounds, primaries, secondaries, and command points — one score sheet that saves itself. Free, ad-free.">
+  <meta property="og:description" content="Track victory points, command points, secondaries, and battle rounds for two players in any miniature wargame. Saves mid-game. Free, ad-free, no signup.">
   <meta property="og:image" content="https://writing.builtbyjoshstudio.com/assets/brand/og-1200x630.png">
+  <meta property="og:site_name" content="J.S. Warden">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://writing.builtbyjoshstudio.com/tabletop/wargame-score-tracker/">
   <meta name="twitter:title" content="Wargame Score Tracker | Free VP &amp; CP Tracker, Any System">
-  <meta name="twitter:description" content="Two players, battle rounds, primaries, secondaries, and command points — one score sheet that saves itself. Free, ad-free.">
+  <meta name="twitter:description" content="Track victory points, command points, secondaries, and battle rounds for two players in any miniature wargame. Saves mid-game. Free, ad-free, no signup.">
   <meta name="twitter:image" content="https://writing.builtbyjoshstudio.com/assets/brand/og-1200x630.png">
-
 <link rel="stylesheet" href="/css/studio/tokens.css?v=f58e0d92c0">
 <link rel="stylesheet" href="/css/studio/components.css?v=09a4d9f402">
 <link rel="stylesheet" href="/css/studio/tools.css?v=76acb59400">
@@ -144,7 +203,7 @@ d.setAttribute('data-theme',t)})();
 <link rel="stylesheet" href="/fonts/fonts.css?v=00fd9dd53c">
 <link rel="stylesheet" href="/tokens/themes.css?v=a10c66c644">
 <link rel="stylesheet" href="/css/base.css?v=fa70b1d88f">
-<link rel="stylesheet" href="/css/site.css?v=bf15793f00">
+<link rel="stylesheet" href="/css/site.css?v=214148b14f">
 <link rel="stylesheet" href="/css/tool-parts.css?v=0d4d40d55a">
 <script defer src="/js/theme-switcher.js?v=8278cc8676"></script>
 <script defer src="/js/site.js?v=f8e9bf1bb4"></script>
@@ -294,6 +353,19 @@ d.setAttribute('data-theme',t)})();
         <tr><th scope="row">Inputs</th><td>Player names, battle rounds, primary points per round, the secondary objectives each side is playing, and command points.</td></tr>
         <tr><th scope="row">Outputs</th><td>Per-round and running totals for both players — the sheet survives a mid-game refresh.</td></tr>
         <tr><th scope="row">Cost &amp; privacy</th><td>Free, ad-free, no signup. Runs and saves in this browser's local storage — nothing leaves your device.</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <div class="jsw-tool__panel jsw-glance" id="quick-reference">
+    <h2>Quick reference</h2>
+    <div class="jsw-table-wrap">
+    <table class="jsw-table">
+      <tbody>
+        <tr><th scope="row">Match setup</th><td>Two players with editable names and <span class="jsw-num">3</span>&ndash;<span class="jsw-num">6</span> configurable battle rounds (default <span class="jsw-num">5</span>)</td></tr>
+        <tr><th scope="row">Scoring fields</th><td>Per-round primary victory points (<span class="jsw-num">0</span>&ndash;<span class="jsw-num">999</span>), up to <span class="jsw-num">12</span> custom secondaries per player, and command points (<span class="jsw-num">0</span>&ndash;<span class="jsw-num">99</span>)</td></tr>
+        <tr><th scope="row">Totals &amp; save</th><td>Live running totals for both players; every score change auto-saves in browser local storage</td></tr>
       </tbody>
     </table>
     </div>

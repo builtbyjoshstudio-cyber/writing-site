@@ -24,119 +24,178 @@ d.setAttribute('data-theme',t)})();
   <meta name="description" content="Keep session notes, NPC names, and loot for your TTRPG campaign — saved in your browser between sessions, exportable to Markdown. Free, ad-free, no signup.">
   <meta name="robots" content="max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <link rel="canonical" href="https://writing.builtbyjoshstudio.com/tabletop/session-notes/">
-
-  <!-- JSON-LD #1: WebApplication -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Session Notes & NPC Log",
-    "url": "https://writing.builtbyjoshstudio.com/tabletop/session-notes/",
-    "description": "A campaign journal for tabletop RPGs — session log, NPC name list, and loot tracker, saved in your browser between sessions and exportable to Markdown.",
-    "applicationCategory": "GameApplication",
-    "operatingSystem": "Any (web browser)",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "publisher": {
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://writing.builtbyjoshstudio.com/#website",
+      "name": "J.S. Warden",
+      "url": "https://writing.builtbyjoshstudio.com/",
+      "description": "Dark LitRPG and fantasy noir by J.S. Warden — books, in-world field dispatches, character profiles, and free browser tabletop tools.",
+      "inLanguage": "en-US",
+      "author": {
+        "@id": "https://writing.builtbyjoshstudio.com/#jswarden"
+      },
+      "publisher": {
+        "@id": "https://builtbyjoshstudio.com/#organization"
+      }
+    },
+    {
       "@type": "Organization",
       "@id": "https://builtbyjoshstudio.com/#organization",
       "name": "Built by Josh Studio LLC",
       "legalName": "Built by Josh Studio LLC",
-      "alternateName": [
-        "BBJ Studio",
-        "Built by Josh Studio"
-      ],
-      "url": "https://builtbyjoshstudio.com",
+      "url": "https://builtbyjoshstudio.com/",
+      "email": "mailto:support@builtbyjoshstudio.com",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://builtbyjoshstudio.com/images/logo/logo.webp",
+        "url": "https://writing.builtbyjoshstudio.com/assets/favicons/favicon-512.png",
         "width": 512,
         "height": 512
-      },
-      "image": "https://builtbyjoshstudio.com/images/logo/logo.webp",
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://writing.builtbyjoshstudio.com/#jswarden",
+      "name": "J.S. Warden",
+      "url": "https://writing.builtbyjoshstudio.com/",
+      "description": "Fiction author of dark LitRPG and dark fantasy detective noir, including Overlayed Echoes and Ebonspire Chronicles.",
       "sameAs": [
-        "https://linktr.ee/builtbyjoshstudio",
-        "https://www.youtube.com/@TalesofInkShadowsStudio",
-        "https://www.youtube.com/@joshandjordanskitchen",
-        "https://tynkrtoolsandco.etsy.com",
-        "https://www.etsy.com/shop/BuiltByJoshStudio",
-        "https://www.redbubble.com/people/BBJStudio/shop"
-      ],
-      "identifier": [
-        {
-          "@type": "PropertyValue",
-          "propertyID": "Kansas Business ID",
-          "value": "10076138"
-        }
+        "https://builtbyjoshstudio.com/about.html",
+        "https://www.amazon.com/stores/author/B0FPQ3RWWF",
+        "https://www.youtube.com/@TalesofInkShadowsStudio"
       ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "J.S. Warden",
+          "item": "https://writing.builtbyjoshstudio.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tabletop & RPG tools",
+          "item": "https://writing.builtbyjoshstudio.com/tabletop/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Session Notes & NPC Log",
+          "item": "https://writing.builtbyjoshstudio.com/tabletop/session-notes/"
+        }
+      ],
+      "@id": "https://writing.builtbyjoshstudio.com/tabletop/session-notes/#breadcrumb"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://writing.builtbyjoshstudio.com/tabletop/session-notes/#webpage",
+      "url": "https://writing.builtbyjoshstudio.com/tabletop/session-notes/",
+      "name": "Session Notes & NPC Log | Free TTRPG Campaign Journal",
+      "description": "Keep session notes, NPC names, and loot for your TTRPG campaign — saved in your browser between sessions, exportable to Markdown. Free, ad-free, no signup.",
+      "inLanguage": "en-US",
+      "isPartOf": {
+        "@id": "https://writing.builtbyjoshstudio.com/#website"
+      },
+      "breadcrumb": {
+        "@id": "https://writing.builtbyjoshstudio.com/tabletop/session-notes/#breadcrumb"
+      },
+      "mainEntity": {
+        "@id": "https://writing.builtbyjoshstudio.com/tabletop/session-notes/#app"
+      },
+      "primaryImageOfPage": "https://writing.builtbyjoshstudio.com/assets/brand/og-1200x630.png"
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://writing.builtbyjoshstudio.com/tabletop/session-notes/#app",
+      "name": "Session Notes & NPC Log",
+      "url": "https://writing.builtbyjoshstudio.com/tabletop/session-notes/",
+      "description": "Keep session notes, NPC names, and loot for your TTRPG campaign — saved in your browser between sessions, exportable to Markdown. Free, ad-free, no signup.",
+      "image": "https://writing.builtbyjoshstudio.com/assets/brand/og-1200x630.png",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript. Runs locally in any modern web browser.",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "Multi-campaign journal (up to 20 campaigns, 200 sessions per campaign)",
+        "Searchable NPC directory (up to 300 NPCs) and loot ledger (up to 200 items)",
+        "Automatic browser localStorage persistence",
+        "Markdown (.md) campaign export",
+        "Full JSON backup export and restore"
+      ],
+      "author": {
+        "@id": "https://writing.builtbyjoshstudio.com/#jswarden"
+      },
+      "publisher": {
+        "@id": "https://builtbyjoshstudio.com/#organization"
+      },
+      "isPartOf": {
+        "@id": "https://writing.builtbyjoshstudio.com/#website"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Where are my campaign notes stored?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In your browser's local storage, on your own device. Nothing is uploaded anywhere and there's no account. That also means clearing your browser data erases them — use Back up journal now and then to download a .json copy you own, which Restore backup loads back in here, in another browser, or on another device."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I keep notes for more than one campaign?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Create as many campaigns as you like and switch between them from the campaign picker — each keeps its own session log, NPC list, and loot list."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I get my notes out of the tool?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes — one click exports the whole campaign as a Markdown file: every session entry with its date, the full NPC list, and your loot and quest items. It's plain text, so it opens anywhere and pastes cleanly into Notion, Obsidian, or a plain document. To move the whole journal to another browser or device, use Back up journal (.json) and Restore backup instead."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this campaign journal free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes — free, no ads, no signup, and it runs entirely in your browser. Your notes stay on your own device."
+          }
+        }
+      ],
+      "@id": "https://writing.builtbyjoshstudio.com/tabletop/session-notes/#faq"
     }
-  }
-  </script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {"@type": "ListItem", "position": 1, "name": "J.S. Warden", "item": "https://writing.builtbyjoshstudio.com/"},
-    {"@type": "ListItem", "position": 2, "name": "Tabletop & RPG tools", "item": "https://writing.builtbyjoshstudio.com/tabletop/"},
-    {"@type": "ListItem", "position": 3, "name": "Session Notes & NPC Log", "item": "https://writing.builtbyjoshstudio.com/tabletop/session-notes/"}
   ]
 }
 </script>
-
-  <!-- JSON-LD #2: FAQPage (mirrors the on-page FAQ) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Where are my campaign notes stored?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "In your browser's local storage, on your own device. Nothing is uploaded anywhere and there's no account. That also means clearing your browser data erases them — use Back up journal now and then to download a .json copy you own, which Restore backup loads back in here, in another browser, or on another device."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can I keep notes for more than one campaign?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. Create as many campaigns as you like and switch between them from the campaign picker — each keeps its own session log, NPC list, and loot list."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can I get my notes out of the tool?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes — one click exports the whole campaign as a Markdown file: every session entry with its date, the full NPC list, and your loot and quest items. It's plain text, so it opens anywhere and pastes cleanly into Notion, Obsidian, or a plain document. To move the whole journal to another browser or device, use Back up journal (.json) and Restore backup instead."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is this campaign journal free?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes — free, no ads, no signup, and it runs entirely in your browser. Your notes stay on your own device."
-        }
-      }
-    ]
-  }
-  </script>
-
   <!-- Open Graph + Twitter -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://writing.builtbyjoshstudio.com/tabletop/session-notes/">
   <meta property="og:title" content="Session Notes &amp; NPC Log | Free TTRPG Campaign Journal">
-  <meta property="og:description" content="Session log, NPC name list, and loot tracker for any tabletop campaign. Saves in your browser, exports to Markdown. Free, ad-free.">
+  <meta property="og:description" content="Keep session notes, NPC names, and loot for your TTRPG campaign — saved in your browser between sessions, exportable to Markdown. Free, ad-free, no signup.">
   <meta property="og:image" content="https://writing.builtbyjoshstudio.com/assets/brand/og-1200x630.png">
+  <meta property="og:site_name" content="J.S. Warden">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://writing.builtbyjoshstudio.com/tabletop/session-notes/">
   <meta name="twitter:title" content="Session Notes &amp; NPC Log | Free TTRPG Campaign Journal">
-  <meta name="twitter:description" content="Session log, NPC name list, and loot tracker for any tabletop campaign. Saves in your browser, exports to Markdown. Free, ad-free.">
+  <meta name="twitter:description" content="Keep session notes, NPC names, and loot for your TTRPG campaign — saved in your browser between sessions, exportable to Markdown. Free, ad-free, no signup.">
   <meta name="twitter:image" content="https://writing.builtbyjoshstudio.com/assets/brand/og-1200x630.png">
-
 <link rel="stylesheet" href="/css/studio/tokens.css?v=f58e0d92c0">
 <link rel="stylesheet" href="/css/studio/components.css?v=09a4d9f402">
 <link rel="stylesheet" href="/css/studio/tools.css?v=76acb59400">
@@ -144,7 +203,7 @@ d.setAttribute('data-theme',t)})();
 <link rel="stylesheet" href="/fonts/fonts.css?v=00fd9dd53c">
 <link rel="stylesheet" href="/tokens/themes.css?v=a10c66c644">
 <link rel="stylesheet" href="/css/base.css?v=fa70b1d88f">
-<link rel="stylesheet" href="/css/site.css?v=bf15793f00">
+<link rel="stylesheet" href="/css/site.css?v=214148b14f">
 <link rel="stylesheet" href="/css/tool-parts.css?v=0d4d40d55a">
 <script defer src="/js/theme-switcher.js?v=8278cc8676"></script>
 <script defer src="/js/site.js?v=f8e9bf1bb4"></script>
@@ -269,6 +328,20 @@ d.setAttribute('data-theme',t)})();
     </div>
   </div>
 
+  <div class="jsw-tool__panel jsw-glance" id="quick-reference">
+    <h2>Quick reference</h2>
+    <div class="jsw-table-wrap">
+    <table class="jsw-table">
+      <tbody>
+        <tr><th scope="row">Campaign capacity</th><td>Up to <span class="jsw-num">20</span> campaigns and <span class="jsw-num">200</span> session entries per campaign (up to <span class="jsw-num">20,000</span> characters each)</td></tr>
+        <tr><th scope="row">NPC &amp; loot logs</th><td>Up to <span class="jsw-num">300</span> searchable NPC entries and <span class="jsw-num">200</span> loot items with check-off tracking per campaign</td></tr>
+        <tr><th scope="row">Exports &amp; backups</th><td>One-click Markdown (.md) export per campaign, plus full .json journal backup and restore</td></tr>
+        <tr><th scope="row">Tool integration</th><td>NPCs sent from the NPC Generator land directly in your active campaign via shared browser local storage</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
     <!-- PROSE -->
     <section class="jsw-section jsw-prose">
       <h2>Every campaign has a memory problem</h2>
@@ -364,6 +437,11 @@ d.setAttribute('data-theme',t)})();
   <section class="jsw-section net-band">
     <h2 class="section-title">More from J.S. Warden<span class="rule"></span></h2>
     <div class="net-rows">
+      <a class="glass-lite anatomy-row" href="/blog/free-tabletop-rpg-tools/">
+        <div class="ix">LOG</div>
+        <div class="lbl"><h3>Read the full guide</h3><p>Why these browser tabletop RPG tools were built for the real table</p></div>
+        <code>&rarr;</code>
+      </a>
       <a class="glass-lite anatomy-row" href="/books/">
         <div class="ix">JSW</div>
         <div class="lbl"><h3>Books by J.S. Warden</h3><p>Ebonspire Chronicles and Overlayed Echoes</p></div>

@@ -21,122 +21,181 @@ d.setAttribute('data-theme',t)})();
     </script>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Initiative Tracker | Free TTRPG Combat Tracker, Any System</title>
-  <meta name="description" content="Track turn order, rounds, HP, and conditions for any tabletop RPG combat — D&amp;D, Pathfinder, or any system. Saves between sessions. Free, ad-free, no signup.">
+  <meta name="description" content="Track turn order, rounds, HP, and conditions for any tabletop RPG combat — D&amp;D, Pathfinder, or homebrew. Saves between sessions. Free, no ads.">
   <meta name="robots" content="max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <link rel="canonical" href="https://writing.builtbyjoshstudio.com/tabletop/initiative-tracker/">
-
-  <!-- JSON-LD #1: WebApplication -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Initiative Tracker",
-    "url": "https://writing.builtbyjoshstudio.com/tabletop/initiative-tracker/",
-    "description": "Track turn order, rounds, HP, and conditions for tabletop RPG combat in any system. Your encounter saves itself in the browser between sessions.",
-    "applicationCategory": "GameApplication",
-    "operatingSystem": "Any (web browser)",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "publisher": {
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://writing.builtbyjoshstudio.com/#website",
+      "name": "J.S. Warden",
+      "url": "https://writing.builtbyjoshstudio.com/",
+      "description": "Dark LitRPG and fantasy noir by J.S. Warden — books, in-world field dispatches, character profiles, and free browser tabletop tools.",
+      "inLanguage": "en-US",
+      "author": {
+        "@id": "https://writing.builtbyjoshstudio.com/#jswarden"
+      },
+      "publisher": {
+        "@id": "https://builtbyjoshstudio.com/#organization"
+      }
+    },
+    {
       "@type": "Organization",
       "@id": "https://builtbyjoshstudio.com/#organization",
       "name": "Built by Josh Studio LLC",
       "legalName": "Built by Josh Studio LLC",
-      "alternateName": [
-        "BBJ Studio",
-        "Built by Josh Studio"
-      ],
-      "url": "https://builtbyjoshstudio.com",
+      "url": "https://builtbyjoshstudio.com/",
+      "email": "mailto:support@builtbyjoshstudio.com",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://builtbyjoshstudio.com/images/logo/logo.webp",
+        "url": "https://writing.builtbyjoshstudio.com/assets/favicons/favicon-512.png",
         "width": 512,
         "height": 512
-      },
-      "image": "https://builtbyjoshstudio.com/images/logo/logo.webp",
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://writing.builtbyjoshstudio.com/#jswarden",
+      "name": "J.S. Warden",
+      "url": "https://writing.builtbyjoshstudio.com/",
+      "description": "Fiction author of dark LitRPG and dark fantasy detective noir, including Overlayed Echoes and Ebonspire Chronicles.",
       "sameAs": [
-        "https://linktr.ee/builtbyjoshstudio",
-        "https://www.youtube.com/@TalesofInkShadowsStudio",
-        "https://www.youtube.com/@joshandjordanskitchen",
-        "https://tynkrtoolsandco.etsy.com",
-        "https://www.etsy.com/shop/BuiltByJoshStudio",
-        "https://www.redbubble.com/people/BBJStudio/shop"
-      ],
-      "identifier": [
-        {
-          "@type": "PropertyValue",
-          "propertyID": "Kansas Business ID",
-          "value": "10076138"
-        }
+        "https://builtbyjoshstudio.com/about.html",
+        "https://www.amazon.com/stores/author/B0FPQ3RWWF",
+        "https://www.youtube.com/@TalesofInkShadowsStudio"
       ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "J.S. Warden",
+          "item": "https://writing.builtbyjoshstudio.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tabletop & RPG tools",
+          "item": "https://writing.builtbyjoshstudio.com/tabletop/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Initiative Tracker",
+          "item": "https://writing.builtbyjoshstudio.com/tabletop/initiative-tracker/"
+        }
+      ],
+      "@id": "https://writing.builtbyjoshstudio.com/tabletop/initiative-tracker/#breadcrumb"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://writing.builtbyjoshstudio.com/tabletop/initiative-tracker/#webpage",
+      "url": "https://writing.builtbyjoshstudio.com/tabletop/initiative-tracker/",
+      "name": "Initiative Tracker | Free TTRPG Combat Tracker, Any System",
+      "description": "Track turn order, rounds, HP, and conditions for any tabletop RPG combat — D&D, Pathfinder, or homebrew. Saves between sessions. Free, no ads.",
+      "inLanguage": "en-US",
+      "isPartOf": {
+        "@id": "https://writing.builtbyjoshstudio.com/#website"
+      },
+      "breadcrumb": {
+        "@id": "https://writing.builtbyjoshstudio.com/tabletop/initiative-tracker/#breadcrumb"
+      },
+      "mainEntity": {
+        "@id": "https://writing.builtbyjoshstudio.com/tabletop/initiative-tracker/#app"
+      },
+      "primaryImageOfPage": "https://writing.builtbyjoshstudio.com/assets/brand/og-1200x630.png"
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://writing.builtbyjoshstudio.com/tabletop/initiative-tracker/#app",
+      "name": "Initiative Tracker",
+      "url": "https://writing.builtbyjoshstudio.com/tabletop/initiative-tracker/",
+      "description": "Track turn order, rounds, HP, and conditions for any tabletop RPG combat — D&D, Pathfinder, or homebrew. Saves between sessions. Free, no ads.",
+      "image": "https://writing.builtbyjoshstudio.com/assets/brand/og-1200x630.png",
+      "applicationCategory": "GameApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript. Runs locally in any modern web browser.",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "Turn order sorting with automatic duplicate numbering and decimal tie-breakers",
+        "Up to 40 combatants with round and turn cycling",
+        "Quick HP damage and healing controls",
+        "Up to 8 condition tags per combatant with presets and custom tags",
+        "Automatic browser localStorage persistence between sessions"
+      ],
+      "author": {
+        "@id": "https://writing.builtbyjoshstudio.com/#jswarden"
+      },
+      "publisher": {
+        "@id": "https://builtbyjoshstudio.com/#organization"
+      },
+      "isPartOf": {
+        "@id": "https://writing.builtbyjoshstudio.com/#website"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Does this initiative tracker work for games other than D&D?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. It tracks names, initiative values, hit points, rounds, and conditions — the pieces almost every tabletop RPG shares — without assuming any ruleset. Use it for D&D, Pathfinder, Call of Cthulhu, or any homebrew system."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will my encounter still be here if I close the tab?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The encounter saves itself in your browser's local storage on every change, so you can close the tab mid-session and pick up exactly where you left off — same combatants, same round, same turn. It stays on this device and browser; nothing is uploaded anywhere."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How are ties in initiative handled?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Combatants with the same initiative keep the order you added them in. If your table breaks ties differently, nudge one combatant's initiative by a decimal — 15.5 sorts above 15."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this initiative tracker free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes — free, no ads, no signup, and it runs entirely in your browser. Nothing you enter is sent anywhere; your encounter is stored only on your own device."
+          }
+        }
+      ],
+      "@id": "https://writing.builtbyjoshstudio.com/tabletop/initiative-tracker/#faq"
     }
-  }
-  </script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {"@type": "ListItem", "position": 1, "name": "J.S. Warden", "item": "https://writing.builtbyjoshstudio.com/"},
-    {"@type": "ListItem", "position": 2, "name": "Tabletop & RPG tools", "item": "https://writing.builtbyjoshstudio.com/tabletop/"},
-    {"@type": "ListItem", "position": 3, "name": "Initiative Tracker", "item": "https://writing.builtbyjoshstudio.com/tabletop/initiative-tracker/"}
   ]
 }
 </script>
-
-  <!-- JSON-LD #2: FAQPage (mirrors the on-page FAQ) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Does this initiative tracker work for games other than D&D?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. It tracks names, initiative values, hit points, rounds, and conditions — the pieces almost every tabletop RPG shares — without assuming any ruleset. Use it for D&D, Pathfinder, Call of Cthulhu, or any homebrew system."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Will my encounter still be here if I close the tab?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. The encounter saves itself in your browser's local storage on every change, so you can close the tab mid-session and pick up exactly where you left off — same combatants, same round, same turn. It stays on this device and browser; nothing is uploaded anywhere."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How are ties in initiative handled?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Combatants with the same initiative keep the order you added them in. If your table breaks ties differently, nudge one combatant's initiative by a decimal — 15.5 sorts above 15."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is this initiative tracker free?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes — free, no ads, no signup, and it runs entirely in your browser. Nothing you enter is sent anywhere; your encounter is stored only on your own device."
-        }
-      }
-    ]
-  }
-  </script>
-
   <!-- Open Graph + Twitter -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://writing.builtbyjoshstudio.com/tabletop/initiative-tracker/">
   <meta property="og:title" content="Initiative Tracker | Free TTRPG Combat Tracker, Any System">
-  <meta property="og:description" content="Turn order, rounds, HP, and conditions for any tabletop RPG. Saves between sessions. Free, ad-free.">
+  <meta property="og:description" content="Track turn order, rounds, HP, and conditions for any tabletop RPG combat — D&amp;D, Pathfinder, or homebrew. Saves between sessions. Free, no ads.">
   <meta property="og:image" content="https://writing.builtbyjoshstudio.com/assets/brand/og-1200x630.png">
+  <meta property="og:site_name" content="J.S. Warden">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://writing.builtbyjoshstudio.com/tabletop/initiative-tracker/">
   <meta name="twitter:title" content="Initiative Tracker | Free TTRPG Combat Tracker, Any System">
-  <meta name="twitter:description" content="Turn order, rounds, HP, and conditions for any tabletop RPG. Saves between sessions. Free, ad-free.">
+  <meta name="twitter:description" content="Track turn order, rounds, HP, and conditions for any tabletop RPG combat — D&amp;D, Pathfinder, or homebrew. Saves between sessions. Free, no ads.">
   <meta name="twitter:image" content="https://writing.builtbyjoshstudio.com/assets/brand/og-1200x630.png">
-
 <link rel="stylesheet" href="/css/studio/tokens.css?v=f58e0d92c0">
 <link rel="stylesheet" href="/css/studio/components.css?v=09a4d9f402">
 <link rel="stylesheet" href="/css/studio/tools.css?v=76acb59400">
@@ -144,7 +203,7 @@ d.setAttribute('data-theme',t)})();
 <link rel="stylesheet" href="/fonts/fonts.css?v=00fd9dd53c">
 <link rel="stylesheet" href="/tokens/themes.css?v=a10c66c644">
 <link rel="stylesheet" href="/css/base.css?v=fa70b1d88f">
-<link rel="stylesheet" href="/css/site.css?v=bf15793f00">
+<link rel="stylesheet" href="/css/site.css?v=214148b14f">
 <link rel="stylesheet" href="/css/tool-parts.css?v=0d4d40d55a">
 <script defer src="/js/theme-switcher.js?v=8278cc8676"></script>
 <script defer src="/js/site.js?v=f8e9bf1bb4"></script>
@@ -269,6 +328,20 @@ d.setAttribute('data-theme',t)})();
     </div>
   </div>
 
+  <div class="jsw-tool__panel jsw-glance" id="quick-reference">
+    <h2>Quick reference</h2>
+    <div class="jsw-table-wrap">
+    <table class="jsw-table">
+      <tbody>
+        <tr><th scope="row">Roster capacity</th><td>Up to <span class="jsw-num">40</span> combatants per encounter; duplicate names auto-number (e.g. Goblin, Goblin <span class="jsw-num">2</span>)</td></tr>
+        <tr><th scope="row">Tie-breaking</th><td>Equal initiatives preserve entry order; decimal values (e.g. <span class="jsw-num">15.5</span> above <span class="jsw-num">15</span>) break ties cleanly</td></tr>
+        <tr><th scope="row">HP &amp; conditions</th><td>Quick damage/heal controls, zero-HP gray-out, and up to <span class="jsw-num">8</span> condition tags per combatant (presets or custom)</td></tr>
+        <tr><th scope="row">Turn flow &amp; save</th><td>Next turn and Back controls with automatic round counting; every change auto-saves in browser local storage</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
     <!-- PROSE -->
     <section class="jsw-section jsw-prose">
       <h2>Run combat faster at the table</h2>
@@ -364,6 +437,11 @@ d.setAttribute('data-theme',t)})();
   <section class="jsw-section net-band">
     <h2 class="section-title">More from J.S. Warden<span class="rule"></span></h2>
     <div class="net-rows">
+      <a class="glass-lite anatomy-row" href="/blog/free-tabletop-rpg-tools/">
+        <div class="ix">LOG</div>
+        <div class="lbl"><h3>Read the full guide</h3><p>Why these browser tabletop RPG tools were built for the real table</p></div>
+        <code>&rarr;</code>
+      </a>
       <a class="glass-lite anatomy-row" href="/books/">
         <div class="ix">JSW</div>
         <div class="lbl"><h3>Books by J.S. Warden</h3><p>Ebonspire Chronicles and Overlayed Echoes</p></div>

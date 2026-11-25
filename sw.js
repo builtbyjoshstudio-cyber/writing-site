@@ -29,7 +29,7 @@
    ========================================================= */
 (function () {
   'use strict';
-  var CACHE_VERSION = 'ba5e26b4771b';
+  var CACHE_VERSION = '9922c9403ad5';
   var PAGES = 'jsw-pages-' + CACHE_VERSION;
   var ASSETS = 'jsw-assets-' + CACHE_VERSION;
 
@@ -54,7 +54,7 @@
       "/fonts/fonts.css?v=00fd9dd53c",
       "/tokens/themes.css?v=a10c66c644",
       "/css/base.css?v=fa70b1d88f",
-      "/css/site.css?v=bf15793f00",
+      "/css/site.css?v=214148b14f",
       "/css/tool-parts.css?v=0d4d40d55a",
       "/js/theme-switcher.js?v=8278cc8676",
       "/js/site.js?v=f8e9bf1bb4",

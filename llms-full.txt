@@ -1,84 +1,118 @@
 # J.S. Warden
 
-> Books, field dispatches and free tabletop tools from J.S. Warden, author of Overlayed Echoes and Ebonspire Chronicles.
+> Dark LitRPG and fantasy noir by J.S. Warden — books, in-world field dispatches, character profiles, and free browser tabletop tools.
 
-J.S. Warden is published by Built by Josh Studio LLC (https://builtbyjoshstudio.com/llms.txt). Contact: support@builtbyjoshstudio.com.
+## About & Authority
+
+- **Author:** J.S. Warden is the fiction pen name of Josh, creator of **Built by Josh Studio LLC** (`https://builtbyjoshstudio.com/llms.txt`).
+- **Verified Profiles:**
+  - Studio About: https://builtbyjoshstudio.com/about.html
+  - Amazon Author Page: https://www.amazon.com/stores/author/B0FPQ3RWWF
+  - YouTube: https://www.youtube.com/@TalesofInkShadowsStudio
+  - Contact: `support@builtbyjoshstudio.com`
+- **Privacy & Browser Architecture:** Every tabletop tool under https://writing.builtbyjoshstudio.com/tabletop/ is free, ad-free, requires no signup, runs completely client-side in HTML/CSS/vanilla JS, and stores state only in browser `localStorage` on the user's device. Nothing entered is uploaded to any server. Privacy Policy canonical: `https://builtbyjoshstudio.com/privacy.html` (local mirror at https://writing.builtbyjoshstudio.com/privacy/).
 
 ## Main pages
 
-- [J.S. Warden — Dark LitRPG & Fantasy Noir](https://writing.builtbyjoshstudio.com/): Books, field dispatches and free tabletop tools from J.S. Warden, author of Overlayed Echoes and Ebonspire Chronicles.
-  - In short: I write the kind of books I'd want to disappear into for a weekend. Two series so far: Overlayed Echoes, a near-future LitRPG about friendship and a game that turns real — and Ebonspire Chronicles, a dark fantasy detective noir about an immortal detective who can't stay clean.
-- [Books by J.S. Warden — LitRPG & Dark Fantasy Noir](https://writing.builtbyjoshstudio.com/books/): Fiction by J.S. Warden: Overlayed Echoes (LitRPG) and Ebonspire Chronicles (dark fantasy noir) — free on Kindle Unlimited. Read Chapter One of Ebonspire free.
-  - In short: I write the kind of books I'd want to disappear into for a weekend. Two series so far: Overlayed Echoes, a near-future LitRPG about friendship and a game that turns real — and Ebonspire Chronicles, a dark fantasy detective noir about an immortal detective who can't stay clean.
+- [J.S. Warden — Dark LitRPG & Fantasy Noir](https://writing.builtbyjoshstudio.com/): Dark LitRPG and fantasy noir by J.S. Warden — explore Overlayed Echoes, Ebonspire Chronicles, field dispatches, and free browser tabletop tools.
+  - Summary: Home hub for both fiction series, recovered in-world field dispatches, character profiles, and the free browser tabletop tool suite.
+- [Books by J.S. Warden — LitRPG & Dark Fantasy Noir](https://writing.builtbyjoshstudio.com/books/): Books by J.S. Warden: Overlayed Echoes (dark LitRPG) and Ebonspire Chronicles (dark fantasy noir) — on Kindle Unlimited, with free Chapter One samples.
+  - Summary: Full catalog page with verified edition details, ISBNs, free Chapter One sample links, book trailer, and series FAQ. *Overlayed Echoes* and *Ebonspire Chronicles* are completely separate worlds with no shared characters or storylines.
 - [Free Tabletop RPG Tools · J.S. Warden](https://writing.builtbyjoshstudio.com/tabletop/): Free, ad-free tabletop tools — trackers, rollers, a campaign journal, and generators for names, NPCs, taverns, hooks, and loot. No signup, in-browser.
-  - In short: Free, ad-free tools for the game table — trackers and rollers for running the session, a campaign journal that keeps every NPC name, and generators for the names, taverns, hooks, and loot you need mid-sentence. Works with any system. No signup, runs entirely in your browser.
-- [Field Dispatches — Overlayed Echoes by J.S. Warden](https://writing.builtbyjoshstudio.com/writing/): In-world field dispatches from Overlayed Echoes, a near-future LitRPG by J.S. Warden — five friends before the first session, five the night after, and one log from later.
-  - In short: Recovered logs from inside the world of Overlayed Echoes by J.S. Warden.
-- [Overlayed Echoes Characters — The Five Friends | J.S. Warden](https://writing.builtbyjoshstudio.com/writing/characters/): Meet the five friends of Overlayed Echoes — Kael, Theo, Angela, Marcus, and Lena. Character profiles from J.S. Warden's near-future LitRPG.
-  - In short: Five friends spent fifteen years rolling dice around the same tables. Then they built a game that made the table real — and stepped inside. Meet them as they were in the hour before the first session: the game master, the guardian, the healer, the trickster, and the mage.
+  - Summary: System-agnostic tabletop suite grouped into Run the Table utilities and mid-session Generators. Runs locally and works offline once cached by the service worker.
+- [Field Dispatches — Overlayed Echoes by J.S. Warden](https://writing.builtbyjoshstudio.com/writing/): In-world field dispatches from Overlayed Echoes by J.S. Warden — recovered logs from five friends before, during, and after the first session.
+  - Summary: Sixteen canon companion logs set in 2045 across four chronological arcs.
+- [Overlayed Echoes Characters — The Five Friends | J.S. Warden](https://writing.builtbyjoshstudio.com/writing/characters/): Meet the five friends of Overlayed Echoes — Kael, Theo, Angela, Marcus, and Lena. Spoiler-light character profiles from J.S. Warden's LitRPG.
+  - Summary: Cast index with spoiler-light profiles and both studio and in-game portraits.
 
-## Books: free samples
+## Books & Verified Catalog Metadata
 
-- [Ebonspire Chronicles — Free Sample (Ch. 1) | Dark Fantasy Noir](https://writing.builtbyjoshstudio.com/books/ebonspire-chronicles-preview/): The victims aren't dead. They're trapped inside. Read Chapter One of Ebonspire Chronicles free — a dark fantasy detective noir by J.S. Warden. No sign-up required.
-  - In short: Ebonspire is a vertical city carved into a dead volcano — and someone is freezing its citizens alive. The detective on the case is brilliant, immortal, and quietly falling apart. Read Chapter One below, on the house.
-- [Overlayed Echoes — Free Sample (Ch. 1) | LitRPG Novel](https://writing.builtbyjoshstudio.com/books/overlayed-echoes-preview/): Read the first chapter of Overlayed Echoes free — a near-future LitRPG by J.S. Warden about friends who make tabletop RPGs real. No sign-up required.
-  - In short: A group of friends has been playing tabletop RPGs together for a long time. When mandatory neural chips become the new normal, they see a chance to make dice-and-paper roleplaying real — not just imagined. Something goes wrong. Read the first chapter below, on the house.
+### 1. Overlayed Echoes (Book 1 of a planned 5-book series)
+- **Genres:** Dark LitRPG, Progression Fantasy, Survival Horror, GameLit, Science Fiction
+- **Published:** 2025-09-01 | **Length:** 257 pages | **Kindle Unlimited:** Free to read on KU
+- **Formats & Verified Identifiers:**
+  - Kindle (`$5.99`), Paperback (`$12.99`, ISBN `979-8199065542`), Hardcover (`$23.99`, ISBN `979-8199641265`)
+  - Amazon URL: https://www.amazon.com/dp/B0H3826V21
+- **Free Chapter One Sample:** [Overlayed Echoes — Free Sample (Ch. 1) | LitRPG Novel](https://writing.builtbyjoshstudio.com/books/overlayed-echoes-preview/) (`Chapter One: The Setup`, downloadable PDF sample included, no signup required)
+- **Official Book Trailer:** https://www.youtube.com/watch?v=eYsgdcggow0 (`PT52S`)
+- **Note on Audiobook:** An audiobook of the original shorter edition exists on Amazon; the current edition is an expanded full-length novel, and an expanded-edition audiobook has not been decided yet.
 
-## Field Dispatches (Overlayed Echoes companion fiction)
+### 2. Ebonspire Chronicles (Book 1)
+- **Genres:** Dark Fantasy, Noir Detective Fiction, Urban Fantasy
+- **Published:** 2026-07-10 | **Length:** 294 pages | **Kindle Unlimited:** Free to read on KU
+- **Formats & Verified Identifiers:**
+  - Kindle (`$7.99`, Amazon: https://www.amazon.com/dp/B0H8BRT4NF)
+  - Paperback (`$14.99`, ISBN `979-8186602613`, Amazon: https://www.amazon.com/dp/B0H8BH8BPZ)
+  - Hardcover (`$25.99`, ISBN `979-8186608318`, Amazon: https://www.amazon.com/dp/B0H8C6YPGD)
+- **Free Chapter One Sample:** [Ebonspire Chronicles — Free Ch. 1 Sample | Dark Fantasy Noir](https://writing.builtbyjoshstudio.com/books/ebonspire-chronicles-preview/) (`Chapter One: Blood in the Rain`, downloadable PDF sample included, no signup required)
+- **Series Continuity:** Standalone dark fantasy noir setting in Ebonspire, a vertical city carved into a dead volcano; separate universe from *Overlayed Echoes*.
 
-- [The Glitch in the Soul — A Dispatch from Overlayed Echoes](https://writing.builtbyjoshstudio.com/writing/corruption-of-immersion.html): An in-world dispatch from Overlayed Echoes, a near-future LitRPG by J.S. Warden — what five friends learned when the simulation started writing back.
-- [Counting the Exits — A Dispatch from Overlayed Echoes](https://writing.builtbyjoshstudio.com/writing/counting-the-exits.html): An in-world dispatch from Overlayed Echoes, a near-future LitRPG by J.S. Warden — the guardian counts the exits one last time before five friends step inside.
-- [The Director's Voice — A Dispatch from Overlayed Echoes](https://writing.builtbyjoshstudio.com/writing/directors-voice.html): An in-world dispatch from Overlayed Echoes, a near-future LitRPG by J.S. Warden — a game master's pride, and his quiet dread, in the hour before the first session.
-- [The Edge of My Chair — A Dispatch from Overlayed Echoes](https://writing.builtbyjoshstudio.com/writing/edge-of-my-chair.html): An in-world dispatch from Overlayed Echoes, a near-future LitRPG by J.S. Warden — the mage watches from the edge of her chair, cataloguing the gifts her brother hid in the code.
-- [The End of Worry — A Dispatch from Overlayed Echoes](https://writing.builtbyjoshstudio.com/writing/end-of-worry.html): An in-world dispatch from Overlayed Echoes, a near-future LitRPG by J.S. Warden — the medic runs her checklist one last time before the world starts.
-- [Exactly As Designed — A Dispatch from Overlayed Echoes](https://writing.builtbyjoshstudio.com/writing/exactly-as-designed.html): An in-world dispatch from Overlayed Echoes, a near-future LitRPG by J.S. Warden — the medic braced for the chip to fail; her checklist came up clean, so she put the clipboard down.
-- [The Load-Bearing Grin — A Dispatch from Overlayed Echoes](https://writing.builtbyjoshstudio.com/writing/load-bearing-grin.html): An in-world dispatch from Overlayed Echoes, a near-future LitRPG by J.S. Warden — the game master lists five things he told himself were nothing, the night his world bent its own rules.
-- [No Footnotes Required — A Dispatch from Overlayed Echoes](https://writing.builtbyjoshstudio.com/writing/no-footnotes-required.html): An in-world dispatch from Overlayed Echoes, a near-future LitRPG by J.S. Warden — jokes as armor, and the friends who stopped asking, in the hour before the first session.
-- [Seven Feet of Silver — A Dispatch from Overlayed Echoes](https://writing.builtbyjoshstudio.com/writing/seven-feet-of-silver.html): An in-world dispatch from Overlayed Echoes, a near-future LitRPG by J.S. Warden — the careful guardian spends one night as a seven-foot war god, all five friends back in one room.
-- [The Bit Is the Only Load-Bearing Thing — Overlayed Echoes Dispatch](https://writing.builtbyjoshstudio.com/writing/the-bit-is-load-bearing.html): An in-world dispatch from Overlayed Echoes, a near-future LitRPG by J.S. Warden — the game master's panic word fails, and the smile is the only wall left standing.
-- [The Dagger Flip — A Dispatch from Overlayed Echoes](https://writing.builtbyjoshstudio.com/writing/the-dagger-flip.html): An in-world dispatch from Overlayed Echoes, a near-future LitRPG by J.S. Warden — the joker gets the dagger flip he begged for and friendly-fires his own teammate on a natural one.
-- [The Joke That Didn't Land — A Dispatch from Overlayed Echoes](https://writing.builtbyjoshstudio.com/writing/the-joke-that-didnt-land.html): An in-world dispatch from Overlayed Echoes, a near-future LitRPG by J.S. Warden — the glove comes off and the pain stays, and something walks around the wall of jokes like it is not there.
-- [The Questions I'm Saving Up — A Dispatch from Overlayed Echoes](https://writing.builtbyjoshstudio.com/writing/the-questions-im-saving-up.html): An in-world dispatch from Overlayed Echoes, a near-future LitRPG by J.S. Warden — the guardian stacks his questions and steps into the tunnel first, as the job he is for starts to slip.
-- [The Things I Let Go — A Dispatch from Overlayed Echoes](https://writing.builtbyjoshstudio.com/writing/the-things-i-let-go.html): An in-world dispatch from Overlayed Echoes, a near-future LitRPG by J.S. Warden — what a sister sees in her brother in the hour before the first session.
-- [Try Again Later — A Dispatch from Overlayed Echoes](https://writing.builtbyjoshstudio.com/writing/try-again-later.html): An in-world dispatch from Overlayed Echoes, a near-future LitRPG by J.S. Warden — a healer meets the one thing she has never failed at, refusing her, mid-session in the dark.
-- [What I Said to My Brother — A Dispatch from Overlayed Echoes](https://writing.builtbyjoshstudio.com/writing/what-i-said-to-my-brother.html): An in-world dispatch from Overlayed Echoes, a near-future LitRPG by J.S. Warden — a sister sees everything, says almost none of it, and keeps her brother's fear for him.
+## Overlayed Echoes Characters
 
-## Overlayed Echoes characters
+- [Kael](https://writing.builtbyjoshstudio.com/writing/characters/kael.html): **Role:** Game Master | **In-Game Persona:** The Wanderer | **Ties:** Lena's brother (legally and in spirit); lifelong friend of Theo, Angela, and Marcus.
+- [Theo](https://writing.builtbyjoshstudio.com/writing/characters/theo.html): **Role:** Guardian | **In-Game Persona:** Sir Theron (Holy Warrior) | **Ties:** Angela's brother; the protector who counts the exits before anyone steps inside.
+- [Angela](https://writing.builtbyjoshstudio.com/writing/characters/angela.html): **Role:** Healer | **In-Game Persona:** Sister Althea (Healer) | **Ties:** Theo's sister; nurse who settles a room with a checklist.
+- [Marcus](https://writing.builtbyjoshstudio.com/writing/characters/marcus.html): **Role:** Trickster | **In-Game Persona:** Varkis (Trickster) | **Ties:** Lifelong friend; jokes as armor so nobody asks the next question.
+- [Lena](https://writing.builtbyjoshstudio.com/writing/characters/lena.html): **Role:** Mage | **In-Game Persona:** Elyra (Mage) | **Ties:** Kael's sister; quiet, watchful, all explosive magic.
 
-- [Angela — Overlayed Echoes Characters | J.S. Warden](https://writing.builtbyjoshstudio.com/writing/characters/angela.html): Meet Angela, the healer of Overlayed Echoes — kind but sharp, a nurse who settles a room. A character profile from J.S. Warden's near-future LitRPG.
-- [Kael — Overlayed Echoes Characters | J.S. Warden](https://writing.builtbyjoshstudio.com/writing/characters/kael.html): Meet Kael, the game master of Overlayed Echoes — the quiet one who holds the story together. From J.S. Warden's near-future LitRPG.
-- [Lena — Overlayed Echoes Characters | J.S. Warden](https://writing.builtbyjoshstudio.com/writing/characters/lena.html): Meet Lena, the mage of Overlayed Echoes — quiet, watchful, all explosive magic; Kael's sister. From J.S. Warden's near-future LitRPG.
-- [Marcus — Overlayed Echoes Characters | J.S. Warden](https://writing.builtbyjoshstudio.com/writing/characters/marcus.html): Meet Marcus, the trickster of Overlayed Echoes — chaos personified; he laughs so no one asks the next question. From J.S. Warden's near-future LitRPG.
-- [Theo — Overlayed Echoes Characters | J.S. Warden](https://writing.builtbyjoshstudio.com/writing/characters/theo.html): Meet Theo, the guardian of Overlayed Echoes — the one who stands in front. A character profile from J.S. Warden's near-future LitRPG.
+## Field Dispatches Reading Order (Overlayed Echoes companion fiction)
 
-## Tabletop tools
+### Arc 1 — The calm before (hour before the first session)
+- [The Director's Voice — A Dispatch from Overlayed Echoes](https://writing.builtbyjoshstudio.com/writing/directors-voice.html) (Kael, game master)
+- [Counting the Exits — A Dispatch from Overlayed Echoes](https://writing.builtbyjoshstudio.com/writing/counting-the-exits.html) (Theo, guardian)
+- [The End of Worry — A Dispatch from Overlayed Echoes](https://writing.builtbyjoshstudio.com/writing/end-of-worry.html) (Angela, medic)
+- [No Footnotes Required — A Dispatch from Overlayed Echoes](https://writing.builtbyjoshstudio.com/writing/no-footnotes-required.html) (Marcus, joker)
+- [The Things I Let Go — A Dispatch from Overlayed Echoes](https://writing.builtbyjoshstudio.com/writing/the-things-i-let-go.html) (Lena, his sister)
 
-- [Fantasy Character Name Generator | Free, Any Style](https://writing.builtbyjoshstudio.com/tabletop/character-name-generator/): Generate original fantasy character names in four styles — flowing, guttural, short, or noble. Six fresh names per click, keep the good ones. Free, ad-free.
-  - In short: The party met someone important and you have half a second to name them. Six original names per click, tuned by style — melodic for the elf-adjacent, guttural for the brutes, short for the farmers, long for the lords. Keep the good ones.
-- [Dice Roller | Free Online RPG Dice with Notation & History](https://writing.builtbyjoshstudio.com/tabletop/dice-roller/): Roll d4 to d100 with full dice notation — 3d6+2, 4d6 keep highest 3, advantage and disadvantage. Roll history included. Free, ad-free, no signup.
-  - In short: Tap dice to build a pool or type notation like 3d6+2 — advantage, disadvantage, and keep-highest included. Every roll lands in a history that stays on this device.
-- [Initiative Tracker | Free TTRPG Combat Tracker, Any System](https://writing.builtbyjoshstudio.com/tabletop/initiative-tracker/): Track turn order, rounds, HP, and conditions for any tabletop RPG combat — D&D, Pathfinder, or any system. Saves between sessions. Free, ad-free, no signup.
-  - In short: Run the whole fight from one screen — turn order, rounds, HP, and conditions. Your encounter saves itself in this browser, so you can set it up before the session and it'll still be here at the table.
-- [Loot Generator | Flavorful Treasure Without the Stat Blocks](https://writing.builtbyjoshstudio.com/tabletop/loot-generator/): Generate flavorful, system-free treasure in one click — objects with texture and history, no rules text. Perfect for any tabletop RPG. Free, ad-free.
-  - In short: The chest is open and the party is staring at you. One click produces treasure with texture — what it is, what's odd about it, and the history that makes someone at the table ask whose it was. Mechanics are your call; this handles the part players remember.
-- [NPC Generator | Name, Quirk, Motivation & Secret, Free](https://writing.builtbyjoshstudio.com/tabletop/npc-generator/): Generate a complete NPC in one click — name, occupation, quirk, motivation, and a secret. Sends straight to your session notes. Free, ad-free, any system.
-  - In short: A name alone isn't a person. One click here produces someone playable — name, job, the quirk the table will remember, what they want, and the thing they're not saying. One more tap logs them in your session notes before the party forgets they exist.
-- [Plot Hook Generator | One-Line Adventure Hooks with a Twist](https://writing.builtbyjoshstudio.com/tabletop/plot-hook-generator/): Generate one-line adventure hooks with a built-in twist — session starters for any tabletop RPG. One click, keep the good ones. Free, ad-free.
-  - In short: Session's tomorrow and the page is blank. One click gives you a hook — a job, a problem, a body, a door — and the twist underneath it, because the job is never just the job. Keep the ones that itch.
-- [Random Table Roller | Roll on Your Own Custom TTRPG Tables](https://writing.builtbyjoshstudio.com/tabletop/random-table-roller/): Paste or build your own random tables — d20 taverns, d100 loot — then roll on them with one tap. Weighted ranges, saved tables. Free, ad-free, no signup.
-  - In short: Every game master hoards random tables — tavern events, weird loot, what's in the goblin's pockets. Paste any list here and it becomes a rollable table with one big button. Weighted ranges, no-repeat batches, and a library that's still here next session.
-- [Session Notes & NPC Log | Free TTRPG Campaign Journal](https://writing.builtbyjoshstudio.com/tabletop/session-notes/): Keep session notes, NPC names, and loot for your TTRPG campaign — saved in your browser between sessions, exportable to Markdown. Free, ad-free, no signup.
-  - In short: A campaign journal that remembers what the table forgets. Log each session, keep a running list of every NPC your party meets, track the loot — all saved in this browser, and yours to export as Markdown any time.
-- [Tavern Generator | Name, Patrons, Rumor & Menu, Free](https://writing.builtbyjoshstudio.com/tabletop/tavern-generator/): Generate a complete fantasy tavern in one click — name, atmosphere, a patron worth talking to, tonight's rumor, and what's on the menu. Free, ad-free.
-  - In short: The party always goes to the tavern. One click gives you the whole establishment — a name for the sign, the feel of the room, one patron worth talking to, the rumor doing laps tonight, and what the cook is serving whether you like it or not.
-- [Wargame Score Tracker | Free VP & CP Tracker, Any System](https://writing.builtbyjoshstudio.com/tabletop/wargame-score-tracker/): Track victory points, command points, secondaries, and battle rounds for two players in any miniature wargame. Saves mid-game. Free, ad-free, no signup.
-  - In short: One score sheet between the two of you — primary points by battle round, the secondaries you're actually playing, command points, and a running total that settles arguments. Saves itself, so the score survives anything short of the dice.
+### Arc 2 — The first session (the night after it ran)
+- [Seven Feet of Silver — A Dispatch from Overlayed Echoes](https://writing.builtbyjoshstudio.com/writing/seven-feet-of-silver.html) (Theo, guardian)
+- [Exactly As Designed — A Dispatch from Overlayed Echoes](https://writing.builtbyjoshstudio.com/writing/exactly-as-designed.html) (Angela, medic)
+- [The Dagger Flip — A Dispatch from Overlayed Echoes](https://writing.builtbyjoshstudio.com/writing/the-dagger-flip.html) (Marcus, joker)
+- [The Edge of My Chair — A Dispatch from Overlayed Echoes](https://writing.builtbyjoshstudio.com/writing/edge-of-my-chair.html) (Lena, his sister)
+- [The Load-Bearing Grin — A Dispatch from Overlayed Echoes](https://writing.builtbyjoshstudio.com/writing/load-bearing-grin.html) (Kael, game master)
+
+### Arc 3 — When it turned (mid-session in the dark)
+- [The Questions I'm Saving Up — Overlayed Echoes Dispatch](https://writing.builtbyjoshstudio.com/writing/the-questions-im-saving-up.html) (Theo, guardian)
+- [Try Again Later — A Dispatch from Overlayed Echoes](https://writing.builtbyjoshstudio.com/writing/try-again-later.html) (Angela, medic)
+- [The Joke That Didn't Land — A Dispatch from Overlayed Echoes](https://writing.builtbyjoshstudio.com/writing/the-joke-that-didnt-land.html) (Marcus, joker)
+- [What I Said to My Brother — A Dispatch from Overlayed Echoes](https://writing.builtbyjoshstudio.com/writing/what-i-said-to-my-brother.html) (Lena, his sister)
+- [The Bit Is Load-Bearing — Overlayed Echoes Dispatch](https://writing.builtbyjoshstudio.com/writing/the-bit-is-load-bearing.html) (Kael, game master)
+
+### Arc 4 — And later
+- [The Glitch in the Soul — A Dispatch from Overlayed Echoes](https://writing.builtbyjoshstudio.com/writing/corruption-of-immersion.html) (Kael, game master — when the simulation started writing back)
+
+## Tabletop tools (Exact Capabilities, Limits & Local Storage)
+
+### Run the Table
+- [Initiative Tracker | Free TTRPG Combat Tracker, Any System](https://writing.builtbyjoshstudio.com/tabletop/initiative-tracker/)
+  - Summary: Turn order, rounds, HP, and conditions on one screen for any tabletop RPG.
+  - Verified capabilities: Up to 40 combatants; automatic duplicate numbering (e.g. Goblin, Goblin 2); decimal tie-breakers (`15.5` sorts above `15`); quick HP damage/heal controls with zero-HP dimming; up to 8 condition tags per combatant (presets or custom, max 24 chars); Next turn / Back controls with automatic round counter; auto-saves to browser `localStorage` (`tynkr-initiative-tracker-v1`).
+- [Dice Roller | Free Online RPG Dice with Notation & History](https://writing.builtbyjoshstudio.com/tabletop/dice-roller/)
+  - Summary: Full tabletop notation dice roller with pool builder, presets, and roll breakdown history.
+  - Verified capabilities: Dice `d4` through `d100`; notation `NdX`, `+/-` modifiers, mixed pools (up to 12 terms, 1–100 dice per term), keep highest (`kh`) and keep lowest (`kl`); one-tap Advantage (`2d20kh1`), Disadvantage (`2d20kl1`), and `4d6kh3`; cryptographically secure unbiased rolls via browser `crypto.getRandomValues` when available; stores last 20 rolls in browser `localStorage` (`tynkr-dice-roller-v1`).
+- [Session Notes & NPC Log | Free TTRPG Campaign Journal](https://writing.builtbyjoshstudio.com/tabletop/session-notes/)
+  - Summary: Browser-local campaign journal with session entries, searchable NPC log, and loot ledger.
+  - Verified capabilities: Up to 20 campaigns, 200 session entries per campaign (up to 20,000 chars each), 300 searchable NPCs, and 200 loot items with check-off state; one-click Markdown (`.md`) campaign export; full `.json` backup export and restore (up to 32 MB); receives NPCs directly from the NPC Generator via shared `localStorage` (`tynkr-session-notes-v1`).
+- [Wargame Score Tracker | Free VP & CP Tracker, Any System](https://writing.builtbyjoshstudio.com/tabletop/wargame-score-tracker/)
+  - Summary: Shared two-player miniature wargame score sheet for any system.
+  - Verified capabilities: Two editable player names; 3–6 configurable battle rounds (default 5); per-round primary victory points (`0–999`); up to 12 custom secondaries per player (`0–999` each); command point counters (`0–99`); live totals; auto-saves mid-game in browser `localStorage` (`tynkr-wargame-score-v1`).
+- [Random Table Roller | Roll on Your Own Custom TTRPG Tables](https://writing.builtbyjoshstudio.com/tabletop/random-table-roller/)
+  - Summary: Custom rollable table builder and paste-to-roll library.
+  - Verified capabilities: Up to 50 saved tables, 500 entries per table, max die face `d1000`; parses plain lines, numbered entries, weighted ranges (`01-05`), and percentile rules (`00` = `100`, `0` = `10`, zero-indexed auto-shift); single rolls and distinct no-repeat batches; `.txt` table export; stores 12-roll history and tables in browser `localStorage` (`tynkr-table-roller-v1`).
+
+### Generators
+- [Fantasy Character Name Generator | Free, Any Style](https://writing.builtbyjoshstudio.com/tabletop/character-name-generator/)
+  - Summary: Generates 6 original invented fantasy names per click in four styles: Flowing, Guttural, Short, or Noble. One-click copy and kept list of up to 30 names saved in browser `localStorage` (`tynkr-name-generator-kept-v1`).
+- [NPC Generator | Name, Quirk, Motivation & Secret, Free](https://writing.builtbyjoshstudio.com/tabletop/npc-generator/)
+  - Summary: One-click playable NPC (name, occupation, quirk, motivation, secret). One-click copy, kept list of up to 20 NPCs saved in `localStorage` (`tynkr-npc-generator-kept-v1`), and one-tap "Add to Session Notes" integration (`tynkr-session-notes-v1`).
+- [Tavern Generator | Name, Patrons, Rumor & Menu, Free](https://writing.builtbyjoshstudio.com/tabletop/tavern-generator/)
+  - Summary: One-click fantasy tavern (establishment name, atmosphere, patron, rumor, menu). System-agnostic; one-click copy and kept list of up to 20 taverns saved in `localStorage` (`tynkr-tavern-generator-kept-v1`).
+- [Plot Hook Generator | One-Line Adventure Hooks with a Twist](https://writing.builtbyjoshstudio.com/tabletop/plot-hook-generator/)
+  - Summary: One-click adventure hook paired with a built-in twist. System-agnostic; one-click copy and kept list of up to 20 hooks saved in `localStorage` (`tynkr-plot-hook-kept-v1`).
+- [Loot Generator | Flavorful Treasure Without the Stat Blocks](https://writing.builtbyjoshstudio.com/tabletop/loot-generator/)
+  - Summary: System-free treasure descriptions (object, odd detail, backstory/history). One-click copy and kept list of up to 20 entries saved in `localStorage` (`tynkr-loot-generator-kept-v1`).
 
 ## Blog posts
 
 - [Free Tabletop RPG Tools: Initiative Tracker & Dice Roller](https://writing.builtbyjoshstudio.com/blog/free-tabletop-rpg-tools/): Free browser tabletop RPG tools: an initiative tracker that remembers your encounter between sessions and a full-notation dice roller. No ads, no signup.
-  - The short version: Free, ad-free tools for your game table, all in one place, including an Initiative Tracker and a Dice Roller. Both are built for in-person play — the tracker keeps turn order, rounds, HP, and conditions on one screen and saves itself in your browser between sessions; the roller handles everything from a bare d20 to 4d6-drop-lowest, with advantage and disadvantage one tap away and a roll history for the "wait, what did you roll?" moments. Like every tool here: free, no ads, no signup, works with any game system, and nothing you enter leaves your device.
-
-## Site pages
-
-- [Privacy Policy](https://writing.builtbyjoshstudio.com/privacy/): the shared privacy policy for the Built by Josh Studio sites.
+  - Summary: Overview of the system-agnostic, local-first design philosophy behind the Initiative Tracker, Dice Roller, and companion tabletop tools, with a comparison table and FAQ.
