@@ -15,9 +15,11 @@ d.setAttribute('data-theme',t)})();
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
+      gtag('set', 'ads_data_redaction', true);
       gtag('js', new Date());
       var gaKeep = new URLSearchParams(); new URLSearchParams(location.search).forEach(function (v, k) { if (k.indexOf('utm_') === 0) gaKeep.append(k, v); });
-      gtag('config', 'G-QDSPBB7S9J', { page_location: location.origin + location.pathname + (gaKeep.toString() ? '?' + gaKeep.toString() : ''), page_referrer: document.referrer.split(/[?#]/)[0] });
+      gtag('config', 'G-QDSPBB7S9J', { page_location: location.origin + location.pathname + (gaKeep.toString() ? '?' + gaKeep.toString() : ''), page_referrer: document.referrer.split(/[?#]/)[0], allow_google_signals: false, allow_ad_personalization_signals: false });
     </script>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Wargame Score Tracker | Free VP &amp; CP Tracker, Any System</title>
@@ -352,7 +354,7 @@ d.setAttribute('data-theme',t)})();
         <tr><th scope="row">What it does</th><td>One shared score sheet for a two-player miniature wargame.</td></tr>
         <tr><th scope="row">Inputs</th><td>Player names, battle rounds, primary points per round, the secondary objectives each side is playing, and command points.</td></tr>
         <tr><th scope="row">Outputs</th><td>Per-round and running totals for both players — the sheet survives a mid-game refresh.</td></tr>
-        <tr><th scope="row">Cost &amp; privacy</th><td>Free, ad-free, no signup. Runs and saves in this browser's local storage — nothing leaves your device.</td></tr>
+        <tr><th scope="row">Cost &amp; privacy</th><td>Free, ad-free, no signup. Runs and saves in this browser's local storage — your entries stay on your device.</td></tr>
       </tbody>
     </table>
     </div>

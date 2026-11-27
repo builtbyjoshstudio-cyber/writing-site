@@ -15,9 +15,11 @@ d.setAttribute('data-theme',t)})();
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
+      gtag('set', 'ads_data_redaction', true);
       gtag('js', new Date());
       var gaKeep = new URLSearchParams(); new URLSearchParams(location.search).forEach(function (v, k) { if (k.indexOf('utm_') === 0) gaKeep.append(k, v); });
-      gtag('config', 'G-QDSPBB7S9J', { page_location: location.origin + location.pathname + (gaKeep.toString() ? '?' + gaKeep.toString() : ''), page_referrer: document.referrer.split(/[?#]/)[0] });
+      gtag('config', 'G-QDSPBB7S9J', { page_location: location.origin + location.pathname + (gaKeep.toString() ? '?' + gaKeep.toString() : ''), page_referrer: document.referrer.split(/[?#]/)[0], allow_google_signals: false, allow_ad_personalization_signals: false });
     </script>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Tavern Generator | Name, Patrons, Rumor &amp; Menu, Free</title>
@@ -265,7 +267,7 @@ d.setAttribute('data-theme',t)})();
         <button type="button" id="clear-kept" class="jsw-btn jsw-btn--small jsw-btn--danger">Clear</button>
       </div>
       <div id="kept-list" class="jsw-results"></div>
-      <p class="note">Everything is generated in your browser from original, invented content — nothing from any publisher, nothing sent anywhere. Kept items stay on this device.</p>
+      <p class="note">Everything is generated in your browser from original, invented content — nothing from any publisher, and your kept items stay on this device.</p>
       <a class="xlink" href="/tabletop/random-table-roller/">
         Want your own tavern-events table? Build one in the table roller &rarr;
       </a>
@@ -280,7 +282,7 @@ d.setAttribute('data-theme',t)})();
         <tr><th scope="row">What it does</th><td>Generates the whole tavern the moment the party walks in.</td></tr>
         <tr><th scope="row">Inputs</th><td>One click per establishment.</td></tr>
         <tr><th scope="row">Outputs</th><td>A name for the sign, the room's atmosphere, one patron worth talking to, tonight's rumor, and the menu.</td></tr>
-        <tr><th scope="row">Cost &amp; privacy</th><td>Free, ad-free, no signup. Runs in your browser and saves your kept list in local storage — nothing leaves your device.</td></tr>
+        <tr><th scope="row">Cost &amp; privacy</th><td>Free, ad-free, no signup. Runs in your browser and saves your kept list in local storage — your kept list stays on your device.</td></tr>
       </tbody>
     </table>
     </div>
@@ -394,7 +396,7 @@ d.setAttribute('data-theme',t)})();
   </section>
 
   <div class="footer">
-    <p>This generator is system-agnostic and is not affiliated with, endorsed by, or associated with any game publisher. Every name, phrase, and result it produces is original invented content — use it freely at your table. Nothing is sent anywhere; kept items are stored only in your own browser.</p>
+    <p>This generator is system-agnostic and is not affiliated with, endorsed by, or associated with any game publisher. Every name, phrase, and result it produces is original invented content — use it freely at your table. Your inputs and kept items aren't sent to a server; they're stored only in your own browser.</p>
 </div>
 </div>
 

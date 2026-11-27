@@ -15,9 +15,11 @@ d.setAttribute('data-theme',t)})();
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
+      gtag('set', 'ads_data_redaction', true);
       gtag('js', new Date());
       var gaKeep = new URLSearchParams(); new URLSearchParams(location.search).forEach(function (v, k) { if (k.indexOf('utm_') === 0) gaKeep.append(k, v); });
-      gtag('config', 'G-QDSPBB7S9J', { page_location: location.origin + location.pathname + (gaKeep.toString() ? '?' + gaKeep.toString() : ''), page_referrer: document.referrer.split(/[?#]/)[0] });
+      gtag('config', 'G-QDSPBB7S9J', { page_location: location.origin + location.pathname + (gaKeep.toString() ? '?' + gaKeep.toString() : ''), page_referrer: document.referrer.split(/[?#]/)[0], allow_google_signals: false, allow_ad_personalization_signals: false });
     </script>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Session Notes &amp; NPC Log | Free TTRPG Campaign Journal</title>
@@ -322,7 +324,7 @@ d.setAttribute('data-theme',t)})();
         <tr><th scope="row">What it does</th><td>A campaign journal that remembers what the table forgets.</td></tr>
         <tr><th scope="row">Inputs</th><td>Free-form session entries, NPC names and details, and loot — organized per campaign, with support for multiple campaigns.</td></tr>
         <tr><th scope="row">Outputs</th><td>A running campaign log, an NPC directory, and a loot ledger, exportable to Markdown, plus a .json backup of the whole journal you can restore.</td></tr>
-        <tr><th scope="row">Cost &amp; privacy</th><td>Free, ad-free, no signup. Runs and saves in this browser's local storage — nothing leaves your device.</td></tr>
+        <tr><th scope="row">Cost &amp; privacy</th><td>Free, ad-free, no signup. Runs and saves in this browser's local storage — your entries stay on your device.</td></tr>
       </tbody>
     </table>
     </div>
@@ -354,7 +356,7 @@ d.setAttribute('data-theme',t)})();
       <p>A session entry here is just a date and a text box. No templates to fill in, no fields fighting you — a few sentences about what happened is worth more than the elaborate journal you'd abandon by session three. The entries stack newest-first, so last session's cliffhanger is always at the top when you sit back down.</p>
 
       <h3>Your notes are yours — literally</h3>
-      <p>Everything stays in your browser's local storage: no account, no cloud, nothing sent anywhere. The flip side is that clearing your browser data clears the journal, so back it up — one click saves every campaign as a .json file you can restore here, in another browser, or on another device. The Markdown export turns a campaign into a file with every session, NPC, and loot item. Plain text, readable anywhere, pasteable into Notion or Obsidian if your campaign outgrows this page.</p>
+      <p>Your campaign notes stay in your browser's local storage: no account, no cloud, and nothing uploaded. The flip side is that clearing your browser data clears the journal, so back it up — one click saves every campaign as a .json file you can restore here, in another browser, or on another device. The Markdown export turns a campaign into a file with every session, NPC, and loot item. Plain text, readable anywhere, pasteable into Notion or Obsidian if your campaign outgrows this page.</p>
     </section>
 
     <!-- FAQ -->

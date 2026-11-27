@@ -15,9 +15,11 @@ d.setAttribute('data-theme',t)})();
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
+      gtag('set', 'ads_data_redaction', true);
       gtag('js', new Date());
       var gaKeep = new URLSearchParams(); new URLSearchParams(location.search).forEach(function (v, k) { if (k.indexOf('utm_') === 0) gaKeep.append(k, v); });
-      gtag('config', 'G-QDSPBB7S9J', { page_location: location.origin + location.pathname + (gaKeep.toString() ? '?' + gaKeep.toString() : ''), page_referrer: document.referrer.split(/[?#]/)[0] });
+      gtag('config', 'G-QDSPBB7S9J', { page_location: location.origin + location.pathname + (gaKeep.toString() ? '?' + gaKeep.toString() : ''), page_referrer: document.referrer.split(/[?#]/)[0], allow_google_signals: false, allow_ad_personalization_signals: false });
     </script>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Dice Roller | Free Online RPG Dice with Notation &amp; History</title>
@@ -321,7 +323,7 @@ d.setAttribute('data-theme',t)})();
         <tr><th scope="row">What it does</th><td>Rolls any dice pool with full tabletop notation.</td></tr>
         <tr><th scope="row">Inputs</th><td>Tap dice (<span class="jsw-formula">d4</span>—<span class="jsw-formula">d100</span>) to build a pool, or type notation like <span class="jsw-formula">3d6+2</span> or <span class="jsw-formula">4d6</span> keep highest <span class="jsw-num">3</span> — advantage and disadvantage included.</td></tr>
         <tr><th scope="row">Outputs</th><td>The total with every individual die shown, plus a roll history that stays on this device.</td></tr>
-        <tr><th scope="row">Cost &amp; privacy</th><td>Free, ad-free, no signup. Runs and saves in this browser's local storage — nothing leaves your device.</td></tr>
+        <tr><th scope="row">Cost &amp; privacy</th><td>Free, ad-free, no signup. Runs and saves in this browser's local storage — your entries stay on your device.</td></tr>
       </tbody>
     </table>
     </div>
